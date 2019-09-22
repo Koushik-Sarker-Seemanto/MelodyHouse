@@ -1,0 +1,9 @@
+numpy
+scipy
+xarray
+astropy
+matplotlib
+scikit-learn
+netCDF4
+pyyaml
+tqdm

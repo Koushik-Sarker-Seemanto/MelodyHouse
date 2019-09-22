@@ -1,0 +1,84 @@
+/*<section class="hero-area">*/
+
+/*    <div class="d-flex">*/
+/*        <div id="demo" class="carousel slide" data-ride="carousel">*/
+/*        <!-- Indicators -->*/
+/*            <ul class="carousel-indicators">*/
+/*                <li data-target="#" data-slide-to="0" class="active"></li>*/
+/*                <li data-target="#" data-slide-to="1"></li>*/
+/*                <li data-target="#" data-slide-to="2"></li>*/
+/*            </ul>*/
+
+/*            <div class="carousel-inner">*/
+/*                <div class="carousel-item">*/
+/*                    <!-- Single Hero Slide -->*/
+/*                    <div class="d-flex align-items-center justify-content-center">*/
+/*                        <!-- Slide Img -->*/
+/*                        <div class="bg-img" style="background-image: url({% static 'home/images/bg-img/bg-1.jpg' %});"></div>*/
+/*                        <!-- Slide Content -->*/
+/*                        <div class="container">*/
+/*                            <div class="row">*/
+/*                                <div class="col-12">*/
+/*                                    <div class="text-center">*/
+/*                                        <h6 data-animation="fadeInUp" data-delay="100ms">Latest album</h6>*/
+/*                                        <h2 data-animation="fadeInUp" data-delay="300ms">Beyond Time <span>Beyond Time</span></h2>*/
+/*                                        <a data-animation="fadeInUp" data-delay="500ms" href="#" class="btn oneMusic-btn mt-50">Discover <i class="fa fa-angle-double-right"></i></a>*/
+/*                                    </div>*/
+/*                                </div>*/
+/*                            </div>*/
+/*                        </div>*/
+/*                    </div>*/
+/*                </div>*/
+
+/*                <div class="carousel-item">*/
+/*                    <!-- Single Hero Slide -->*/
+/*                    <div class="d-flex align-items-center justify-content-center">*/
+/*                        <!-- Slide Img -->*/
+/*                        <div class="bg-img" style="background-image: url({% static 'home/images/bg-img/bg-2.jpg' %});"></div>*/
+/*                        <!-- Slide Content -->*/
+/*                        <div class="container">*/
+/*                            <div class="row">*/
+/*                                <div class="col-12">*/
+/*                                    <div class="hero-slides-content text-center">*/
+/*                                        <h6 data-animation="fadeInUp" data-delay="100ms">Latest album</h6>*/
+/*                                        <h2 data-animation="fadeInUp" data-delay="300ms">Colorlib Music <span>Colorlib Music</span></h2>*/
+/*                                        <a data-animation="fadeInUp" data-delay="500ms" href="#" class="btn oneMusic-btn mt-50">Discover <i class="fa fa-angle-double-right"></i></a>*/
+/*                                    </div>*/
+/*                                </div>*/
+/*                            </div>*/
+/*                        </div>*/
+/*                    </div>*/
+/*                </div>*/
+
+/*                <div class="carousel-item">*/
+/*                    <!-- Single Hero Slide -->*/
+/*                    <div class="d-flex align-items-center justify-content-center">*/
+/*                        <!-- Slide Img -->*/
+/*                        <div class="bg-img" style="background-image: url({% static 'home/images/bg-img/bg-1.jpg' %});"></div>*/
+/*                        <!-- Slide Content -->*/
+/*                        <div class="container">*/
+/*                            <div class="row">*/
+/*                                <div class="col-12">*/
+/*                                    <div class="text-center">*/
+/*                                        <h6 data-animation="fadeInUp" data-delay="100ms">Latest album</h6>*/
+/*                                        <h2 data-animation="fadeInUp" data-delay="300ms">Beyond Time <span>Beyond Time</span></h2>*/
+/*                                        <a data-animation="fadeInUp" data-delay="500ms" href="#" class="btn oneMusic-btn mt-50">Discover <i class="fa fa-angle-double-right"></i></a>*/
+/*                                    </div>*/
+/*                                </div>*/
+/*                            </div>*/
+/*                        </div>*/
+/*                    </div>*/
+/*                </div>*/
+/*            </div>*/
+
+/*            <!-- Left and right controls -->*/
+/*            <a class="carousel-control-prev" href="#" data-slide="prev">*/
+/*                <span class="carousel-control-prev-icon"></span>*/
+/*            </a>*/
+/*            <a class="carousel-control-next" href="#" data-slide="next">*/
+/*                <span class="carousel-control-next-icon"></span>*/
+/*            </a>*/
+/*        </div>*/
+/*    </div>*/
+/*    <!-- ##### Hero Area End ##### -->*/
+/*</section>*/

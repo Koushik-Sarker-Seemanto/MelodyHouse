@@ -1,0 +1,55 @@
+{% extends 'home/base.html' %}
+
+
+{% block body %}
+    {% load staticfiles %}
+
+
+    <!-- ##### Hero Area Start ##### -->
+    <div id="demo" class="carousel slide d-flex justify-content-center" data-ride="carousel" style="margin-top: 70px">
+        <!-- Indicators -->
+        <ul class="carousel-indicators">
+            <li data-target="#demo" data-slide-to="0" class="active"></li>
+            <li data-target="#demo" data-slide-to="1"></li>
+            <li data-target="#demo" data-slide-to="2"></li>
+        </ul>
+
+        <!-- The slideshow -->
+        <div class="carousel-inner text-center">
+            <div class="carousel-item active">
+                <div class="back_ground1 d-flex justify-content-center">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="text-center">
+                                    <h6>Latest album</h6>
+                                    <h2>Beyond Time <span>Beyond Time</span></h2>
+                                    <a  href="#" class="btn btn-primary">Discover <i class="fa fa-angle-double-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://www.w3schools.com/bootstrap4/la.jpg" alt="">
+                <div class="carousel-caption text-center">
+                    <h6 data-animation="fadeInUp" data-delay="100ms">Latest album</h6>
+                    <h2 data-animation="fadeInUp" data-delay="300ms">Beyond Time <span>Beyond Time</span></h2>
+                    <a data-animation="fadeInUp" data-delay="500ms" href="#" class="btn btn-primary">Discover <i class="fa fa-angle-double-right"></i></a>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://www.w3schools.com/bootstrap4/ny.jpg" alt="New York">
+            </div>
+        </div>
+
+        <!-- Left and right controls -->
+        <a class="carousel-control-prev" href="#demo" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#demo" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </a>
+    </div>
+{% endblock %}

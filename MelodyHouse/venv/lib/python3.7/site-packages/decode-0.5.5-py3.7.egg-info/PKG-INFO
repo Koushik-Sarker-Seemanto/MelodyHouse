@@ -1,0 +1,23 @@
+Metadata-Version: 2.1
+Name: decode
+Version: 0.5.5
+Summary: DESHIMA code for data analysis
+Home-page: https://github.com/deshima-dev/decode
+Author: DESHIMA software team
+Author-email: taniguchi@a.phys.nagoya-u.ac.jp
+License: MIT
+Description: # De:code
+        
+        [![](https://img.shields.io/pypi/v/decode.svg?label=PyPI&style=flat-square)](https://pypi.org/pypi/decode/)
+        [![](https://img.shields.io/pypi/pyversions/decode.svg?label=Python&color=yellow&style=flat-square)](https://pypi.org/pypi/decode/)
+        [![Travis](https://img.shields.io/travis/deshima-dev/decode/master.svg?label=Travis%20CI&style=flat-square)](https://travis-ci.org/deshima-dev/decode)
+        [![License](https://img.shields.io/badge/license-MIT-blue.svg?label=License&style=flat-square)](LICENSE)
+        
+        :zap: DESHIMA code for data analysis
+        
+Keywords: astronomy,submillimeter,spectroscopy,deshima,data-analysis
+Platform: any
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
