@@ -1,0 +1,27 @@
+{% extends 'profile_app/profilebase.html' %}
+{% load static %}
+
+{% block title %}
+    <title>profile Page</title>
+{% endblock %}
+
+
+{% block body %}
+    <h1 class="d-flex justify-content-center" style="margin-top: 50px">Profile</h1>
+	<div class="d-flex justify-content-center mt-2 mb-2" style="margin-top: 200px">
+		<div class="col-md-9 list-group-item list-group-item-success">
+			<div class="profile-image">
+				<img src='{% static 'resource/male-circle.png' %}'>
+			</div>
+			<h6 class="list-group-item">Name: {{ user.name }}</h6>
+			<h6 class="list-group-item">Phone: {{ user.phone }}</h6>
+			<h6 class="list-group-item">Email: {{ user.email }}</h6>
+			<h6 class="list-group-item">Gender: {{ user.gender }}</h6>
+			<h6 class="list-group-item">Fav Genre: {{ user.fav_genre }}</h6>
+
+			<a href="{% url 'profile_app:profile-update' %}" class="btn btn-success">Update</a>
+            <a href="{% url 'authentication:change_password' %}" class="btn btn-success">Change Password</a>
+			
+		</div>
+	</div>
+{% endblock %}

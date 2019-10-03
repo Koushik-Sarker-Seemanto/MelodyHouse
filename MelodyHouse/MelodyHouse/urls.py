@@ -22,4 +22,5 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'', include('home.urls')),
     url(r'', include('authentication.urls')),
+    url(r'', include('profile_app.urls')),
 ]

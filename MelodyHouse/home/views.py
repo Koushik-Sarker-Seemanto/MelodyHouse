@@ -11,10 +11,3 @@ def homeView(request):
     template = 'home/HomePage.html'
     return render(request, template)
 
-
-def ProfileView(request):
-    user = request.user
-    context = {
-        'user': user
-    }
-    return render(request, 'profile/profileView.html', context)

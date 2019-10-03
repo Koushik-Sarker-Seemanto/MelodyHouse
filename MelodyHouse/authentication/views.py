@@ -4,7 +4,7 @@ from django.shortcuts import redirect, render, HttpResponse
 from generic.helper import decode as token_decode
 from generic.service import verify_email
 from authentication.models import Account
-from authentication.forms import SignupForm, SigninForm
+from authentication.forms import SignupForm, SigninForm, PasswordChangeForm
 
 
 def signupView(request):
@@ -44,7 +44,7 @@ def verify(request, token):
     context = {
         'user': user
     }
-    return render(request, 'profile/profileView.html', context)
+    return render(request, 'profile/../profile_app/templates/profile_app/profileView.html', context)
     # return HttpResponse('<h1 align="center">Email verified</h1>')
 
 
@@ -73,3 +73,22 @@ def signin(request):
 def signout(request):
     logout(request)
     return redirect('/')
+
+
+@login_required(login_url='/signin/')
+def change_password(request):
+    context = {}
+
+    if request.method == 'POST':
+        form = PasswordChangeForm(request.POST, user=request.user)
+        if form.is_valid():
+            user = form.save()
+            logout(request)
+            login(request, user)
+
+            return redirect('/profile/')
+    else:
+        form = PasswordChangeForm(user=request.user)
+    context['form'] = form
+
+    return render(request, 'authentication/PasswordChange.html', context)

@@ -7,6 +7,4 @@ app_name = 'home'
 urlpatterns = [
     #  / home/
     url(r'^$', views.homeView, name='home'),
-
-    path('profile/', views.ProfileView, name='profile-view'),
 ]
