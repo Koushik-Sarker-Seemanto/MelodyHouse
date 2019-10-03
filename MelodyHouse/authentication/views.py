@@ -44,7 +44,7 @@ def verify(request, token):
     context = {
         'user': user
     }
-    return render(request, 'profile/../profile_app/templates/profile_app/profileView.html', context)
+    return render(request, 'profile_app/profileView.html', context)
     # return HttpResponse('<h1 align="center">Email verified</h1>')
 
 
@@ -59,7 +59,7 @@ def signin(request):
             user = authenticate(request, username=email, password=password)
             if user is not None:
                 login(request, user)
-            return redirect('home:profile-view')
+            return redirect('profile_app:profile-view')
     else:
         form = SigninForm()
         print(form.as_table())
