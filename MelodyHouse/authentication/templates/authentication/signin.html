@@ -1,0 +1,27 @@
+{% extends 'home/base.html' %}
+{% load static %}
+
+{% block title %}
+    <title>Sign-in Page</title>
+{% endblock %}
+
+
+{% block body %}
+    <div class="d-flex justify-content-center mt-5 mb-5">
+        <h1>Sign In Page</h1>
+    </div>
+	<div class="d-flex justify-content-center mt-5">
+		<div class="col-md-5 list-group-item">
+			<form method="POST" enctype="multipart/form-data">
+                <table>
+				{% csrf_token %}
+				{{ form.as_table }}
+				<tr><td><button class="btn btn-success">Signin</button></td></tr>
+                    </table>
+			</form>
+			<br>
+			<a href="#" class="list-group-item">Forget password</a>
+			<a href="{% url 'authentication:signup' %}" class="list-group-item">Create a new account</a>
+		</div>
+	</div>
+{% endblock %}

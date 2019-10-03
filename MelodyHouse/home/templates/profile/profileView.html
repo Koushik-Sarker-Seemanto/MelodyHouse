@@ -1,10 +1,13 @@
 {% extends 'profile/profilebase.html' %}
 {% load static %}
 
+{% block title %}
+    <title>profile Page</title>
+{% endblock %}
 
 
-{% block extra_body %}
-	<div class="d-flex justify-content-center mt-2 mb-2">
+{% block body %}
+	<div class="d-flex justify-content-center mt-2 mb-2" style="margin-top: 200px">
 		<div class="col-md-9 list-group-item list-group-item-success">
 			<div class="profile-image">
 				<img src='{% static 'resource/male-circle.png' %}'>
@@ -13,13 +16,11 @@
 			<h6 class="list-group-item">Phone: {{ user.phone }}</h6>
 			<h6 class="list-group-item">Email: {{ user.email }}</h6>
 			<h6 class="list-group-item">Gender: {{ user.gender }}</h6>
-			<h6 class="list-group-item">Card: {{ user.fav_genre }}</h6>
+			<h6 class="list-group-item">Fav Genre: {{ user.fav_genre }}</h6>
 
 			<a href="#" class="btn btn-success">Update</a>
-			<br><br>
-			<div class="list-group list-group-horizontal">
-				<a href="#" class="h6 list-group-item list-group-item-action">Change Password</a>
-			</div>
+            <a href="#" class="btn btn-success">Change Password</a>
+			
 		</div>
 	</div>
 {% endblock %}

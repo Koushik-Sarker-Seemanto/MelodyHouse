@@ -14,6 +14,6 @@ def verify_email(request, user):
 		'token' : token_encode({'user_id': user.id, 'email': user.email })
 	}
 
-	message = render_to_string('home/verify_email.html', context)
+	message = render_to_string('authentication/verify_email.html', context)
 	mail = EmailMessage(subject='Email Verification', body=message, to=[user.email])
 	mail.send()
