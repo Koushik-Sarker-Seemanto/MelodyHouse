@@ -35,5 +35,4 @@ def ProfileUpdate(request):
         form = ProfileUpdateForm(user=request.user)
 
     context['form'] = form
-
     return render(request, 'profile_app/ProfileUpdate.html', context)

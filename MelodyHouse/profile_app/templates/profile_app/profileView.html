@@ -1,27 +1,83 @@
 {% extends 'profile_app/profilebase.html' %}
 {% load static %}
 
+
 {% block title %}
     <title>profile Page</title>
 {% endblock %}
 
+{##}
+{#{% block body %}#}
+{#    <h1 class="d-flex justify-content-center" style="margin-top: 100px; margin-bottom: 50px">Profile</h1>#}
+{#	<div class="d-flex justify-content-center mt-2 mb-2" style="margin-bottom: 100px">#}
+{#		<div class="col-md-9 list-group-item list-group-item-success">#}
+{#			<div class="profile-image d-flex justify-content-center">#}
+{#				<img class="embed-responsive" style="max-width: 100%; height: 45.51%" src='{% static 'resource/cover_photo.jpg' %}'>#}
+{#                <img class="embed-responsive" style="position: absolute;left: 50px;top: 150px;max-width: 25%;height:25%" src='{% static 'resource/profile_photo.png' %}'>#}
+{#                <h6 class="list-group-item" style="position: absolute;left: 50px;top: 300px"> {{ user.name }} </h6>#}
+{#			</div>#}
+{##}
+{#			<h6 class="list-group-item">Phone: {{ user.phone }}</h6>#}
+{#			<h6 class="list-group-item">Email: {{ user.email }}</h6>#}
+{#			<h6 class="list-group-item">Gender: {{ user.gender }}</h6>#}
+{#			<h6 class="list-group-item">Fav Genre: {{ user.fav_genre }}</h6>#}
+{##}
+{#			<a href="{% url 'profile_app:profile-update' %}" class="btn btn-success">Update</a>#}
+{#            <a href="{% url 'authentication:change_password' %}" class="btn btn-success">Change Password</a>#}
+{#			#}
+{#		</div>#}
+{#	</div>#}
+{#    <div class="d-flex justify-content-center" style="margin-bottom: 100px">#}
+{#        End#}
+{#    </div>#}
+{#{% endblock %}#}
 
 {% block body %}
-    <h1 class="d-flex justify-content-center" style="margin-top: 50px">Profile</h1>
-	<div class="d-flex justify-content-center mt-2 mb-2" style="margin-top: 200px">
-		<div class="col-md-9 list-group-item list-group-item-success">
-			<div class="profile-image">
-				<img src='{% static 'resource/male-circle.png' %}'>
-			</div>
-			<h6 class="list-group-item">Name: {{ user.name }}</h6>
+    <div class="d-flex justify-content-center mt-2 mb-2" >
+        <div id="profile-upper" class="col-md-9">
+            <div id="profile-banner-image">
+                <img src='{% static 'resource/cover_photo.jpg' %}' alt="Banner image">
+            </div>
+            <div id="profile-d">
+                <div id="profile-pic">
+                    <img src='{% static 'resource/profile_photo.png' %}'>
+                </div>
+                <div id="u-name">{{ user.name }}</div>
+                <div id="u-fav_genre">{{ user.fav_genre }}</div>
+                <div class="tb" id="m-btns">
+                    <div class="td">
+                        <div class="m-btn"><i class="fa fa-fw fa-music"></i><span>Activity log</span></div>
+                    </div>
+                    <div class="td">
+                        <div class="m-btn"><i class="fa fa-fw fa-music"></i><span>Privacy</span></div>
+                    </div>
+                </div>
+                <div id="edit-profile"><i class="fa fa-fw fa-camera"></i></div>
+            </div>
+            <div id="black-grd"></div>
+        </div>
+    </div>
+    <div class="d-flex justify-content-center mt-2 mb-2" >
+        <div class="col-md-6 d-flex justify-content-center">
+            <a href="#" class="btn btn-secondary" style="padding: 10px;margin: 10px;width: 180px;">Friend List</a>
+            <a href="#" class="btn btn-secondary" style="padding: 10px;margin: 10px;width: 180px;">My Playlist</a>
+			<a href="{% url 'profile_app:profile-update' %}" class="btn btn-secondary" style="padding: 10px;margin: 10px;width: 180px;">Update</a>
+            <a href="{% url 'authentication:change_password' %}" class="btn btn-secondary" style="padding: 10px;margin: 10px;width: 180px;">Change Password</a>
+
+		</div>
+    </div>
+
+    <div class="d-flex justify-content-center mt-2 mb-2" style="margin-top: -100px;" >
+        <div class="col-md-9 list-group-item list-group-item-primary">
+
 			<h6 class="list-group-item">Phone: {{ user.phone }}</h6>
 			<h6 class="list-group-item">Email: {{ user.email }}</h6>
 			<h6 class="list-group-item">Gender: {{ user.gender }}</h6>
-			<h6 class="list-group-item">Fav Genre: {{ user.fav_genre }}</h6>
+            <h6></h6>
 
-			<a href="{% url 'profile_app:profile-update' %}" class="btn btn-success">Update</a>
-            <a href="{% url 'authentication:change_password' %}" class="btn btn-success">Change Password</a>
-			
+			<a href="{% url 'profile_app:profile-update' %}" class="btn btn-secondary">Edit Profile</a>
+            <a href="{% url 'authentication:change_password' %}" class="btn btn-secondary">Change Password</a>
+
 		</div>
-	</div>
+    </div>
 {% endblock %}

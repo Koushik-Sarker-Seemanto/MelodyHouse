@@ -1,0 +1,130 @@
+
+/* Profile image header */
+#profile-upper
+{
+    margin-top: 50px;
+    position: relative;
+}
+
+#profile-d
+{
+    position: absolute;
+    left: 60px;
+    bottom: 0px;
+    right: 0px;
+    height: 180px;
+    z-index: 2;
+}
+
+#profile-banner-image
+{
+    height: 480px;
+    overflow: hidden;
+    z-index: 1;
+}
+
+#profile-banner-image img
+{
+    width: 100%;
+    margin-top: 0%;
+}
+
+#profile-pic
+{
+    width: 200px;
+    height: 200px;
+    border-radius: 3px;
+    margin-top: 28px;
+    overflow: hidden;
+    box-shadow: 0 0 0 5px #fff;
+    background: #370006;
+}
+
+#profile-pic img
+{
+    width: 100%;
+}
+
+#u-name
+{
+    position: absolute;
+    top: 80px;
+    left: 215px;
+    color: #fff;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+#u-fav_genre
+{
+    position: absolute;
+    top: 130px;
+    left: 215px;
+    color: #fff;
+    font-size: 24px;
+    font-weight: normal;
+}
+
+#m-btns
+{
+    position: absolute;
+    right: 56px;
+    bottom: 20px;
+    width: 211px;
+}
+
+#m-btns .td
+{
+    padding: 0 8px;
+}
+
+.m-btn
+{
+    cursor: pointer;
+    color: #0e0e0e;
+    font-size: 14px;
+    white-space: pre;
+    padding: 5px 8px 6px 8px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 2px;
+}
+
+.m-btn i
+{
+    font-size: 16px;
+    margin-right: 1px;
+    vertical-align: middle;
+}
+
+.m-btn span
+{
+    position: relative;
+    top: 1px;
+}
+
+#edit-profile
+{
+    position: absolute;
+    right: 20px;
+    bottom: 21px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+#edit-profile i
+{
+    display: block;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+#black-grd
+{
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    height: 300px;
+    background: linear-gradient(rgba(0,0,0,0) 71%, rgba(0,0,0, .53));
+    z-index: 1;
+}
+/* Profile image header finished */
