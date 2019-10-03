@@ -8,6 +8,8 @@ from authentication.forms import SignupForm, SigninForm
 
 
 def homeView(request):
-    template = 'home/HomePage.html'
-    return render(request, template)
-
+    if request.user.is_authenticated:
+        return redirect('profile_app:profile-view')
+    else:
+        template = 'home/HomePage.html'
+        return render(request, template)
