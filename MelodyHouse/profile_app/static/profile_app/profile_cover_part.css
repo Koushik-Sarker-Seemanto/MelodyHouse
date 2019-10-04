@@ -48,7 +48,7 @@
 #u-name
 {
     position: absolute;
-    top: 80px;
+    top: 50px;
     left: 215px;
     color: #fff;
     font-size: 36px;
@@ -58,7 +58,7 @@
 #u-fav_genre
 {
     position: absolute;
-    top: 130px;
+    top: 100px;
     left: 215px;
     color: #fff;
     font-size: 24px;
@@ -128,3 +128,240 @@
     z-index: 1;
 }
 /* Profile image header finished */
+
+
+/* This is for removing blue color of <a> tag       START*/
+.a_link a:hover, a:focus, a:active
+{
+    text-decoration: none;
+    color: inherit;
+}
+
+#u_link
+{
+    text-decoration: none;
+    color: inherit;
+}
+/* This is for removing blue color of <a> tag       END*/
+
+
+
+
+/* this Section is for Buttons: Playlist, message,upload, update etc.           START*/
+
+#l-col, #m-col, #r-col
+{
+    vertical-align: top;
+
+}
+
+#m-col
+{
+    padding: 0px 55px;
+}
+
+.m-mrg
+{
+    margin-bottom: 28px;
+}
+
+#p-tabs
+{
+    position: relative;
+    font-size: 13px;
+    color: #919191;
+    text-align: center;
+    padding: 13px 20px;
+    margin-top: -40px;
+    background-color: #fff;
+    box-shadow: 0px 3px 3px #ddd;
+    z-index: 3;
+}
+
+#p-tabs-m .td
+{
+    width: 16.6666667%;
+    cursor: pointer;
+    padding: 10px;
+}
+
+#p-tabs-m .td:hover
+{
+    color: #ffffff;
+    background-color: #fe790a;
+}
+
+#p-tabs-m .td.active
+{
+    color: #ee6000;
+}
+
+#p-tabs-m span
+{
+    position: relative;
+}
+
+#p-tabs-m .td.active span:after
+{
+    content: '';
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: -13px;
+    height: 4px;
+    background-color: #ee6000;
+}
+
+#p-tabs-m .td i
+{
+    display: block;
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+#p-tab-m
+{
+    width: 1px;
+    color: #ccc;
+    cursor: pointer;
+}
+
+#p-tab-m i
+{
+    margin-right: -4px;
+}
+
+/* this Section is for Buttons: Playlist, message,upload, update etc.           END*/
+
+
+
+
+/* Sample Post          Start*/
+
+.post
+{
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 5px 5px 5px #ddd;
+    margin-bottom: 100px;
+}
+
+.p-p-pic
+{
+    position: absolute;
+    display: flex;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.p-p-pic img
+{
+    width: 100%;
+    border: 0;
+}
+
+.p-r-hdr
+{
+    vertical-align: top;
+    padding-left: 20px;
+    margin-left: 40px;
+}
+
+.p-u-info
+{
+    color: #5a5959;
+    font-size: 15px;
+    margin-bottom: 7px;
+}
+
+.p-u-info a
+{
+    color: #4267b2;
+}
+
+.p-dt
+{
+    color: #a8a8a8;
+    font-size: 13px;
+}
+
+.p-dt i
+{
+    font-size: 14px;
+    margin-right: 2px;
+}
+
+.p-dt span
+{
+    position: relative;
+    top: -2px;
+}
+
+.p-opt
+{
+    position: relative;
+    right: -3px;
+    width: 1px;
+    color: #ccc;
+    cursor: pointer;
+    vertical-align: top;
+}
+
+.p-cnt-v
+{
+    display: block;
+    margin: 20px -20px;
+    cursor: pointer;
+}
+
+.p-acts
+{
+    overflow: hidden;
+}
+
+.p-act
+{
+    width: 24px;
+    height: 24px;
+    color: #a3a6aa;
+    cursor: pointer;
+}
+
+.p-act span
+{
+    position: relative;
+    top: 1px;
+    width: 20px;
+    font-size: 15px;
+    color: #a3a6aa;
+}
+
+.like
+{
+    margin-right: 36px;
+}
+
+.like, .comment
+{
+    width: 50px;
+    float: left;
+}
+
+.p-act i
+{
+    vertical-align: middle;
+}
+
+.like i, .comment i
+{
+    margin-right: 6px;
+}
+
+.share
+{
+    float: right;
+    transform: rotateY(180deg);
+    margin-right: -1px;
+}

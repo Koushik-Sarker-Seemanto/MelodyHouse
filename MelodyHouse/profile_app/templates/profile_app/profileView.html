@@ -3,34 +3,8 @@
 
 
 {% block title %}
-    <title>profile Page</title>
+    <title>Profile Page</title>
 {% endblock %}
-
-{##}
-{#{% block body %}#}
-{#    <h1 class="d-flex justify-content-center" style="margin-top: 100px; margin-bottom: 50px">Profile</h1>#}
-{#	<div class="d-flex justify-content-center mt-2 mb-2" style="margin-bottom: 100px">#}
-{#		<div class="col-md-9 list-group-item list-group-item-success">#}
-{#			<div class="profile-image d-flex justify-content-center">#}
-{#				<img class="embed-responsive" style="max-width: 100%; height: 45.51%" src='{% static 'resource/cover_photo.jpg' %}'>#}
-{#                <img class="embed-responsive" style="position: absolute;left: 50px;top: 150px;max-width: 25%;height:25%" src='{% static 'resource/profile_photo.png' %}'>#}
-{#                <h6 class="list-group-item" style="position: absolute;left: 50px;top: 300px"> {{ user.name }} </h6>#}
-{#			</div>#}
-{##}
-{#			<h6 class="list-group-item">Phone: {{ user.phone }}</h6>#}
-{#			<h6 class="list-group-item">Email: {{ user.email }}</h6>#}
-{#			<h6 class="list-group-item">Gender: {{ user.gender }}</h6>#}
-{#			<h6 class="list-group-item">Fav Genre: {{ user.fav_genre }}</h6>#}
-{##}
-{#			<a href="{% url 'profile_app:profile-update' %}" class="btn btn-success">Update</a>#}
-{#            <a href="{% url 'authentication:change_password' %}" class="btn btn-success">Change Password</a>#}
-{#			#}
-{#		</div>#}
-{#	</div>#}
-{#    <div class="d-flex justify-content-center" style="margin-bottom: 100px">#}
-{#        End#}
-{#    </div>#}
-{#{% endblock %}#}
 
 {% block body %}
     <div class="d-flex justify-content-center mt-2 mb-2" >
@@ -44,12 +18,12 @@
                 </div>
                 <div id="u-name">{{ user.name }}</div>
                 <div id="u-fav_genre">{{ user.fav_genre }}</div>
-                <div class="tb" id="m-btns">
+                <div class="tb" id="m-btns" style="display: flex">
                     <div class="td">
-                        <div class="m-btn"><i class="fa fa-fw fa-music"></i><span>Activity log</span></div>
+                        <div class="m-btn"><i class="material-icons">format_list_bulleted</i><span>Activity log</span></div>
                     </div>
                     <div class="td">
-                        <div class="m-btn"><i class="fa fa-fw fa-music"></i><span>Privacy</span></div>
+                        <div class="m-btn"><i class="material-icons">lock</i><span>Privacy</span></div>
                     </div>
                 </div>
                 <div id="edit-profile"><i class="fa fa-fw fa-camera"></i></div>
@@ -57,27 +31,80 @@
             <div id="black-grd"></div>
         </div>
     </div>
-    <div class="d-flex justify-content-center mt-2 mb-2" >
-        <div class="col-md-6 d-flex justify-content-center">
-            <a href="#" class="btn btn-secondary" style="padding: 10px;margin: 10px;width: 180px;">Friend List</a>
-            <a href="#" class="btn btn-secondary" style="padding: 10px;margin: 10px;width: 180px;">My Playlist</a>
-			<a href="{% url 'profile_app:profile-update' %}" class="btn btn-secondary" style="padding: 10px;margin: 10px;width: 180px;">Update</a>
-            <a href="{% url 'authentication:change_password' %}" class="btn btn-secondary" style="padding: 10px;margin: 10px;width: 180px;">Change Password</a>
 
-		</div>
+
+    <div class="d-flex justify-content-center mt-2 mb-2" >
+         <div class="td col-md-6" id="m-col">
+             <div class="m-mrg" id="p-tabs">
+                 <div class="tb">
+                     <div class="td">
+                         <div class="tb justify-content-center" id="p-tabs-m" style="display: flex">
+                            <div class="td"><i class="material-icons">headset</i><span>PLAYLIST</span></div>
+                            <div class="td"><i class="material-icons">people</i><span>FRIENDS</span></div>
+                            <div class="td"><i class="material-icons">file_upload</i><span>UPLOAD</span></div>
+                            <div class="td"><i class="material-icons">message</i><span>MESSAGE</span></div>
+                             <div class="td"> <a id="u_link" class="a_link" href="{% url 'profile_app:profile-update' %}"><i class="material-icons">create</i><span>EDIT PROFILE</span></a></div>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+        </div>
     </div>
 
-    <div class="d-flex justify-content-center mt-2 mb-2" style="margin-top: -100px;" >
-        <div class="col-md-9 list-group-item list-group-item-primary">
 
+
+    <div class="container justify-content-center col-md-12" style="display: flex">
+    <div class="col-md-3">
+         <div class="list-group-item" style="margin-left: -10px;margin-right: 5px">
+
+             <h6 class="list-group-item">Name: {{ user.name }}</h6>
+             <h6 class="list-group-item">Genre: {{ user.fav_genre }}</h6>
 			<h6 class="list-group-item">Phone: {{ user.phone }}</h6>
 			<h6 class="list-group-item">Email: {{ user.email }}</h6>
 			<h6 class="list-group-item">Gender: {{ user.gender }}</h6>
+
             <h6></h6>
 
 			<a href="{% url 'profile_app:profile-update' %}" class="btn btn-secondary">Edit Profile</a>
             <a href="{% url 'authentication:change_password' %}" class="btn btn-secondary">Change Password</a>
 
 		</div>
+
+
     </div>
+
+
+    <div class="col-md-6 d-flex justify-content-center">
+        <div class="post">
+            <div class="tb" style="display: flex">
+                <div>
+                    <a href="#" class="td p-p-pic"><img src='{% static 'resource/profile_photo.png' %}'></a>
+                </div>
+
+                <div class="td p-r-hdr">
+                    <div class="p-u-info">
+                        <a href="#">{{ user.name }}</a> created an Album: <a href="#"> Oniket Prantor </a>
+                    </div>
+                    <div class="p-dt">
+                        <i class="material-icons">calendar_today</i>
+                        <span>October 03, 2019</span>
+                    </div>
+                </div>
+                <div class="td p-opt"><i class="material-icons">keyboard_arrow_down</i></div>
+            </div>
+            <a href="#" class="p-cnt-v">
+                <img src='{% static 'resource/Oniket Prantor.jpg' %}'>
+            </a>
+            <div>
+                <div class="p-acts">
+                    <div class="p-act like"><i class="material-icons">thumb_up_alt</i><span>25</span></div>
+                    <div class="p-act comment"><i class="material-icons">comment</i><span>1</span></div>
+                    <div class="p-act share"><i class="material-icons">reply</i></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
 {% endblock %}
