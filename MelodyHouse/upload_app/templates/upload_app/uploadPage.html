@@ -1,0 +1,23 @@
+{% extends 'profile_app/profilebase.html' %}
+{% load static %}
+
+{% block title %}
+    <title>Upload Page</title>
+{% endblock %}
+
+
+
+{% block body %}
+
+    <h1 class="d-flex justify-content-center" style="margin-top: 100px">Create Album</h1>
+	<div class="d-flex justify-content-center mt-5 mb-5" style="margin-top: 500px">
+		<div class="col-md-5 list-group-item">
+			<form method="POST" enctype="multipart/form-data">
+				{% csrf_token %}
+				{{ form.as_p }}
+				<button class="btn btn-success">Create</button>
+			</form>
+		</div>
+	</div>
+
+{% endblock %}

@@ -2,14 +2,24 @@ from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import redirect, render, HttpResponse
 from generic.helper import decode as token_decode
+from upload_app.models import Album
 from generic.service import verify_email
 from profile_app.forms import ProfileUpdateForm
+from django.db.models import Q
 
 
 @login_required(login_url='/signin/')
 def ProfileView(request):
     user = request.user
+    albums = Album.objects.filter(user=request.user)
+    query = request.GET.get("q")
+    if query:
+        albums = albums.filter(
+            Q(album_title__icontains=query) |
+            Q(artist__icontains=query)
+        ).distinct()
     context = {
+        'albums': albums,
         'user': user
     }
     return render(request, 'profile_app/profileView.html', context)

@@ -7,6 +7,7 @@ app_name = 'upload_app'
 urlpatterns = [
 
     # url(r'^signup/$', views.signupView, name='signup'),
+    path('add_album/', views.addAlbum, name='add-album'),
 
 ]
 
