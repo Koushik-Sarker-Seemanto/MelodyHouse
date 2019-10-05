@@ -11,7 +11,6 @@
 
 {# Cover Photo Area           START #}
 
-
     <div class="d-flex justify-content-center mt-2 mb-2" >
         <div id="profile-upper" class="col-md-9">
             <div id="profile-banner-image">
@@ -52,7 +51,7 @@
                          <div class="tb justify-content-center" id="p-tabs-m" style="display: flex">
                             <div class="td"><i class="material-icons">headset</i><span>PLAYLIST</span></div>
                             <div class="td"><i class="material-icons">people</i><span>FRIENDS</span></div>
-                            <div class="td"><i class="material-icons">file_upload</i><span>UPLOAD</span></div>
+                             <div class="td"><a id="u_link" class="a_link" href="{% url 'upload_app:add-album' %}"><i class="material-icons">file_upload</i><span>UPLOAD</span></a></div>
                             <div class="td"><i class="material-icons">message</i><span>MESSAGE</span></div>
                              <div class="td"> <a id="u_link" class="a_link" href="{% url 'profile_app:profile-update' %}"><i class="material-icons">create</i><span>EDIT PROFILE</span></a></div>
                          </div>
@@ -66,65 +65,121 @@
 
 
 
-
     <div class="container justify-content-center col-md-12" style="display: flex">
 
 
         {# Left Side Bar           START #}
 
-        <div class="col-md-3" >
-             <div class="list-group-item" style="margin-left: -10px;margin-right: 5px;position: -webkit-sticky;position: sticky;top: 60px;overflow: visible">
-                 <div class="d-flex justify-content-center">
-                     <h4>Profile Info</h4>
-                 </div>
-                 <h6 class="list-group-item">Name: {{ user.name }}</h6>
-                 <h6 class="list-group-item">Genre: {{ user.fav_genre }}</h6>
-                 <h6 class="list-group-item">Phone: {{ user.phone }}</h6>
-                 <h6 class="list-group-item">Email: {{ user.email }}</h6>
-                 <h6 class="list-group-item">Gender: {{ user.gender }}</h6>
+        <div class="col-md-3">
+            <div class="col-md-12" style="position: -webkit-sticky;position: sticky;top: 60px;overflow: visible">
+                 <div class="list-group-item" style="margin-left: -20px;margin-right: 5px;">
+                     <div class="d-flex justify-content-center">
+                         <h4>About</h4>
+                     </div>
+                     <h6 class="list-group-item">Name: {{ user.name }}</h6>
+                     <h6 class="list-group-item">Genre: {{ user.fav_genre }}</h6>
+                     <h6 class="list-group-item">Phone: {{ user.phone }}</h6>
+                     <h6 class="list-group-item">Email: {{ user.email }}</h6>
+                     <h6 class="list-group-item">Gender: {{ user.gender }}</h6>
 
-                 <h6></h6>
+                     <h6></h6>
 
-                 <a href="{% url 'profile_app:profile-update' %}" class="btn btn-secondary">Edit Profile</a>
-                 <a href="{% url 'authentication:change_password' %}" class="btn btn-secondary">Change Password</a>
-
+                     <a href="{% url 'profile_app:profile-update' %}" class="btn btn-secondary">Edit Profile</a>
+                     <a href="{% url 'authentication:change_password' %}" class="btn btn-secondary">Change Password</a>
+                </div>
             </div>
+
+        <h3 class="d-flex justify-content-center" style="position: -webkit-sticky;position: sticky;top: 400px;overflow: visible">My Albums</h3>
+{#                <div class="col-md-10" >#}
+                <div class="col-md-12 row"  style="position: -webkit-sticky;position: sticky;top: 440px;overflow: visible">
+
+                    {% for album in albums %}
+                        <div class="col-md-6 " >
+                            <div class="thumbnail" style="background-color: antiquewhite">
+                                <a href="#">
+                                    <img src="{% static 'resource/Oniket Prantor.jpg' %}" class="img-responsive" style="width: 180px; height: 180px">
+                                </a>
+                                <div class="caption justify-content-center">
+                                    <h6>{{ album }}</h6>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+
         </div>
+
 
         {# Left Side Bar           END #}
 
 
-        <div class="col-md-6 d-flex justify-content-center">
-            <div class="post">
-                <div class="tb" style="display: flex">
-                    <div>
-                        <a href="#" class="td p-p-pic"><img src='{% static 'resource/profile_photo.png' %}'></a>
-                    </div>
+{#        Main Posts             #}
+        <div class="col-md-6">
+            <div class="col-md-12 d-flex justify-content-center">
+                <div class="post">
+                    <div class="tb" style="display: flex">
+                        <div>
+                            <a href="#" class="td p-p-pic"><img src='{% static 'resource/profile_photo.png' %}'></a>
+                        </div>
 
-                    <div class="td p-r-hdr">
-                        <div class="p-u-info">
-                            <a href="#">{{ user.name }}</a> created an Album: <a href="#"> Oniket Prantor </a>
+                        <div class="td p-r-hdr">
+                            <div class="p-u-info">
+                                <a href="#">{{ user.name }}</a> created an Album: <a href="#"> Oniket Prantor </a>
+                            </div>
+                            <div class="p-dt">
+                                <i class="material-icons">calendar_today</i>
+                                <span>October 03, 2019</span>
+                            </div>
                         </div>
-                        <div class="p-dt">
-                            <i class="material-icons">calendar_today</i>
-                            <span>October 03, 2019</span>
-                        </div>
+                        <div class="td p-opt"><i class="material-icons">keyboard_arrow_down</i></div>
                     </div>
-                    <div class="td p-opt"><i class="material-icons">keyboard_arrow_down</i></div>
-                </div>
-                <a href="#" class="p-cnt-v">
-                    <img src='{% static 'resource/Oniket Prantor.jpg' %}'>
-                </a>
-                <div>
-                    <div class="p-acts">
-                        <div class="p-act like"><i class="material-icons">thumb_up_alt</i><span>25</span></div>
-                        <div class="p-act comment"><i class="material-icons">comment</i><span>1</span></div>
-                        <div class="p-act share"><i class="material-icons">reply</i></div>
+                    <a href="#" class="p-cnt-v">
+                        <img src='{% static 'resource/Oniket Prantor.jpg' %}'>
+                    </a>
+                    <div>
+                        <div class="p-acts">
+                            <div class="p-act like"><i class="material-icons">thumb_up_alt</i><span>25</span></div>
+                            <div class="p-act comment"><i class="material-icons">comment</i><span>1</span></div>
+                            <div class="p-act share"><i class="material-icons">reply</i></div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
+            <div class="col-md-12 d-flex justify-content-center">
+                <div class="post">
+                    <div class="tb" style="display: flex">
+                        <div>
+                            <a href="#" class="td p-p-pic"><img src='{% static 'resource/profile_photo.png' %}'></a>
+                        </div>
+
+                        <div class="td p-r-hdr">
+                            <div class="p-u-info">
+                                <a href="#">{{ user.name }}</a> created an Album: <a href="#"> Oniket Prantor </a>
+                            </div>
+                            <div class="p-dt">
+                                <i class="material-icons">calendar_today</i>
+                                <span>October 03, 2019</span>
+                            </div>
+                        </div>
+                        <div class="td p-opt"><i class="material-icons">keyboard_arrow_down</i></div>
+                    </div>
+                    <a href="#" class="p-cnt-v">
+                        <img src='{% static 'resource/Oniket Prantor.jpg' %}'>
+                    </a>
+                    <div>
+                        <div class="p-acts">
+                            <div class="p-act like"><i class="material-icons">thumb_up_alt</i><span>25</span></div>
+                            <div class="p-act comment"><i class="material-icons">comment</i><span>1</span></div>
+                            <div class="p-act share"><i class="material-icons">reply</i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
     </div>
 
 
