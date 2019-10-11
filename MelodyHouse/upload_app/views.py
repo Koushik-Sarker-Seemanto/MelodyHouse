@@ -20,7 +20,7 @@ def addAlbum(request):
             album_title = form.cleaned_data['album_title']
             query = Album.objects.filter(artist=artist).filter(album_title=album_title).filter(user=request.user)
             if query.exists():
-                raise form.ValidationError('invalid password')
+                return HttpResponse('<h1 align="center" style="color: red;margin-top: 400px">Album Already Exists!!!</h1>')
             else:
                 album.save()
                 return redirect('profile_app:profile-view')
@@ -31,3 +31,5 @@ def addAlbum(request):
         'form': form
     }
     return render(request, 'upload_app/uploadPage.html', context)
+
+
