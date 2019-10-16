@@ -2,14 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5b9436bb-59d6-4431-9d76-769530f9fb24" name="Default Changelist" comment="nothing">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MelodyHouse/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/MelodyHouse/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authentication/templates/authentication/signin.html" beforeDir="false" afterPath="$PROJECT_DIR$/authentication/templates/authentication/signin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/home/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/home/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/upload_app/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/upload_app/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MelodyHouse/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/MelodyHouse/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/upload_app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/upload_app/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/upload_app/templates/upload_app/uploadPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/upload_app/templates/upload_app/uploadPage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/upload_app/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/upload_app/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/upload_app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/upload_app/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -36,42 +32,23 @@
         <entry file="file://$PROJECT_DIR$/authentication/templates/authentication/signin.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="289">
-              <caret line="17" column="28" lean-forward="true" selection-start-line="16" selection-start-column="16" selection-end-line="17" selection-end-column="28" />
+              <caret line="17" column="28" selection-start-line="16" selection-start-column="16" selection-end-line="17" selection-end-column="28" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/home/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" selection-start-line="4" selection-end-line="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/upload_app/templates/upload_app/uploadPage.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="366">
-              <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
+            <state relative-caret-position="136">
+              <caret line="8" selection-start-line="8" selection-end-line="8" />
               <folding>
+                <element signature="e#275#300#0#HTML" expanded="true" />
+                <element signature="e#410#417#1#HTML" expanded="true" />
                 <element signature="e#195#220#0#HTML" expanded="true" />
                 <element signature="e#476#497#0#HTML" expanded="true" />
                 <element signature="e#587#612#0#HTML" expanded="true" />
                 <element signature="e#1018#1039#0#HTML" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/profile_app/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="20" column="15" lean-forward="true" selection-start-line="20" selection-start-column="15" selection-end-line="20" selection-end-column="15" />
-              <folding>
-                <element signature="e#0#59#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -85,8 +62,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/upload_app/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="366">
-              <caret line="38" column="41" lean-forward="true" selection-start-line="38" selection-start-column="41" selection-end-line="38" selection-end-column="41" />
+            <state relative-caret-position="595">
+              <caret line="35" column="75" selection-start-line="35" selection-start-column="75" selection-end-line="35" selection-end-column="75" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
@@ -94,13 +71,34 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/upload_app/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="468">
-              <caret line="50" selection-start-line="50" selection-end-line="50" />
+            <state relative-caret-position="289">
+              <caret line="17" column="27" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
               <folding>
                 <element signature="e#0#59#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MelodyHouse/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="434">
+              <caret line="136" selection-start-line="136" selection-end-line="136" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MelodyHouse/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="442">
+              <caret line="26" column="1" selection-start-line="26" selection-start-column="1" selection-end-line="26" selection-end-column="1" />
+              <folding>
+                <element signature="e#635#676#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -187,17 +185,17 @@
         <option value="$PROJECT_DIR$/profile_app/static/profile_app/style_js.js" />
         <option value="$PROJECT_DIR$/profile_app/templates/profile_app/profilebase.html" />
         <option value="$PROJECT_DIR$/profile_app/static/profile_app/profile_cover_part.css" />
-        <option value="$PROJECT_DIR$/MelodyHouse/urls.py" />
         <option value="$PROJECT_DIR$/profile_app/views.py" />
         <option value="$PROJECT_DIR$/profile_app/templates/profile_app/profileView.html" />
-        <option value="$PROJECT_DIR$/MelodyHouse/settings.py" />
         <option value="$PROJECT_DIR$/authentication/templates/authentication/signin.html" />
         <option value="$PROJECT_DIR$/home/templates/home/base.html" />
         <option value="$PROJECT_DIR$/upload_app/forms.py" />
-        <option value="$PROJECT_DIR$/upload_app/views.py" />
         <option value="$PROJECT_DIR$/upload_app/urls.py" />
+        <option value="$PROJECT_DIR$/MelodyHouse/settings.py" />
+        <option value="$PROJECT_DIR$/MelodyHouse/urls.py" />
         <option value="$PROJECT_DIR$/upload_app/models.py" />
         <option value="$PROJECT_DIR$/upload_app/templates/upload_app/uploadPage.html" />
+        <option value="$PROJECT_DIR$/upload_app/views.py" />
       </list>
     </option>
   </component>
@@ -224,65 +222,6 @@
             <path>
               <item name="MelodyHouse" type="b2602c69:ProjectViewProjectNode" />
               <item name="MelodyHouse" type="462c0819:PsiDirectoryNode" />
-              <item name="authentication" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MelodyHouse" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MelodyHouse" type="462c0819:PsiDirectoryNode" />
-              <item name="authentication" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MelodyHouse" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MelodyHouse" type="462c0819:PsiDirectoryNode" />
-              <item name="authentication" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="authentication" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MelodyHouse" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MelodyHouse" type="462c0819:PsiDirectoryNode" />
-              <item name="home" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MelodyHouse" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MelodyHouse" type="462c0819:PsiDirectoryNode" />
-              <item name="home" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MelodyHouse" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MelodyHouse" type="462c0819:PsiDirectoryNode" />
-              <item name="home" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="home" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MelodyHouse" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MelodyHouse" type="462c0819:PsiDirectoryNode" />
-              <item name="MelodyHouse" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MelodyHouse" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MelodyHouse" type="462c0819:PsiDirectoryNode" />
-              <item name="profile_app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MelodyHouse" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MelodyHouse" type="462c0819:PsiDirectoryNode" />
-              <item name="upload_app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MelodyHouse" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MelodyHouse" type="462c0819:PsiDirectoryNode" />
-              <item name="upload_app" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MelodyHouse" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MelodyHouse" type="462c0819:PsiDirectoryNode" />
-              <item name="upload_app" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
               <item name="upload_app" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -385,12 +324,12 @@
       <workItem from="1570241813574" duration="24074000" />
       <workItem from="1570769054416" duration="3632000" />
       <workItem from="1571033036807" duration="4833000" />
-      <workItem from="1571210516683" duration="5786000" />
+      <workItem from="1571210516683" duration="8627000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="159522000" />
+    <option name="totallyTimeSpent" value="162363000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="83" y="25" width="1837" height="1055" extended-state="6" />
@@ -591,16 +530,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MelodyHouse/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="1" lean-forward="true" selection-start-line="26" selection-start-column="1" selection-end-line="26" selection-end-column="1" />
-          <folding>
-            <element signature="e#635#676#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/authentication/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -655,13 +584,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MelodyHouse/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="39" column="28" selection-start-line="39" selection-start-column="28" selection-end-line="39" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/home/templates/home/base.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
@@ -689,7 +611,7 @@
     <entry file="file://$PROJECT_DIR$/profile_app/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
-          <caret line="20" column="15" lean-forward="true" selection-start-line="20" selection-start-column="15" selection-end-line="20" selection-end-column="15" />
+          <caret line="20" column="15" selection-start-line="20" selection-start-column="15" selection-end-line="20" selection-end-column="15" />
           <folding>
             <element signature="e#0#59#0" expanded="true" />
           </folding>
@@ -705,16 +627,6 @@
           <caret line="21" column="12" selection-start-line="21" selection-start-column="12" selection-end-line="21" selection-end-column="12" />
           <folding>
             <element signature="e#0#24#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/upload_app/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="50" selection-start-line="50" selection-end-line="50" />
-          <folding>
-            <element signature="e#0#59#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -739,29 +651,58 @@
     <entry file="file://$PROJECT_DIR$/authentication/templates/authentication/signin.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
-          <caret line="17" column="28" lean-forward="true" selection-start-line="16" selection-start-column="16" selection-end-line="17" selection-end-column="28" />
+          <caret line="17" column="28" selection-start-line="16" selection-start-column="16" selection-end-line="17" selection-end-column="28" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/upload_app/models.py">
+    <entry file="file://$PROJECT_DIR$/MelodyHouse/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="366">
-          <caret line="38" column="41" lean-forward="true" selection-start-line="38" selection-start-column="41" selection-end-line="38" selection-end-column="41" />
+        <state relative-caret-position="434">
+          <caret line="136" selection-start-line="136" selection-end-line="136" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MelodyHouse/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="26" column="1" selection-start-line="26" selection-start-column="1" selection-end-line="26" selection-end-column="1" />
           <folding>
-            <element signature="e#0#28#0" expanded="true" />
+            <element signature="e#635#676#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/upload_app/templates/upload_app/uploadPage.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="366">
-          <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
+        <state relative-caret-position="136">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
           <folding>
+            <element signature="e#275#300#0#HTML" expanded="true" />
+            <element signature="e#410#417#1#HTML" expanded="true" />
             <element signature="e#195#220#0#HTML" expanded="true" />
             <element signature="e#476#497#0#HTML" expanded="true" />
             <element signature="e#587#612#0#HTML" expanded="true" />
             <element signature="e#1018#1039#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/upload_app/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="35" column="75" selection-start-line="35" selection-start-column="75" selection-end-line="35" selection-end-column="75" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/upload_app/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="27" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#59#0" expanded="true" />
           </folding>
         </state>
       </provider>

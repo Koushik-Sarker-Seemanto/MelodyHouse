@@ -9,6 +9,14 @@
 
 {% block body %}
 
+    {% if error_message %}
+        <div class="alert alert-warning alert-dismissible fade show d-flex justify-content-center" style="margin-top: 100px">
+            <strong>Error: </strong> {{ error_message }}
+            <button type="button" class="close" data-dismiss="alert">&times;
+            </button>
+        </div>
+    {% endif %}
+
     <h1 class="d-flex justify-content-center" style="margin-top: 100px">Create Album</h1>
 	<div class="d-flex justify-content-center mt-5 mb-5">
 		<div class="col-md-5 list-group-item">

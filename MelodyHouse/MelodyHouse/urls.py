@@ -25,3 +25,7 @@ urlpatterns = [
     url(r'', include('profile_app.urls')),
     url(r'', include('upload_app.urls')),
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
