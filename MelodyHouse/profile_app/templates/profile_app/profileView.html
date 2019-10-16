@@ -96,9 +96,18 @@
                     {% for album in albums %}
                         <div class="col-md-6 " >
                             <div class="thumbnail" style="background-color: antiquewhite">
-                                <a href="#">
-                                    <img src="{% static 'resource/Oniket Prantor.jpg' %}" class="img-responsive" style="width: 180px; height: 180px">
-                                </a>
+                                {% if album.album_logo %}
+                                    <a href="#">
+                                        <img src="{{ album.album_logo.url }}" class="img-responsive" style="width: 180px; height: 180px">
+                                    </a>
+                                {% else %}
+
+                                    <a href="#">
+                                        <img src='{% static 'resource/Oniket Prantor.jpg' %}' class="img-responsive" style="width: 180px; height: 180px">
+                                    </a>
+
+                                {% endif %}
+
                                 <div class="caption justify-content-center">
                                     <h6>{{ album }}</h6>
                                 </div>

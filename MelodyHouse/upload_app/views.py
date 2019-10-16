@@ -19,6 +19,20 @@ def addAlbum(request):
             album = form.save(commit=False)
             album.user = request.user
 
+            if album.album_logo in request.POST:
+                album.album_logo = request.FILES['album_logo']
+                file_type = album.album_logo.url.split('.')[-1]
+                file_type = file_type.lower()
+                if file_type not in IMAGE_FILE_TYPES:
+                    form = AlbumForm()
+                    form_song = SongForm()
+                    context = {
+                        'form': form,
+                        'form_song': form_song,
+                        'error_message': 'Album Already Exists!!!',
+                    }
+                    return render(request, 'upload_app/uploadPage.html', context)
+
             artist = form.cleaned_data['artist']
             album_title = form.cleaned_data['album_title']
             query = Album.objects.filter(artist=artist).filter(album_title=album_title).filter(user=request.user)
