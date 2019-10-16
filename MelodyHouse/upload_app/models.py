@@ -19,6 +19,7 @@ class Album(models.Model):
     user = models.ForeignKey(Account, on_delete=models.CASCADE)
     artist = models.CharField(max_length=100)
     album_title = models.CharField(max_length=100)
+    album_logo = models.FileField(default='', blank=True)
     genre = models.CharField(max_length=50, choices=_GENRES)
     description = models.TextField(max_length=1000, default='', blank=True)
 

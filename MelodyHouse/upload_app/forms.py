@@ -7,7 +7,7 @@ class AlbumForm(forms.ModelForm):
 
     class Meta:
         model = Album
-        fields = ['artist', 'album_title', 'genre', 'description']
+        fields = ['artist', 'album_title', 'album_logo', 'genre', 'description']
 
     widgets = {
         'artist': forms.TextInput(attrs={'class': 'form-control'}),
