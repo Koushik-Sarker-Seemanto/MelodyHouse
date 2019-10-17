@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import Permission
 from authentication.models import Account
+from datetime import datetime
 
 # Create your models here.
 
@@ -22,6 +23,7 @@ class Album(models.Model):
     album_logo = models.FileField(default='', blank=True)
     genre = models.CharField(max_length=50, choices=_GENRES)
     description = models.TextField(max_length=1000, default='', blank=True)
+    date_time = models.DateTimeField(default=datetime.now)
 
     class Meta:
         unique_together = (('album_title', 'artist', 'user'),)
@@ -35,6 +37,7 @@ class Song(models.Model):
     song_file = models.FileField(default='')
     album_id = models.ForeignKey(Album, on_delete=models.CASCADE, )
     description = models.TextField(max_length=1000, default='', blank=True)
+    date_time = models.DateTimeField(default=datetime.now)
 
     class Meta:
         unique_together = (('song_file', 'album_id'), )

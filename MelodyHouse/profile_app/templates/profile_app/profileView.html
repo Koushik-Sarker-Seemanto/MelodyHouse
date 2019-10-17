@@ -3,11 +3,19 @@
 
 {% block title %}
     <title>Profile Page</title>
+
+
 {% endblock %}
 
 
 
 {% block body %}
+
+    <script>
+        var d = (new Date()).toString().split(' ').splice(1,3).join(' ');
+        document.getElementById("current_date").innerHTML = d;
+    </script>
+
 
 {# Cover Photo Area           START #}
 
@@ -137,7 +145,7 @@
                             </div>
                             <div class="p-dt">
                                 <i class="material-icons">calendar_today</i>
-                                <span>October 03, 2019</span>
+                                <span id="current_date"></span>
                             </div>
                         </div>
                         <div class="td p-opt"><i class="material-icons">keyboard_arrow_down</i></div>
