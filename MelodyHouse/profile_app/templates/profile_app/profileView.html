@@ -7,14 +7,12 @@
 
 {% endblock %}
 
+{% block UserName %}
+    {{ user.name }}
+{% endblock %}
 
 
 {% block body %}
-
-    <script>
-        var d = (new Date()).toString().split(' ').splice(1,3).join(' ');
-        document.getElementById("current_date").innerHTML = d;
-    </script>
 
 
 {# Cover Photo Area           START #}
@@ -73,13 +71,13 @@
 
 
 
-    <div class="container justify-content-center col-md-12" style="display: flex">
+    <div class="container d-flex justify-content-center col-md-12">
 
 
         {# Left Side Bar           START #}
 
-        <div class="col-md-3">
-            <div class="col-md-12" style="position: -webkit-sticky;position: sticky;top: 60px;overflow: visible">
+        <div class="col-md-3" style="background: #fff">
+            <div class="col-md-12 embed-responsive" style="position: -webkit-sticky;position: sticky;top: 60px;overflow: visible">
                  <div class="list-group-item" style="margin-left: -20px;margin-right: 5px;">
                      <div class="d-flex justify-content-center">
                          <h4>About</h4>
@@ -103,15 +101,15 @@
 
                     {% for album in albums %}
                         <div class="col-md-6 " >
-                            <div class="thumbnail" style="background-color: antiquewhite">
+                            <div class="thumbnail">
                                 {% if album.album_logo %}
                                     <a href="#">
-                                        <img src="{{ album.album_logo.url }}" class="img-responsive" style="width: 180px; height: 180px">
+                                        <img src="{{ album.album_logo.url }}" class="embed-responsive" >
                                     </a>
                                 {% else %}
 
                                     <a href="#">
-                                        <img src='{% static 'resource/Oniket Prantor.jpg' %}' class="img-responsive" style="width: 180px; height: 180px">
+                                        <img src='{% static 'resource/Oniket Prantor.jpg' %}' class="embed-responsive">
                                     </a>
 
                                 {% endif %}
@@ -132,8 +130,9 @@
 
 {#        Main Posts             #}
         <div class="col-md-6">
+            {% for album in albums %}
             <div class="col-md-12 d-flex justify-content-center">
-                <div class="post">
+                <div class="post col-md-12" style="background: #fff">
                     <div class="tb" style="display: flex">
                         <div>
                             <a href="#" class="td p-p-pic"><img src='{% static 'resource/profile_photo.png' %}'></a>
@@ -141,20 +140,25 @@
 
                         <div class="td p-r-hdr">
                             <div class="p-u-info">
-                                <a href="#">{{ user.name }}</a> created an Album: <a href="#"> Oniket Prantor </a>
+                                <a href="#">{{ user.name }}</a> created an Album: <a href="#"> {{ album }}</a>
                             </div>
                             <div class="p-dt">
                                 <i class="material-icons">calendar_today</i>
-                                <span id="current_date"></span>
+                                <span id="current_date">{{ album.date_time }}</span>
                             </div>
                         </div>
                         <div class="td p-opt"><i class="material-icons">keyboard_arrow_down</i></div>
                     </div>
-                    <a href="#" class="p-cnt-v">
-                        <img src='{% static 'resource/Oniket Prantor.jpg' %}'>
+                    {% if album.description %}
+                    <p class="embed-responsive" style="padding-top: 10px">
+                        {{ album.description }}
+                    </p>
+                    {% endif %}
+                    <a href="#" class="p-cnt-v" >
+                        <img class="embed-responsive" style="padding-top: 10px" src='{{ album.album_logo.url }}'>
                     </a>
                     <div>
-                        <div class="p-acts">
+                        <div class="p-acts" style="margin-top: 10px">
                             <div class="p-act like"><i class="material-icons">thumb_up_alt</i><span>25</span></div>
                             <div class="p-act comment"><i class="material-icons">comment</i><span>1</span></div>
                             <div class="p-act share"><i class="material-icons">reply</i></div>
@@ -162,37 +166,7 @@
                     </div>
                 </div>
             </div>
-
-            <div class="col-md-12 d-flex justify-content-center">
-                <div class="post">
-                    <div class="tb" style="display: flex">
-                        <div>
-                            <a href="#" class="td p-p-pic"><img src='{% static 'resource/profile_photo.png' %}'></a>
-                        </div>
-
-                        <div class="td p-r-hdr">
-                            <div class="p-u-info">
-                                <a href="#">{{ user.name }}</a> created an Album: <a href="#"> Oniket Prantor </a>
-                            </div>
-                            <div class="p-dt">
-                                <i class="material-icons">calendar_today</i>
-                                <span>October 03, 2019</span>
-                            </div>
-                        </div>
-                        <div class="td p-opt"><i class="material-icons">keyboard_arrow_down</i></div>
-                    </div>
-                    <a href="#" class="p-cnt-v">
-                        <img src='{% static 'resource/Oniket Prantor.jpg' %}'>
-                    </a>
-                    <div>
-                        <div class="p-acts">
-                            <div class="p-act like"><i class="material-icons">thumb_up_alt</i><span>25</span></div>
-                            <div class="p-act comment"><i class="material-icons">comment</i><span>1</span></div>
-                            <div class="p-act share"><i class="material-icons">reply</i></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            {% endfor %}
         </div>
     </div>
 
