@@ -246,6 +246,7 @@
     margin-bottom: 100px;
 }
 
+
 .p-p-pic
 {
     position: absolute;
@@ -312,7 +313,7 @@
 .p-cnt-v
 {
     display: block;
-    margin: 20px -20px;
+    padding: 20px -20px;
     cursor: pointer;
 }
 

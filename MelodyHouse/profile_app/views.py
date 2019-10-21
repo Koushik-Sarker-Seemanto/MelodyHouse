@@ -12,12 +12,8 @@ from django.db.models import Q
 def ProfileView(request):
     user = request.user
     albums = Album.objects.filter(user=request.user)
-    query = request.GET.get("q")
-    if query:
-        albums = albums.filter(
-            Q(album_title__icontains=query) |
-            Q(artist__icontains=query)
-        ).distinct()
+    albums = albums.all().order_by('-date_time')
+
     context = {
         'albums': albums,
         'user': user
