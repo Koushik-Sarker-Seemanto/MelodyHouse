@@ -19,7 +19,6 @@ _FAV_GENRES = (
     ('Rap', "Rap"),
 )
 
-
 class UserManager(BaseUserManager):
     def create_user(self, name, phone, email, gender, fav_genre,  password=None, is_staff=False, is_superuser=False):
         if not name or not email or not phone:

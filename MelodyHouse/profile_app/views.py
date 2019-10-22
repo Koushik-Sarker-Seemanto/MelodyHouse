@@ -2,7 +2,7 @@ from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import redirect, render, HttpResponse
 from generic.helper import decode as token_decode
-from upload_app.models import Album
+from upload_app.models import Album, Song
 from generic.service import verify_email
 from profile_app.forms import ProfileUpdateForm
 from django.db.models import Q
@@ -13,7 +13,6 @@ def ProfileView(request):
     user = request.user
     albums = Album.objects.filter(user=request.user)
     albums = albums.all().order_by('-date_time')
-
     context = {
         'albums': albums,
         'user': user
@@ -42,3 +41,14 @@ def ProfileUpdate(request):
 
     context['form'] = form
     return render(request, 'profile_app/ProfileUpdate.html', context)
+
+
+@login_required(login_url='/signin/')
+def Playlist(request):
+    user = request.user
+    songs = Song.objects.all()
+    context = {
+        'songs': songs,
+        'user': user
+    }
+    return render(request, 'profile_app/PlayList.html', context)
