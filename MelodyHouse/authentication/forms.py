@@ -17,11 +17,11 @@ class SignupForm(forms.ModelForm):
         fields = ['name', 'phone', 'email', 'gender', 'fav_genre']
 
     widgets = {
-        'name': forms.TextInput(attrs={'class':'form-control'}),
-        'phone': forms.TextInput(attrs={'class':'form-control'}),
-        'email': forms.EmailInput(attrs={'class':'form-control'}),
-        'gender': forms.Select(attrs={'class':'custom-select'}),
-        'fav_genre': forms.Select(attrs={'class':'custom-select'})
+        'name': forms.TextInput(attrs={'class': 'form-control'}),
+        'phone': forms.TextInput(attrs={'class': 'form-control'}),
+        'email': forms.EmailInput(attrs={'class': 'form-control'}),
+        'gender': forms.Select(attrs={'class': 'custom-select'}),
+        'fav_genre': forms.Select(attrs={'class': 'custom-select'})
         # 'image': forms.FileInput(attrs={'class':'form-control'})
     }
 
