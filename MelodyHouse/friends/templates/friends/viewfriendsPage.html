@@ -1,0 +1,22 @@
+{% extends 'profile_app/profilebase.html' %}
+{% load static %}
+
+{% block title %}
+    <title>Friends</title>
+{% endblock %}
+
+{% block body %}
+
+    <div class="container" style="margin-top: 80px">
+    <div>
+        <h2>Other People</h2>
+        {% for people in peoples %}
+            <h1>
+            {{ people.name }}
+            </h1>
+        {% endfor %}
+    </div>
+
+    </div>
+
+{% endblock %}
