@@ -24,6 +24,7 @@ urlpatterns = [
     url(r'', include('authentication.urls')),
     url(r'', include('profile_app.urls')),
     url(r'', include('upload_app.urls')),
+    url(r'', include('friends.urls')),
 ]
 
 if settings.DEBUG:
