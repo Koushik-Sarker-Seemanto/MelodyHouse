@@ -20,27 +20,15 @@
 
         {% for song in songs %}
             <div class="col-md-3">
-<<<<<<< Updated upstream
             <h2>{{ song }}</h2>
             <a target="_blank" href="{{ song.song_file.url }}">
                 <button type="button" class="btn btn-success btn-xs">
                     <span class="glyphicon glyphicon-play"></span>&nbsp; Play
                 </button>
             </a>
-            <audio controls style="margin-top: 10px">
+            <audio controls>
                 <source src="{{ song.song_file.url }}" type="audio/mpeg">
             </audio>
-=======
-                <h2>{{ song }}</h2>
-                <a target="_blank" href="{{ song.song_file.url }}">
-                    <button type="button" class="btn btn-success btn-xs">
-                        <span class="glyphicon glyphicon-play"></span>&nbsp; Play
-                    </button>
-                </a>
-                <audio controls style="margin-top: 10px">
-                    <source src="{{ song.song_file.url }}" type="audio/mpeg">
-                </audio>
->>>>>>> Stashed changes
 
 
             </div>
