@@ -52,6 +52,7 @@ def addAlbum(request):
         form_song = SongForm(request.POST, request.FILES)
         if form_song.is_valid():
             song = form_song.save(commit=False)
+            song.user = request.user
 
             song.song_file = request.FILES['song_file']
             file_type = song.song_file.url.split('.')[-1]

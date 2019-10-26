@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static "home/style.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "home/home_style.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "profile_app/profile_cover_part.css" %}">
+
+                {#  BootStrap 4 files   #}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+
+
+
+                {# Extra Styles #}
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    {% block title %}
+
+    <title>Profile page</title>                    {#Title Block#}
+
+    {% endblock %}
+
+</head>
+
+
+<body>
+
+<nav class="navbar navbar-dark bg-dark navbar-expand-xl fixed-top navbar-custom" >
+    <a class="navbar-brand" style="font-family: 'padmaa-Bold.1.1';" href="#">MelodyHouse</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'profile_app:profile-view' %}">
+                    <i class="fa fa-fw fa-home"></i>Home <span class="sr-only">(current)</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="fa fa-fw fa-music"></i>&nbsp;Stream
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="fa fa-fw fa-book"></i> Library
+                </a>
+            </li>
+            <li class="nav-item">
+                <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </li>
+        </ul>
+
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fa fa-fw fa-user"></i>
+                    {% block UserName %}
+                    User Name
+                    {% endblock %}
+                </a>
+
+                <div class="dropdown-menu dropdown-content" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="{% url 'profile_app:profile-view' %}"> <i class="fa fa-fw fa-user-circle"></i> PROFILE</a>
+                    <a class="dropdown-item" href="#"> <i class="fa fa-fw fa-play"></i> PLAYLIST</a>
+                    <a class="dropdown-item" href="#"> <i class="fa fa-fw fa-users"></i> FRIENDS</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="{% url 'authentication:signout' %}"> <i class="fa fa-fw fa-sign-out"></i> SIGN OUT</a>
+                </div>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="fa fa-fw fa-envelope"></i> Messages
+                </a>
+            </li>
+
+            <li class="nav-item dropdown" style="margin-right: 100px">
+                <a class="nav-link dropBtn">
+                    <i class="fa fa-fw fa-bars"></i>
+                </a>
+                <div class="dropdown-menu dropdown-content" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#"> <i class="fa fa-fw fa-user-circle"></i> Profile</a>
+                    <a class="dropdown-item" href="#"> <i class="fa fa-fw fa-thumbs-up"></i> Likes</a>
+                    <a class="dropdown-item" href="#"> <i class="fa fa-fw fa-play"></i> PlayList</a>
+                    <a class="dropdown-item" href="#"> <i class="fa fa-fw fa-users"></i> Friends</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#"> <i class="fa fa-fw fa-sign-out"></i> Log Out</a>
+                </div>
+            </li>
+
+
+        </ul>
+    </div>
+</nav>
+
+{% block body %}
+{#                                Body Block#}
+{% endblock %}
+
+{#<div class=" container jumbotron text-center" style="background: coral">#}
+{#    <h1 class="display-1"> Footer </h1>#}
+{#</div>#}
+
+</body>
+</html>
