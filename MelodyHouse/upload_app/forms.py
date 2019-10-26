@@ -26,6 +26,6 @@ class SongForm(forms.ModelForm):
     widgets = {
         'song_title': forms.TextInput(attrs={'class': 'form-control'}),
         'song_file': forms.TextInput(attrs={'class': 'form-control'}),
-        'album_id': forms.TextInput(attrs={'class': 'custom-select'}),
+        'album_id': forms.TextInput(attrs={'class': 'form-control'}),
         'description': forms.TextInput(attrs={'class': 'form-control'}),
     }

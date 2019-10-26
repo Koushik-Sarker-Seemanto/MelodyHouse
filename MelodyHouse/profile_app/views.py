@@ -12,10 +12,8 @@ from django.db.models import Q
 def ProfileView(request):
     user = request.user
     albums = Album.objects.filter(user=request.user)
-    side_albums = albums.all().order_by('-date_time')[:4]
     albums = albums.all().order_by('-date_time')
     context = {
-        'side_albums': side_albums,
         'albums': albums,
         'user': user
     }
@@ -48,12 +46,7 @@ def ProfileUpdate(request):
 @login_required(login_url='/signin/')
 def Playlist(request):
     user = request.user
-    # albums = Album.objects.filter(user=request.user)
-    # for album in albums:
-    #     album = Album.objects.get(user=request.user)
-    #     songs = Song.objects.filter(album_id=album)
-    songs = Song.objects.filter(user=user).order_by('-date_time')
-    print(songs)
+    songs = Song.objects.all()
     context = {
         'songs': songs,
         'user': user

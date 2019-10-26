@@ -20,17 +20,17 @@
 
         {% for song in songs %}
             <div class="col-md-3">
-                <h2>{{ song }}</h2>
-                <a target="_blank" href="{{ song.song_file.url }}">
-                    <button type="button" class="btn btn-success btn-xs">
-                        <span class="glyphicon glyphicon-play"></span>&nbsp; Play
-                    </button>
-                </a>
-                <audio controls style="margin-top: 10px">
-                    <source src="{{ song.song_file.url }}" type="audio/mpeg">
-                </audio>
+            <h2>{{ song }}</h2>
+            <button class="btn btn-primary"><span>Play</span><i class="material-icons">play_arrow</i></button>
+            <audio controls>
+                <source src="{{ song.song_file.url }}" type="audio/mpeg">
+            </audio>
 
-
+            <a target="_blank" href="{{ song.audio_file.url }}">
+                <button type="button" class="btn btn-success btn-xs">
+                    <span class="glyphicon glyphicon-play"></span>&nbsp; Play
+                </button>
+            </a>
             </div>
         {% endfor %}
     </div>
