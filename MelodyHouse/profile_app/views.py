@@ -48,7 +48,16 @@ def ProfileUpdate(request):
 @login_required(login_url='/signin/')
 def Playlist(request):
     user = request.user
+<<<<<<< Updated upstream
     songs = Song.objects.filter(user=user)
+=======
+    # albums = Album.objects.filter(user=request.user)
+    # for album in albums:
+    #     album = Album.objects.get(user=request.user)
+    #     songs = Song.objects.filter(album_id=album)
+    songs = Song.objects.filter(user=user).order_by('-date_time')
+    print(songs)
+>>>>>>> Stashed changes
     context = {
         'songs': songs,
         'user': user

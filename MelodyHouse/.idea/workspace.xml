@@ -12,12 +12,20 @@
 =======
       <change beforePath="$PROJECT_DIR$/ENV/.env" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/MelodyHouse/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/MelodyHouse/settings.py" afterDir="false" />
+<<<<<<< Updated upstream
       <change beforePath="$PROJECT_DIR$/MelodyHouse/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/MelodyHouse/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/friends/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/friends/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/profile_app/templates/profile_app/PlayList.html" beforeDir="false" afterPath="$PROJECT_DIR$/profile_app/templates/profile_app/PlayList.html" afterDir="false" />
 >>>>>>> master
+=======
+      <change beforePath="$PROJECT_DIR$/home/templates/home/HomePage.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/home/HomePage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/01_-_Artcell_-_Ei_Bidaye_music.com.bd.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/Artcell-Dukkho_Bilash_Smb5ghD.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_app/templates/profile_app/PlayList.html" beforeDir="false" afterPath="$PROJECT_DIR$/profile_app/templates/profile_app/PlayList.html" afterDir="false" />
+>>>>>>> Stashed changes
       <change beforePath="$PROJECT_DIR$/profile_app/templates/profile_app/profileView.html" beforeDir="false" afterPath="$PROJECT_DIR$/profile_app/templates/profile_app/profileView.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/profile_app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/profile_app/views.py" afterDir="false" />
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
       <change beforePath="$PROJECT_DIR$/media/Artcell-Dukkho_Bilash_Uiv436M.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/media/Artcell-Dukkho_Bilash_Smb5ghD.mp3" afterDir="false" />
@@ -28,6 +36,11 @@
       <change beforePath="$PROJECT_DIR$/upload_app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/upload_app/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/upload_app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/upload_app/views.py" afterDir="false" />
 >>>>>>> master
+=======
+      <change beforePath="$PROJECT_DIR$/upload_app/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/upload_app/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/upload_app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/upload_app/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/upload_app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/upload_app/views.py" afterDir="false" />
+>>>>>>> Stashed changes
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -57,8 +70,13 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/upload_app/views.py">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
             <state relative-caret-position="436">
               <caret line="32" column="21" lean-forward="true" selection-start-line="32" selection-start-column="21" selection-end-line="32" selection-end-column="21" />
+=======
+            <state relative-caret-position="317">
+              <caret line="61" column="38" selection-start-line="61" selection-start-column="38" selection-end-line="61" selection-end-column="38" />
+>>>>>>> Stashed changes
               <folding>
                 <element signature="e#0#59#0" expanded="true" />
               </folding>
@@ -67,8 +85,9 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/upload_app/models.py">
+        <entry file="file://$PROJECT_DIR$/profile_app/templates/profile_app/PlayList.html">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< Updated upstream
             <state relative-caret-position="1207">
@@ -81,8 +100,12 @@
             <state relative-caret-position="232">
               <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
 >>>>>>> master
+=======
+            <state relative-caret-position="249">
+              <caret line="24" column="48" selection-start-line="24" selection-start-column="48" selection-end-line="24" selection-end-column="48" />
+>>>>>>> Stashed changes
               <folding>
-                <element signature="e#0#28#0" expanded="true" />
+                <element signature="e#844#868#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -111,6 +134,7 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< Updated upstream
         <entry file="file://$PROJECT_DIR$/home/urls.py">
@@ -120,8 +144,14 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="249">
               <caret line="17" column="35" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
+=======
+        <entry file="file://$PROJECT_DIR$/upload_app/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="368">
+              <caret line="32" selection-start-line="32" selection-end-line="32" />
+>>>>>>> Stashed changes
               <folding>
-                <element signature="e#0#59#0" expanded="true" />
+                <element signature="e#0#28#0" expanded="true" />
               </folding>
 =======
         <entry file="file://$PROJECT_DIR$/profile_app/templates/profile_app/PlayList.html">
@@ -133,6 +163,7 @@
           </provider>
         </entry>
       </file>
+<<<<<<< Updated upstream
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/profile_app/templates/profile_app/profileView.html">
           <provider selected="true" editor-type-id="text-editor">
@@ -154,12 +185,22 @@
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#2;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#h3#0;n#div#0;n#div#2;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#div#0;n#div#2;n#!!top" expanded="true" />
+=======
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/profile_app/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="351">
+              <caret line="54" column="52" selection-start-line="54" selection-start-column="52" selection-end-line="54" selection-end-column="52" />
+              <folding>
+                <element signature="e#0#59#0" expanded="true" />
+>>>>>>> Stashed changes
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< Updated upstream
         <entry file="file://$PROJECT_DIR$/upload_app/models.py">
@@ -172,19 +213,33 @@
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
+=======
+        <entry file="file://$PROJECT_DIR$/home/templates/home/HomePage.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="10" column="74" selection-start-line="10" selection-start-column="74" selection-end-line="10" selection-end-column="74" />
+>>>>>>> Stashed changes
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+<<<<<<< Updated upstream
         <entry file="file://$PROJECT_DIR$/MelodyHouse/settings.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="453">
               <caret line="99" lean-forward="true" selection-start-line="99" selection-end-line="99" />
+=======
+        <entry file="file://$PROJECT_DIR$/profile_app/templates/profile_app/profileView.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-139">
+              <caret line="122" column="43" selection-start-line="122" selection-start-column="43" selection-end-line="122" selection-end-column="43" />
+>>>>>>> Stashed changes
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< Updated upstream
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MelodyHouse/urls.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -193,11 +248,19 @@
               <folding>
                 <element signature="e#635#676#0" expanded="true" />
               </folding>
+=======
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/profile_app/templates/profile_app/profilebase.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="337">
+              <caret line="120" lean-forward="true" selection-start-line="120" selection-end-line="120" />
+>>>>>>> Stashed changes
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+<<<<<<< Updated upstream
         <entry file="file://$PROJECT_DIR$/friends/models.py">
           <provider selected="true" editor-type-id="text-editor">
 <<<<<<< HEAD
@@ -220,11 +283,21 @@
             <state relative-caret-position="51">
               <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
 >>>>>>> master
+=======
+        <entry file="file://$PROJECT_DIR$/generic/service.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="19" selection-start-line="19" selection-end-line="19" />
+              <folding>
+                <element signature="e#0#49#0" expanded="true" />
+              </folding>
+>>>>>>> Stashed changes
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< Updated upstream
         <entry file="file://$PROJECT_DIR$/upload_app/forms.py">
@@ -236,6 +309,12 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="453">
               <caret line="99" selection-start-line="99" selection-end-line="99" />
+=======
+        <entry file="file://$PROJECT_DIR$/MelodyHouse/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="266">
+              <caret line="82" column="16" selection-start-line="82" selection-start-column="16" selection-end-line="82" selection-end-column="16" />
+>>>>>>> Stashed changes
             </state>
           </provider>
         </entry>
@@ -243,8 +322,13 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MelodyHouse/urls.py">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
             <state relative-caret-position="325">
               <caret line="21" column="37" selection-start-line="21" selection-start-column="37" selection-end-line="21" selection-end-column="37" />
+>>>>>>> Stashed changes
+=======
+            <state relative-caret-position="476">
+              <caret line="28" column="70" selection-start-line="28" selection-start-column="70" selection-end-line="28" selection-end-column="70" />
 >>>>>>> Stashed changes
               <folding>
                 <element signature="e#635#676#0" expanded="true" />
@@ -284,7 +368,6 @@
       <list>
         <option value="$PROJECT_DIR$/home/static/home/style.css" />
         <option value="$PROJECT_DIR$/home/templates/home/profilebase.html" />
-        <option value="$PROJECT_DIR$/home/templates/home/HomePage.html" />
         <option value="$PROJECT_DIR$/generic/__init__.py" />
         <option value="$PROJECT_DIR$/generic/filter.py" />
         <option value="$PROJECT_DIR$/generic/helper.py" />
@@ -293,7 +376,11 @@
         <option value="$PROJECT_DIR$/home/forms.py" />
         <option value="$PROJECT_DIR$/home/models.py" />
         <option value="$PROJECT_DIR$/authentication/templates/authentication/base.html" />
+<<<<<<< Updated upstream
         <option value="$PROJECT_DIR$/generic/service.py" />
+=======
+        <option value="$PROJECT_DIR$/authentication/urls.py" />
+>>>>>>> Stashed changes
         <option value="$PROJECT_DIR$/home/templates/profile/profileView.html" />
         <option value="$PROJECT_DIR$/home/templates/profile/profilebase.html" />
         <option value="$PROJECT_DIR$/profile_app/forms.py" />
@@ -306,6 +393,7 @@
         <option value="$PROJECT_DIR$/authentication/templates/authentication/signin.html" />
         <option value="$PROJECT_DIR$/home/templates/home/base.html" />
         <option value="$PROJECT_DIR$/upload_app/urls.py" />
+<<<<<<< Updated upstream
         <option value="$PROJECT_DIR$/upload_app/forms.py" />
         <option value="$PROJECT_DIR$/upload_app/templates/upload_app/uploadPage.html" />
         <option value="$PROJECT_DIR$/profile_app/static/profile_app/profile_cover_part.css" />
@@ -333,6 +421,24 @@
         <option value="$PROJECT_DIR$/profile_app/templates/profile_app/PlayList.html" />
         <option value="$PROJECT_DIR$/profile_app/views.py" />
         <option value="$PROJECT_DIR$/profile_app/templates/profile_app/profileView.html" />
+=======
+        <option value="$PROJECT_DIR$/MelodyHouse/urls.py" />
+        <option value="$PROJECT_DIR$/upload_app/templates/upload_app/uploadPage.html" />
+        <option value="$PROJECT_DIR$/profile_app/static/profile_app/profile_cover_part.css" />
+        <option value="$PROJECT_DIR$/profile_app/urls.py" />
+        <option value="$PROJECT_DIR$/authentication/forms.py" />
+        <option value="$PROJECT_DIR$/authentication/models.py" />
+        <option value="$PROJECT_DIR$/generic/service.py" />
+        <option value="$PROJECT_DIR$/home/templates/home/HomePage.html" />
+        <option value="$PROJECT_DIR$/MelodyHouse/settings.py" />
+        <option value="$PROJECT_DIR$/profile_app/templates/profile_app/profileView.html" />
+        <option value="$PROJECT_DIR$/upload_app/forms.py" />
+        <option value="$PROJECT_DIR$/upload_app/models.py" />
+        <option value="$PROJECT_DIR$/upload_app/views.py" />
+        <option value="$PROJECT_DIR$/profile_app/views.py" />
+        <option value="$PROJECT_DIR$/profile_app/templates/profile_app/PlayList.html" />
+        <option value="$PROJECT_DIR$/profile_app/templates/profile_app/profilebase.html" />
+>>>>>>> Stashed changes
       </list>
     </option>
   </component>
@@ -359,8 +465,11 @@
             <path>
               <item name="MelodyHouse" type="b2602c69:ProjectViewProjectNode" />
               <item name="MelodyHouse" type="462c0819:PsiDirectoryNode" />
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< Updated upstream
+              <item name="generic" type="462c0819:PsiDirectoryNode" />
+=======
               <item name="generic" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -371,22 +480,56 @@
             <path>
               <item name="MelodyHouse" type="b2602c69:ProjectViewProjectNode" />
               <item name="MelodyHouse" type="462c0819:PsiDirectoryNode" />
+              <item name="home" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+>>>>>>> Stashed changes
+            </path>
+            <path>
+              <item name="MelodyHouse" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MelodyHouse" type="462c0819:PsiDirectoryNode" />
+              <item name="home" type="462c0819:PsiDirectoryNode" />
+<<<<<<< Updated upstream
+=======
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="home" type="462c0819:PsiDirectoryNode" />
+>>>>>>> Stashed changes
+            </path>
+            <path>
+              <item name="MelodyHouse" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MelodyHouse" type="462c0819:PsiDirectoryNode" />
+<<<<<<< Updated upstream
 =======
 >>>>>>> Stashed changes
               <item name="media" type="462c0819:PsiDirectoryNode" />
 =======
               <item name="MelodyHouse" type="462c0819:PsiDirectoryNode" />
 >>>>>>> master
+=======
+              <item name="media" type="462c0819:PsiDirectoryNode" />
+>>>>>>> Stashed changes
             </path>
             <path>
               <item name="MelodyHouse" type="b2602c69:ProjectViewProjectNode" />
               <item name="MelodyHouse" type="462c0819:PsiDirectoryNode" />
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
               <item name="profile_app" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="MelodyHouse" type="b2602c69:ProjectViewProjectNode" />
               <item name="MelodyHouse" type="462c0819:PsiDirectoryNode" />
+=======
+              <item name="MelodyHouse" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MelodyHouse" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MelodyHouse" type="462c0819:PsiDirectoryNode" />
+              <item name="profile_app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MelodyHouse" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MelodyHouse" type="462c0819:PsiDirectoryNode" />
+>>>>>>> Stashed changes
               <item name="profile_app" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
@@ -420,6 +563,9 @@
               <item name="MelodyHouse" type="462c0819:PsiDirectoryNode" />
               <item name="upload_app" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
+<<<<<<< Updated upstream
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
               <item name="upload_app" type="462c0819:PsiDirectoryNode" />
@@ -443,7 +589,11 @@
     <property name="nodejs.jest.jest_package" value="" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+<<<<<<< Updated upstream
     <property name="settings.editor.selected.configurable" value="configurable.group.build" />
+=======
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+>>>>>>> Stashed changes
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -536,6 +686,7 @@
       <workItem from="1571033036807" duration="4833000" />
       <workItem from="1571210516683" duration="10743000" />
       <workItem from="1571302261934" duration="6780000" />
+<<<<<<< Updated upstream
       <workItem from="1571646138514" duration="6666000" />
       <workItem from="1571686612775" duration="3898000" />
       <workItem from="1571739870051" duration="1330000" />
@@ -544,10 +695,16 @@
       <workItem from="1571822913624" duration="6231000" />
       <workItem from="1571831023561" duration="1592000" />
       <workItem from="1571849142066" duration="4145000" />
+=======
+      <workItem from="1571646138514" duration="7110000" />
+      <workItem from="1571752261967" duration="14526000" />
+      <workItem from="1571902966138" duration="7747000" />
+>>>>>>> Stashed changes
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< Updated upstream
     <option name="totallyTimeSpent" value="190850000" />
@@ -557,6 +714,9 @@
 =======
     <option name="totallyTimeSpent" value="204869000" />
 >>>>>>> master
+=======
+    <option name="totallyTimeSpent" value="200642000" />
+>>>>>>> Stashed changes
   </component>
   <component name="ToolWindowManager">
     <frame x="83" y="25" width="1837" height="1055" extended-state="6" />
@@ -566,7 +726,11 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32901832" />
+<<<<<<< Updated upstream
       <window_info anchor="bottom" id="Run" order="2" weight="0.25950414" />
+=======
+      <window_info anchor="bottom" id="Run" order="2" weight="0.26054054" />
+>>>>>>> Stashed changes
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -576,7 +740,11 @@
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.32540542" />
+<<<<<<< Updated upstream
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.3289256" />
+=======
+      <window_info anchor="bottom" id="Python Console" order="12" weight="0.32972974" />
+>>>>>>> Stashed changes
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -588,6 +756,7 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
+<<<<<<< Updated upstream
     <entry file="file://$PROJECT_DIR$/home/static/home/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-116">
@@ -599,12 +768,19 @@
     <entry file="file://$PROJECT_DIR$/authentication/templates/authentication/verify_email.html" />
     <entry file="file://$PROJECT_DIR$/authentication/templates/authentication/PasswordChange.html" />
     <entry file="file://$PROJECT_DIR$/home/templates/home/base.html">
+=======
+    <entry file="file://$PROJECT_DIR$/home/static/resource/male-circle.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/home/apps.py">
+>>>>>>> Stashed changes
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="21" column="34" lean-forward="true" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="34" />
         </state>
       </provider>
     </entry>
+<<<<<<< Updated upstream
     <entry file="file://$PROJECT_DIR$/upload_app/urls.py" />
     <entry file="file://$PROJECT_DIR$/authentication/templates/authentication/signup.html" />
     <entry file="file://$PROJECT_DIR$/authentication/templates/authentication/signin.html" />
@@ -641,6 +817,31 @@
       <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/home/templates/home/HomePage.html">
+=======
+    <entry file="file://$PROJECT_DIR$/authentication/apps.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/home/forms.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/authentication/migrations/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/authentication/migrations/0001_initial.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/authentication/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/home/models.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/home/tests.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/authentication/templates/authentication/base.html" />
+    <entry file="file://$PROJECT_DIR$/generic/filter.py">
+>>>>>>> Stashed changes
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="11" column="74" selection-start-line="11" selection-start-column="74" selection-end-line="11" selection-end-column="74" />
@@ -666,6 +867,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< Updated upstream
 <<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/MelodyHouse/urls.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -698,6 +900,18 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/upload_app/templates/upload_app/uploadPage.html">
+=======
+    <entry file="file://$PROJECT_DIR$/home/static/resource/cover_photo.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/home/static/resource/profile_photo.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/home/static/home/DropDownStyle.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/home/static/home/home_style.css">
+>>>>>>> Stashed changes
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="583">
           <caret line="47" selection-start-line="47" selection-end-line="47" selection-end-column="14" />
@@ -718,6 +932,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< Updated upstream
     <entry file="file://$PROJECT_DIR$/friends/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -735,12 +950,39 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" column="20" lean-forward="true" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
+=======
+    <entry file="file://$PROJECT_DIR$/upload_app/migrations/0001_initial.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/authentication/templates/authentication/PasswordChange.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="4" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="92" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/home/templates/home/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="34" lean-forward="true" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/profile_app/models.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/upload_app/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="16" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
+>>>>>>> Stashed changes
           <folding>
             <element signature="e#0#32#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< Updated upstream
     <entry file="file://$PROJECT_DIR$/friends/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -779,12 +1021,64 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="232">
           <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
+=======
+    <entry file="file://$PROJECT_DIR$/authentication/templates/authentication/signup.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="84" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/authentication/templates/authentication/signin.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="28" selection-start-line="16" selection-start-column="16" selection-end-line="17" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/upload_app/migrations/0013_auto_20191017_1143.py" />
+    <entry file="file://$PROJECT_DIR$/profile_app/migrations/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/profile_app/static/profile_app/profile_cover_part.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4046">
+          <caret line="238" column="31" selection-start-line="238" selection-start-column="31" selection-end-line="238" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MelodyHouse/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="26" column="1" selection-start-line="26" selection-start-column="1" selection-end-line="26" selection-end-column="1" />
+          <folding>
+            <element signature="e#635#676#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/profile_app/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/authentication/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+>>>>>>> Stashed changes
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
@@ -815,19 +1109,78 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="453">
           <caret line="99" lean-forward="true" selection-start-line="99" selection-end-line="99" />
+=======
+    <entry file="file://$PROJECT_DIR$/home/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MelodyHouse/urls.py">
+    <entry file="file://$PROJECT_DIR$/authentication/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="21" column="37" lean-forward="true" selection-start-line="21" selection-start-column="37" selection-end-line="21" selection-end-column="37" />
+        <state relative-caret-position="170">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
           <folding>
-            <element signature="e#635#676#0" expanded="true" />
+            <element signature="e#0#140#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/authentication/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="71" column="18" selection-start-line="71" selection-start-column="17" selection-end-line="71" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#24#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generic/helper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="26" column="25" selection-start-line="26" selection-start-column="25" selection-end-line="26" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#42#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generic/period.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/authentication/templates/authentication/verify_email.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="19" lean-forward="true" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/upload_app/templates/upload_app/uploadPage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="663">
+          <caret line="39" column="44" selection-start-line="39" selection-start-column="44" selection-end-line="39" selection-end-column="44" />
+>>>>>>> Stashed changes
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/home/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
+        <state relative-caret-position="325">
+          <caret line="21" column="37" lean-forward="true" selection-start-line="21" selection-start-column="37" selection-end-line="21" selection-end-column="37" />
+=======
+        <state relative-caret-position="119">
+          <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+>>>>>>> Stashed changes
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+<<<<<<< Updated upstream
     <entry file="file://$PROJECT_DIR$/upload_app/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="436">
@@ -842,10 +1195,36 @@
           <caret line="17" column="35" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
           <folding>
             <element signature="e#0#59#0" expanded="true" />
+=======
+    <entry file="file://$PROJECT_DIR$/authentication/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="28" selection-start-line="28" selection-end-line="28" />
+          <folding>
+            <element signature="e#0#59#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/home/templates/home/HomePage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="74" selection-start-line="10" selection-start-column="74" selection-end-line="10" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generic/service.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+          <folding>
+            <element signature="e#0#49#0" expanded="true" />
+>>>>>>> Stashed changes
+          </folding>
+        </state>
+      </provider>
+    </entry>
+<<<<<<< Updated upstream
     <entry file="file://$PROJECT_DIR$/profile_app/templates/profile_app/PlayList.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
@@ -864,20 +1243,56 @@
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#2;n#!!top" expanded="true" />
             <element signature="n#style#0;n#h3#0;n#div#0;n#div#2;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#div#0;n#div#2;n#!!top" expanded="true" />
+=======
+    <entry file="file://$PROJECT_DIR$/MelodyHouse/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="82" column="16" selection-start-line="82" selection-start-column="16" selection-end-line="82" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/upload_app/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="28" column="70" selection-start-line="28" selection-start-column="70" selection-end-line="28" selection-end-column="70" />
+          <folding>
+            <element signature="e#0#24#0" expanded="true" />
+>>>>>>> Stashed changes
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< Updated upstream
     <entry file="file://$PROJECT_DIR$/profile_app/templates/profile_app/profilebase.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="337">
           <caret line="120" lean-forward="true" selection-start-line="120" selection-end-line="120" />
+>>>>>>> Stashed changes
+=======
+    <entry file="file://$PROJECT_DIR$/upload_app/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="32" selection-start-line="32" selection-end-line="32" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/upload_app/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="317">
+          <caret line="61" column="38" selection-start-line="61" selection-start-column="38" selection-end-line="61" selection-end-column="38" />
+          <folding>
+            <element signature="e#0#59#0" expanded="true" />
+          </folding>
 >>>>>>> Stashed changes
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/upload_app/views.py">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
         <state relative-caret-position="496">
           <caret line="153" column="28" lean-forward="true" selection-start-line="153" selection-start-column="28" selection-end-line="153" selection-end-column="28" />
@@ -892,6 +1307,10 @@
 =======
         <state relative-caret-position="249">
           <caret line="17" column="35" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
+=======
+        <state relative-caret-position="351">
+          <caret line="54" column="52" selection-start-line="54" selection-start-column="52" selection-end-line="54" selection-end-column="52" />
+>>>>>>> Stashed changes
           <folding>
             <element signature="e#0#59#0" expanded="true" />
 >>>>>>> master
@@ -899,6 +1318,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< Updated upstream
     <entry file="file://$PROJECT_DIR$/profile_app/views.py">
@@ -926,9 +1346,34 @@
             <element signature="n#style#0;n#h3#0;n#div#0;n#div#2;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#div#0;n#div#2;n#!!top" expanded="true" />
 >>>>>>> master
+=======
+    <entry file="file://$PROJECT_DIR$/profile_app/templates/profile_app/PlayList.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="249">
+          <caret line="24" column="48" selection-start-line="24" selection-start-column="48" selection-end-line="24" selection-end-column="48" />
+          <folding>
+            <element signature="e#844#868#0#HTML" expanded="true" />
+>>>>>>> Stashed changes
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< Updated upstream
+=======
+    <entry file="file://$PROJECT_DIR$/profile_app/templates/profile_app/profileView.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-139">
+          <caret line="122" column="43" selection-start-line="122" selection-start-column="43" selection-end-line="122" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/profile_app/templates/profile_app/profilebase.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="337">
+          <caret line="120" lean-forward="true" selection-start-line="120" selection-end-line="120" />
+        </state>
+      </provider>
+    </entry>
+>>>>>>> Stashed changes
   </component>
 </project>
