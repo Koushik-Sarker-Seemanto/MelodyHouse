@@ -3,14 +3,17 @@
   <component name="ChangeListManager">
     <list default="true" id="5b9436bb-59d6-4431-9d76-769530f9fb24" name="Default Changelist" comment="nothing">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authentication/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/authentication/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authentication/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/authentication/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/Artcell-Dukkho_Bilash.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/Artcell-Dukkho_Bilash_BMsYZOr.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MelodyHouse/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/MelodyHouse/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/home/HomePage.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/home/HomePage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/01_-_Artcell_-_Ei_Bidaye_music.com.bd.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/Artcell-Dukkho_Bilash_Smb5ghD.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_app/templates/profile_app/PlayList.html" beforeDir="false" afterPath="$PROJECT_DIR$/profile_app/templates/profile_app/PlayList.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/profile_app/templates/profile_app/profileView.html" beforeDir="false" afterPath="$PROJECT_DIR$/profile_app/templates/profile_app/profileView.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/profile_app/templates/profile_app/profilebase.html" beforeDir="false" afterPath="$PROJECT_DIR$/profile_app/templates/profile_app/profilebase.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profile_app/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/profile_app/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/profile_app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/profile_app/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/upload_app/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/upload_app/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/upload_app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/upload_app/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/upload_app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/upload_app/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,19 +27,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/upload_app/templates/upload_app/uploadPage.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="572">
-              <caret line="39" column="44" selection-start-line="39" selection-start-column="44" selection-end-line="39" selection-end-column="44" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/upload_app/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1207">
-              <caret line="71" column="85" selection-start-line="71" selection-start-column="76" selection-end-line="71" selection-end-column="85" />
+            <state relative-caret-position="317">
+              <caret line="61" column="38" selection-start-line="61" selection-start-column="38" selection-end-line="61" selection-end-column="38" />
               <folding>
                 <element signature="e#0#59#0" expanded="true" />
               </folding>
@@ -47,31 +41,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/profile_app/templates/profile_app/PlayList.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="530">
-              <caret line="37" column="14" lean-forward="true" selection-start-line="37" selection-start-column="14" selection-end-line="37" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/home/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+            <state relative-caret-position="249">
+              <caret line="24" column="48" selection-start-line="24" selection-start-column="48" selection-end-line="24" selection-end-column="48" />
               <folding>
-                <element signature="e#0#32#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/authentication/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
-              <folding>
-                <element signature="e#0#59#0" expanded="true" />
+                <element signature="e#844#868#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -80,8 +53,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/upload_app/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="28" column="8" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="62" />
+            <state relative-caret-position="368">
+              <caret line="32" selection-start-line="32" selection-end-line="32" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
@@ -89,11 +62,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/profile_app/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="479">
-              <caret line="51" column="20" lean-forward="true" selection-start-line="51" selection-start-column="20" selection-end-line="51" selection-end-column="20" />
+            <state relative-caret-position="351">
+              <caret line="54" column="52" selection-start-line="54" selection-start-column="52" selection-end-line="54" selection-end-column="52" />
               <folding>
                 <element signature="e#0#59#0" expanded="true" />
               </folding>
@@ -102,13 +75,28 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/home/templates/home/HomePage.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="10" column="74" selection-start-line="10" selection-start-column="74" selection-end-line="10" selection-end-column="74" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/profile_app/templates/profile_app/profileView.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="496">
-              <caret line="153" column="28" lean-forward="true" selection-start-line="153" selection-start-column="28" selection-end-line="153" selection-end-column="28" />
-              <folding>
-                <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#div#1;n#div#2;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="-139">
+              <caret line="122" column="43" selection-start-line="122" selection-start-column="43" selection-end-line="122" selection-end-column="43" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/profile_app/templates/profile_app/profilebase.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="337">
+              <caret line="120" lean-forward="true" selection-start-line="120" selection-end-line="120" />
             </state>
           </provider>
         </entry>
@@ -117,7 +105,7 @@
         <entry file="file://$PROJECT_DIR$/generic/service.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="323">
-              <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+              <caret line="19" selection-start-line="19" selection-end-line="19" />
               <folding>
                 <element signature="e#0#49#0" expanded="true" />
               </folding>
@@ -126,10 +114,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MelodyHouse/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="266">
+              <caret line="82" column="16" selection-start-line="82" selection-start-column="16" selection-end-line="82" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/upload_app/forms.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+            <state relative-caret-position="476">
+              <caret line="28" column="70" selection-start-line="28" selection-start-column="70" selection-end-line="28" selection-end-column="70" />
               <folding>
                 <element signature="e#0#24#0" expanded="true" />
               </folding>
@@ -168,7 +165,6 @@
         <option value="$PROJECT_DIR$/home/static/home/home_style.css" />
         <option value="$PROJECT_DIR$/home/static/home/style.css" />
         <option value="$PROJECT_DIR$/home/templates/home/profilebase.html" />
-        <option value="$PROJECT_DIR$/home/templates/home/HomePage.html" />
         <option value="$PROJECT_DIR$/generic/__init__.py" />
         <option value="$PROJECT_DIR$/generic/filter.py" />
         <option value="$PROJECT_DIR$/generic/helper.py" />
@@ -192,20 +188,21 @@
         <option value="$PROJECT_DIR$/home/templates/home/base.html" />
         <option value="$PROJECT_DIR$/upload_app/urls.py" />
         <option value="$PROJECT_DIR$/MelodyHouse/urls.py" />
-        <option value="$PROJECT_DIR$/upload_app/forms.py" />
-        <option value="$PROJECT_DIR$/upload_app/views.py" />
         <option value="$PROJECT_DIR$/upload_app/templates/upload_app/uploadPage.html" />
-        <option value="$PROJECT_DIR$/upload_app/models.py" />
         <option value="$PROJECT_DIR$/profile_app/static/profile_app/profile_cover_part.css" />
-        <option value="$PROJECT_DIR$/MelodyHouse/settings.py" />
         <option value="$PROJECT_DIR$/profile_app/urls.py" />
-        <option value="$PROJECT_DIR$/profile_app/templates/profile_app/profileView.html" />
-        <option value="$PROJECT_DIR$/profile_app/templates/profile_app/profilebase.html" />
-        <option value="$PROJECT_DIR$/profile_app/templates/profile_app/PlayList.html" />
         <option value="$PROJECT_DIR$/authentication/forms.py" />
         <option value="$PROJECT_DIR$/authentication/models.py" />
         <option value="$PROJECT_DIR$/generic/service.py" />
+        <option value="$PROJECT_DIR$/home/templates/home/HomePage.html" />
+        <option value="$PROJECT_DIR$/MelodyHouse/settings.py" />
+        <option value="$PROJECT_DIR$/profile_app/templates/profile_app/profileView.html" />
+        <option value="$PROJECT_DIR$/upload_app/forms.py" />
+        <option value="$PROJECT_DIR$/upload_app/models.py" />
+        <option value="$PROJECT_DIR$/upload_app/views.py" />
         <option value="$PROJECT_DIR$/profile_app/views.py" />
+        <option value="$PROJECT_DIR$/profile_app/templates/profile_app/PlayList.html" />
+        <option value="$PROJECT_DIR$/profile_app/templates/profile_app/profilebase.html" />
       </list>
     </option>
   </component>
@@ -242,7 +239,25 @@
             <path>
               <item name="MelodyHouse" type="b2602c69:ProjectViewProjectNode" />
               <item name="MelodyHouse" type="462c0819:PsiDirectoryNode" />
+              <item name="home" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MelodyHouse" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MelodyHouse" type="462c0819:PsiDirectoryNode" />
+              <item name="home" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="home" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MelodyHouse" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MelodyHouse" type="462c0819:PsiDirectoryNode" />
               <item name="media" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MelodyHouse" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MelodyHouse" type="462c0819:PsiDirectoryNode" />
+              <item name="MelodyHouse" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="MelodyHouse" type="b2602c69:ProjectViewProjectNode" />
@@ -300,7 +315,7 @@
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.language" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -389,23 +404,24 @@
       <workItem from="1571210516683" duration="10743000" />
       <workItem from="1571302261934" duration="6780000" />
       <workItem from="1571646138514" duration="7110000" />
-      <workItem from="1571752261967" duration="12481000" />
+      <workItem from="1571752261967" duration="14526000" />
+      <workItem from="1571902966138" duration="7747000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="190850000" />
+    <option name="totallyTimeSpent" value="200642000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="83" y="25" width="1837" height="1055" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26103967" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2643935" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32901832" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.26054054" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.26054054" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -414,7 +430,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32972974" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.3257821" />
+      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.32540542" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.32972974" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -517,9 +533,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/home/templates/home/HomePage.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/home/templates/home/base.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
@@ -575,13 +588,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MelodyHouse/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1649">
-          <caret line="97" column="16" selection-start-line="97" selection-start-column="16" selection-end-line="97" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/profile_app/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -598,17 +604,6 @@
           <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
           <folding>
             <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/profile_app/templates/profile_app/profilebase.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="567">
-          <caret line="123" column="8" lean-forward="true" selection-start-line="123" selection-start-column="8" selection-end-line="123" selection-end-column="25" />
-          <folding>
-            <element signature="n#style#0;n#footer#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#audio#0;n#footer#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -660,57 +655,91 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/generic/service.py">
+    <entry file="file://$PROJECT_DIR$/upload_app/templates/upload_app/uploadPage.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+        <state relative-caret-position="663">
+          <caret line="39" column="44" selection-start-line="39" selection-start-column="44" selection-end-line="39" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/home/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
           <folding>
-            <element signature="e#0#49#0" expanded="true" />
+            <element signature="e#0#32#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/authentication/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+        <state relative-caret-position="374">
+          <caret line="28" selection-start-line="28" selection-end-line="28" />
           <folding>
             <element signature="e#0#59#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/upload_app/templates/upload_app/uploadPage.html">
+    <entry file="file://$PROJECT_DIR$/home/templates/home/HomePage.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="572">
-          <caret line="39" column="44" selection-start-line="39" selection-start-column="44" selection-end-line="39" selection-end-column="44" />
+        <state relative-caret-position="170">
+          <caret line="10" column="74" selection-start-line="10" selection-start-column="74" selection-end-line="10" selection-end-column="74" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/upload_app/models.py">
+    <entry file="file://$PROJECT_DIR$/generic/service.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+          <folding>
+            <element signature="e#0#49#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MelodyHouse/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="266">
-          <caret line="28" column="8" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="62" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
+          <caret line="82" column="16" selection-start-line="82" selection-start-column="16" selection-end-line="82" selection-end-column="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/upload_app/forms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+        <state relative-caret-position="476">
+          <caret line="28" column="70" selection-start-line="28" selection-start-column="70" selection-end-line="28" selection-end-column="70" />
           <folding>
             <element signature="e#0#24#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/upload_app/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="32" selection-start-line="32" selection-end-line="32" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/upload_app/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1207">
-          <caret line="71" column="85" selection-start-line="71" selection-start-column="76" selection-end-line="71" selection-end-column="85" />
+        <state relative-caret-position="317">
+          <caret line="61" column="38" selection-start-line="61" selection-start-column="38" selection-end-line="61" selection-end-column="38" />
+          <folding>
+            <element signature="e#0#59#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/profile_app/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="54" column="52" selection-start-line="54" selection-start-column="52" selection-end-line="54" selection-end-column="52" />
           <folding>
             <element signature="e#0#59#0" expanded="true" />
           </folding>
@@ -719,38 +748,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/profile_app/templates/profile_app/PlayList.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="530">
-          <caret line="37" column="14" lean-forward="true" selection-start-line="37" selection-start-column="14" selection-end-line="37" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/home/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+        <state relative-caret-position="249">
+          <caret line="24" column="48" selection-start-line="24" selection-start-column="48" selection-end-line="24" selection-end-column="48" />
           <folding>
-            <element signature="e#0#32#0" expanded="true" />
+            <element signature="e#844#868#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/profile_app/templates/profile_app/profileView.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="496">
-          <caret line="153" column="28" lean-forward="true" selection-start-line="153" selection-start-column="28" selection-end-line="153" selection-end-column="28" />
-          <folding>
-            <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#div#1;n#div#2;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="-139">
+          <caret line="122" column="43" selection-start-line="122" selection-start-column="43" selection-end-line="122" selection-end-column="43" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/profile_app/views.py">
+    <entry file="file://$PROJECT_DIR$/profile_app/templates/profile_app/profilebase.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="479">
-          <caret line="51" column="20" lean-forward="true" selection-start-line="51" selection-start-column="20" selection-end-line="51" selection-end-column="20" />
-          <folding>
-            <element signature="e#0#59#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="337">
+          <caret line="120" lean-forward="true" selection-start-line="120" selection-end-line="120" />
         </state>
       </provider>
     </entry>

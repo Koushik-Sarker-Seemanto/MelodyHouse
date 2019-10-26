@@ -15,7 +15,6 @@ _GENRES = (
     ('Rap', "Rap"),
 )
 
-
 class Album(models.Model):
     user = models.ForeignKey(Account, on_delete=models.CASCADE)
     artist = models.CharField(max_length=100)
@@ -33,6 +32,7 @@ class Album(models.Model):
 
 
 class Song(models.Model):
+    user = models.ForeignKey(Account, on_delete=models.CASCADE)
     song_title = models.CharField(max_length=100)
     song_file = models.FileField(default='')
     album_id = models.ForeignKey(Album, on_delete=models.CASCADE, )
@@ -44,5 +44,4 @@ class Song(models.Model):
 
     def __str__(self):
         return self.song_title
-
-               # + Album.objects.filter(album_id=self.album_id)
+               # + ' - ' + album_ID.album_title + ' - ' + album_ID.artist

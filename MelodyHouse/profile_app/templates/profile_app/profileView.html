@@ -99,7 +99,7 @@
 {#                <div class="col-md-10" >#}
                 <div class="col-md-12 row"  style="position: -webkit-sticky;position: sticky;top: 440px;overflow: visible">
 
-                    {% for album in albums %}
+                    {% for album in side_albums %}
                         <div class="col-md-6 " >
                             <div class="thumbnail">
                                 {% if album.album_logo %}
@@ -120,6 +120,7 @@
                             </div>
                         </div>
                     {% endfor %}
+                    <a href="#">see more...</a>
                 </div>
 
         </div>
