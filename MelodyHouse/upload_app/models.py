@@ -33,6 +33,7 @@ class Album(models.Model):
 
 
 class Song(models.Model):
+    user = models.ForeignKey(Account, on_delete=models.CASCADE)
     song_title = models.CharField(max_length=100)
     song_file = models.FileField(default='')
     album_id = models.ForeignKey(Album, on_delete=models.CASCADE, )

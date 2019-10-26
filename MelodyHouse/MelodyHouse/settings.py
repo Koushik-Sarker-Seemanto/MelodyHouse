@@ -84,7 +84,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'melody_house',
         'USER': 'root',
-        'PASSWORD': '20168310',
+        'PASSWORD': '4200',
         'HOST': '127.0.0.1',
         'PORT': '3306',
     }
@@ -93,8 +93,8 @@ DATABASES = {
 AUTH_USER_MODEL = 'authentication.Account'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'melodyhouse143@gmail.com'
-EMAIL_HOST_PASSWORD = 'H2441139'
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
