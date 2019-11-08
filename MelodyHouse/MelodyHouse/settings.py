@@ -42,7 +42,10 @@ INSTALLED_APPS = [
     'authentication.apps.AuthenticationConfig',
     'profile_app.apps.ProfileAppConfig',
     'upload_app.apps.UploadAppConfig',
-    'friends'
+    'friends',
+    
+
+
 ]
 
 MIDDLEWARE = [

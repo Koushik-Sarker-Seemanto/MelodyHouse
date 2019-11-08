@@ -54,3 +54,20 @@ def Playlist(request):
         'user': user
     }
     return render(request, 'profile_app/PlayList.html', context)
+
+
+@login_required(login_url='/signin/')
+def NewsFeedView(request):
+    user = request.user
+    albums = Album.objects.filter(user=request.user)
+    side_albums = albums.all().order_by('-date_time')[:3]
+    side_albums = list(side_albums)
+    print(side_albums)
+    albums = albums.all().order_by('-date_time')
+    context = {
+        'side_albums': side_albums,
+        'albums': albums,
+        'user': user
+    }
+
+    return render(request, 'profile_app/NewsFeed.html', context)
