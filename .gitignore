@@ -1,2 +1,5 @@
-
+*.pyc
+__pycache__
 MelodyHouse/.idea/
+
+MelodyHouse/profile_app/__pycache__/
