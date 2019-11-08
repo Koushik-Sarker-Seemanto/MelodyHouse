@@ -7,7 +7,7 @@ from django.contrib.auth.decorators import login_required
 def ViewFriends(request):
     template = 'friends/viewfriendsPage.html'
     user = request.user
-    peoples = Account.objects.all()
+    peoples = Account.objects.exclude(id=request.user.id)
     context = {
         'user': user,
         'peoples': peoples,
