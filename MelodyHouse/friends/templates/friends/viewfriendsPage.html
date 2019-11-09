@@ -7,15 +7,28 @@
 
 {% block body %}
 
-    <div class="container" style="margin-top: 80px">
-    <div>
-        <h2>All peoples</h2>
-        {% for people in peoples %}
-            <h1>
-            {{ people.name }}
-            </h1>
-        {% endfor %}
+    <div class="container justify-content-center" style="margin-top: 80px">
+        {% if error_message %}
+            <div class="alert alert-success alert-dismissible fade show d-flex justify-content-center" style="margin-top: 100px">
+                <strong>Success: </strong> {{ error_message }}
+                <button type="button" class="close" data-dismiss="alert">&times;
+                </button>
+            </div>
+        {% endif %}
     </div>
+    <div class="container justify-content-center" style="margin-top: 80px">
+        <h2>All peoples</h2>
+        <div>
+            {% for people in peoples %}
+                <h1> {{ people.name }} </h1>
+                <form class="d-flex" method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <input style="display: none" type="text" name="user_id" value="{{ people.id }}">
+                    <button type="submit" class="btn btn-success"> Add Friend</button>
+                </form>
+
+            {% endfor %}
+        </div>
 
     </div>
 

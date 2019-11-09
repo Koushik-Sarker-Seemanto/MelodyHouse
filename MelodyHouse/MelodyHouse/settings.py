@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'profile_app.apps.ProfileAppConfig',
     'upload_app.apps.UploadAppConfig',
     'friends',
-    'friendship'
+    'friendship',
 ]
 
 MIDDLEWARE = [
