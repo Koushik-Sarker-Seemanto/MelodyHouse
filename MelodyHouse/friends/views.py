@@ -10,6 +10,7 @@ def ViewFriends(request):
     template = 'friends/viewfriendsPage.html'
     user = request.user
     peoples = Account.objects.exclude(id=request.user.id)
+    print(peoples)
 
     context = {
         'user': user,
@@ -34,37 +35,45 @@ def ViewFriends(request):
     return render(request, template, context)
 
 
-# @login_required('/signin/')
-# def addFrined(request):
-#     if request.method == 'POST':
-#         user_id = request.POST['user_id']
-#         other_user = Account.objects.get(pk=user_id)
-#         Friend.objects.add_friend(
-#             request.user,  # The sender
-#             other_user,  # The recipient
-#             message='Hi! I would like to add you')
-#
+@login_required(login_url='/signin/')
+def viewRequest(request):
+    template = 'friends/FriendRequestList.html'
+    user = request.user
+    friendship_requests = Friend.objects.requests(user)
+    context = {
+        'user': user,
+        "requests": friendship_requests,
+        'error_message': '',
+    }
 
-#
-# @login_required
-# def friendship_add_friend(
-#     request, to_user, template_name="friends/add.html"
-# ):
-#     """ Create a FriendshipRequest """
-#     ctx = {"to_user": to_user}
-#
-#     if request.method == "POST":
-#         to_user = Account.objects.get(user=to_user)
-#         from_user = request.user
-#         try:
-#             Friend.objects.add_friend(from_user, to_user)
-#         except AlreadyExistsError as e:
-#             ctx["errors"] = ["%s" % e]
-#         else:
-#             return redirect("friendship_request_list")
-#
-#     return render(request, template_name, ctx)
+    if request.method == 'POST':
+        user = request.user
+        friendship_request_id = request.POST['friendship_request_id']
+        if request.POST['action'] == "accept":
+            friend_request = get_object_or_404(
+                request.user.friendship_requests_received, id=friendship_request_id
+            )
+            friend_request.accept()
+            friendship_requests = Friend.objects.requests(user)
+            context = {
+                'user': user,
+                "requests": friendship_requests,
+                'error_message': 'Friend Request Accepted!!!',
+            }
 
+        elif request.POST['action'] == "reject":
+            friend_request = get_object_or_404(
+                request.user.friendship_requests_received, id=friendship_request_id
+            )
+            friend_request.reject()
+            friendship_requests = Friend.objects.requests(user)
+            context = {
+                'user': user,
+                "requests": friendship_requests,
+                'error_message': 'Friend Request Rejected!!!',
+            }
+
+    return render(request, template, context)
 
 
 
