@@ -103,7 +103,11 @@
         </div>
     </div>
 
-
+    <form class="form-inline my-2 my-lg-0" name="search_input_form" action="{% url 'search_app:search-result' %}" method="get">
+                    {% csrf_token %}
+                    <input name="search_field" id="search_field" class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" name="searchbtn" type="submit">Search</button>
+                </form>
 
 
     <div class="container d-flex justify-content-center col-md-12" style="margin-top: 40px">

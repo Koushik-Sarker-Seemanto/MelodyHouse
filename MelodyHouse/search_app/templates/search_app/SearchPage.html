@@ -1,0 +1,211 @@
+{% extends 'search_app/searchbase.html' %}
+{% load static %}
+
+{% block title %}
+    <title>Profile Page</title>
+
+
+{% endblock %}
+
+{% block UserName %}
+    {{ user.name }}
+{% endblock %}
+
+
+{% block body %}
+<div>
+
+    <div class="container d-flex justify-content-center col-md-12" style="margin-top: 80px">
+
+
+        {# Left Side Bar           START #}
+
+        <div class="col-md-3" style="background: #fff" >
+            <div class="col-md-12 embed-responsive" style="position: -webkit-sticky;position: sticky;top: 60px;overflow: visible">
+                 <div class="" style="background: #a2aec7;">
+
+
+                     <div class="list-group-item" style="margin-left: -20px;margin-right: 5px;">
+                         <div class="d-flex justify-content-center">
+                             <h4>Filter Search</h4>
+                         </div>
+
+                         <form action="">
+                             <input name="search_field" id="search_field" class="form-control mr-sm-2" type="text" value="{{ search_key }}" aria-label="Search">
+                             <br>
+                             <div class="custom-control custom-checkbox mb-3">
+                                 <input type="checkbox" class="custom-control-input" id="customCheck1" name="example1">
+                                 <label class="custom-control-label" for="customCheck1">Search User</label>
+                             </div>
+
+                             <div class="custom-control custom-checkbox mb-3">
+                                 <input type="checkbox" class="custom-control-input" id="customCheck2" name="example2">
+                                 <label class="custom-control-label" for="customCheck2">Search Albums</label>
+                             </div>
+
+                             <div class="custom-control custom-checkbox mb-3">
+                                 <input type="checkbox" class="custom-control-input" id="customCheck3" name="example3">
+                                 <label class="custom-control-label" for="customCheck3">Search Songs</label>
+                             </div>
+
+                             <button type="submit" class="btn btn-success" style="width: 100%">Search</button>
+                         </form>
+
+                    </div>
+
+                 </div>
+            </div>
+
+            {# Left Side Bar           Footer #}
+
+            <h3 class="d-flex justify-content-center" style="position: -webkit-sticky;position: sticky;top: 400px;overflow: visible">My Albums</h3>
+
+
+            <div class="col-md-12 row"  style="position: -webkit-sticky;position: sticky;top: 440px;overflow: visible">
+
+                <a href="#">see more...</a>
+            </div>
+
+        </div>
+
+
+        {# Left Side Bar           END #}
+
+
+{#        Main Part             #}
+        <div class="col-md-6">
+
+            <h1 style="margin-bottom: 20px"> Search results </h1>
+
+            <h1 style=" padding: 5px;margin-bottom: 20px;background: #c5c5c5;border-radius: 10px"> Users </h1>
+            {% if USERS %}
+                {% for people in USERS %}
+                    <div style="margin-left: 30px;display: flex;margin-bottom: 20px">
+
+                        <div>
+                            <a href="#" class="td p-p-pic"><img src='{% static 'resource/profile_photo.png' %}'></a>
+                        </div>
+
+                        <h4 style="margin-left: 60px;margin-top: 7px">{{ people.name }}</h4>
+                        <button type="submit" class="btn btn-primary" style="display: block;float: right"> Add Friend</button>
+
+                    </div>
+                {% endfor %}
+            {% else %}
+                <p> No User found.</p>
+            {% endif %}
+
+            <br>
+
+
+
+            <h1 style=" padding: 5px;margin-bottom: 20px;background: #c5c5c5;border-radius: 10px"> Albums </h1>
+
+            {% if albums %}
+
+                {% for album in albums %}
+                <div class="col-md-12 d-flex justify-content-center">
+                    <div class="post col-md-12" style="background: #fff">
+                        <div class="tb" style="display: flex">
+                            <div>
+                                <a href="#" class="td p-p-pic"><img src='{% static 'resource/profile_photo.png' %}'></a>
+                            </div>
+
+                            <div class="td p-r-hdr">
+                                <div class="p-u-info">
+                                    <a href="#">{{ user.name }}</a> created an Album: <a href="#"> {{ album }}</a>
+                                </div>
+                                <div class="p-dt">
+                                    <i class="material-icons">calendar_today</i>
+                                    <span id="current_date">{{ album.date_time }}</span>
+                                </div>
+                            </div>
+                            <div class="td p-opt"><i class="material-icons">keyboard_arrow_down</i></div>
+                        </div>
+                        {% if album.description %}
+                        <p class="embed-responsive" style="padding-top: 10px">
+                            {{ album.description }}
+                        </p>
+                        {% endif %}
+{#                        <a href="#" class="p-cnt-v" style="" >#}
+{#                            <img class="embed-responsive " style="padding-top: 10px" src='{{ album.album_logo.url }}'>#}
+{#                        </a>#}
+                        <div>
+                            <div class="p-acts" style="margin-top: 10px">
+                                <div class="p-act like"><i class="material-icons">thumb_up_alt</i><span>25</span></div>
+                                <div class="p-act comment"><i class="material-icons">comment</i><span>1</span></div>
+                                <div class="p-act share"><i class="material-icons">reply</i></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            {% else %}
+                <p> No Album found.</p>
+            {% endif %}
+            <br>
+
+            <h1 style=" padding: 5px;margin-bottom: 20px;background: #c5c5c5;border-radius: 10px"> Songs </h1>
+            {% if songs %}
+
+                {% for song in songs %}
+                <div class="col-md-12 d-flex justify-content-center">
+                    <div class="post col-md-12" style="background: #fff">
+                        <div class="tb" style="display: flex">
+                            <div>
+                                <a href="#" class="td p-p-pic"><img src='{% static 'resource/profile_photo.png' %}'></a>
+                            </div>
+
+                            <div class="td p-r-hdr">
+                                <div class="p-u-info">
+                                    <a href="#">{{ user.name }}</a> Uploaded a Song: <a href="#"> {{ song }}</a>
+                                </div>
+                                <div class="p-dt">
+                                    <i class="material-icons">calendar_today</i>
+                                    <span id="current_date">{{ song.date_time }}</span>
+                                </div>
+                            </div>
+                            <div class="td p-opt"><i class="material-icons">keyboard_arrow_down</i></div>
+                        </div>
+                        {% if song.description %}
+                        <p class="embed-responsive" style="padding-top: 10px">
+                            {{ song.description }}
+                        </p>
+                        {% else %}
+                            <p class="embed-responsive" style="padding-top: 10px">
+                                No Description...
+                            </p>
+                        {% endif %}
+
+                        <audio controls style="width: 100%">
+                            <source src="{{ song.song_file.url }}" type="audio/mpeg">
+                        </audio>
+
+{#                        <a href="#" class="p-cnt-v" style="" >#}
+{#                            <img class="embed-responsive " style="padding-top: 10px" src='{{ album.album_logo.url }}'>#}
+{#                        </a>#}
+                        <div>
+                            <div class="p-acts" style="margin-top: 10px">
+                                <div class="p-act like"><i class="material-icons">thumb_up_alt</i><span>25</span></div>
+                                <div class="p-act comment"><i class="material-icons">comment</i><span>1</span></div>
+                                <div class="p-act share"><i class="material-icons">reply</i></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+
+            {% else %}
+                <p> No User found.</p>
+            {% endif %}
+
+            <br>
+
+        </div>
+
+    </div>
+
+
+</div>
+
+{% endblock %}
