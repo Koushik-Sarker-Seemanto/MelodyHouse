@@ -3,6 +3,7 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import redirect, render, HttpResponse
 from generic.helper import decode as token_decode
 from upload_app.models import Album, Song
+from authentication.models import Account
 from generic.service import verify_email
 from profile_app.forms import ProfileUpdateForm
 from django.db.models import Q
