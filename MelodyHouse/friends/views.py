@@ -39,7 +39,7 @@ def ViewFriends(request):
 def viewRequest(request):
     template = 'friends/FriendRequestList.html'
     user = request.user
-    friendship_requests = Friend.objects.requests(user)
+    friendship_requests = Friend.objects.unrejected_requests(user=request.user)
     context = {
         'user': user,
         "requests": friendship_requests,
@@ -54,7 +54,7 @@ def viewRequest(request):
                 request.user.friendship_requests_received, id=friendship_request_id
             )
             friend_request.accept()
-            friendship_requests = Friend.objects.requests(user)
+            friendship_requests = Friend.objects.unrejected_requests(user=request.user)
             context = {
                 'user': user,
                 "requests": friendship_requests,
@@ -62,11 +62,12 @@ def viewRequest(request):
             }
 
         elif request.POST['action'] == "reject":
+
             friend_request = get_object_or_404(
                 request.user.friendship_requests_received, id=friendship_request_id
             )
             friend_request.reject()
-            friendship_requests = Friend.objects.requests(user)
+            friendship_requests = Friend.objects.unrejected_requests(user=request.user)
             context = {
                 'user': user,
                 "requests": friendship_requests,

@@ -30,25 +30,26 @@
                              <h4>Filter Search</h4>
                          </div>
 
-                         <form action="">
-                             <input name="search_field" id="search_field" class="form-control mr-sm-2" type="text" value="{{ search_key }}" aria-label="Search">
+                         <form action="" method="POST" enctype="multipart/form-data">
+                             {% csrf_token %}
+                             <input name="search_text" id="search_text" class="form-control mr-sm-2" type="text"  aria-label="Search">
                              <br>
                              <div class="custom-control custom-checkbox mb-3">
-                                 <input type="checkbox" class="custom-control-input" id="customCheck1" name="example1">
-                                 <label class="custom-control-label" for="customCheck1">Search User</label>
+                                 <input type="checkbox" class="custom-control-input" id="user_field" name="user_field">
+                                 <label class="custom-control-label" for="user_field">Search User</label>
                              </div>
 
                              <div class="custom-control custom-checkbox mb-3">
-                                 <input type="checkbox" class="custom-control-input" id="customCheck2" name="example2">
-                                 <label class="custom-control-label" for="customCheck2">Search Albums</label>
+                                 <input type="checkbox" class="custom-control-input" id="album_field" name="album_field">
+                                 <label class="custom-control-label" for="album_field">Search Albums</label>
                              </div>
 
                              <div class="custom-control custom-checkbox mb-3">
-                                 <input type="checkbox" class="custom-control-input" id="customCheck3" name="example3">
-                                 <label class="custom-control-label" for="customCheck3">Search Songs</label>
+                                 <input type="checkbox" class="custom-control-input" id="song_field" name="song_field">
+                                 <label class="custom-control-label" for="song_field">Search Songs</label>
                              </div>
 
-                             <button type="submit" class="btn btn-success" style="width: 100%">Search</button>
+                             <button type="submit" name="search_btn" value="search_btn" class="btn btn-success" style="width: 100%">Search</button>
                          </form>
 
                     </div>
@@ -75,10 +76,45 @@
 {#        Main Part             #}
         <div class="col-md-6">
 
+            <div class="container justify-content-center" style="margin-top: 80px">
+                {% if error_message %}
+                    <div class="alert alert-success alert-dismissible fade show d-flex justify-content-center" style="margin-top: 100px">
+                        <strong>Success: </strong> {{ error_message }}
+                        <button type="button" class="close" data-dismiss="alert">&times;
+                        </button>
+                    </div>
+                {% endif %}
+            </div>
+
             <h1 style="margin-bottom: 20px"> Search results </h1>
 
-            <h1 style=" padding: 5px;margin-bottom: 20px;background: #c5c5c5;border-radius: 10px"> Users </h1>
-            {% if USERS %}
+            {% if friends or USERS %}
+                <h1 style=" padding: 5px;margin-bottom: 20px;background: #c3ffcb;border-radius: 10px"> Users </h1>
+            {% endif %}
+
+
+            {% if friends %}
+                {% for people in friends %}
+                    <div style="margin-left: 30px;display: flex;">
+
+                        <div>
+                            <a href="#" class="td p-p-pic"><img src='{% static 'resource/profile_photo.png' %}'></a>
+                        </div>
+
+                        <h4 style="margin-left: 60px;margin-top: 7px">{{ people.name }}</h4><hr>
+                        <button class="btn btn-dark disabled" style="display: block;alignment: right;margin-right: 20px"> Friends</button>
+{#                        <form method="POST" enctype="multipart/form-data">#}
+{#                            {% csrf_token %}#}
+{#                            <input style="display: none" type="text" name="user_id" value="{{ people.id }}">#}
+{#                            <button class="btn btn-dark disabled" style="display: block;alignment: right;margin-right: 20px"> Friends</button>#}
+{##}
+{#                        </form>#}
+
+                    </div>
+                {% endfor %}
+{#            {% elif %}#}
+
+            {% elif USERS %}
                 {% for people in USERS %}
                     <div style="margin-left: 30px;display: flex;margin-bottom: 20px">
 
@@ -86,8 +122,13 @@
                             <a href="#" class="td p-p-pic"><img src='{% static 'resource/profile_photo.png' %}'></a>
                         </div>
 
-                        <h4 style="margin-left: 60px;margin-top: 7px">{{ people.name }}</h4>
-                        <button type="submit" class="btn btn-primary" style="display: block;float: right"> Add Friend</button>
+                        <h4 style="margin-left: 60px;margin-top: 7px">{{ people.name }}</h4><hr>
+                        <form method="POST" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <input style="display: none" type="text" name="user_id" value="{{ people.id }}">
+                            <button type="submit" name="add_friend" value="send_request" class="btn btn-success" style="display: block;alignment: right;margin-right: 20px"> Add Friend</button>
+
+                        </form>
 
                     </div>
                 {% endfor %}
@@ -99,9 +140,10 @@
 
 
 
-            <h1 style=" padding: 5px;margin-bottom: 20px;background: #c5c5c5;border-radius: 10px"> Albums </h1>
+
 
             {% if albums %}
+                <h1 style=" padding: 5px;margin-bottom: 20px;background: #c3ffcb;border-radius: 10px"> Albums </h1>
 
                 {% for album in albums %}
                 <div class="col-md-12 d-flex justify-content-center">
@@ -145,9 +187,9 @@
             {% endif %}
             <br>
 
-            <h1 style=" padding: 5px;margin-bottom: 20px;background: #c5c5c5;border-radius: 10px"> Songs </h1>
-            {% if songs %}
 
+            {% if songs %}
+                <h1 style=" padding: 5px;margin-bottom: 20px;background: #c3ffcb;border-radius: 10px"> Songs </h1>
                 {% for song in songs %}
                 <div class="col-md-12 d-flex justify-content-center">
                     <div class="post col-md-12" style="background: #fff">
@@ -196,7 +238,7 @@
                 {% endfor %}
 
             {% else %}
-                <p> No User found.</p>
+                <p> No Song found.</p>
             {% endif %}
 
             <br>
