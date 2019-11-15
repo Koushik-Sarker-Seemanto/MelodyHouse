@@ -141,9 +141,4 @@ def SearchResult(request):
             }
             return render(request, 'search_app/SearchPage.html', context)
 
-    print("final return")
-    print(context.get(search_key))
-    print(context.get(user))
-    print(context.get(albums))
-    print(context.get(songs))
     return render(request, 'search_app/SearchPage.html', context)

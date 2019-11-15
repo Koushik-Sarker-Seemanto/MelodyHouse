@@ -8,7 +8,13 @@
 {% block body %}
 
     <div class="container justify-content-center" style="margin-top: 80px">
-        {% if error_message %}
+        {% if error_message == ' Friend Request Rejected!!!' %}
+            <div class="alert alert-danger alert-dismissible fade show d-flex justify-content-center" style="margin-top: 100px">
+                <strong>Success: </strong> {{ error_message }}
+                <button type="button" class="close" data-dismiss="alert">&times;
+                </button>
+            </div>
+        {% elif error_message == ' Friend Request Accepted!!!' or error_message == ' Unfriend done!!!' %}
             <div class="alert alert-success alert-dismissible fade show d-flex justify-content-center" style="margin-top: 100px">
                 <strong>Success: </strong> {{ error_message }}
                 <button type="button" class="close" data-dismiss="alert">&times;
@@ -16,20 +22,163 @@
             </div>
         {% endif %}
     </div>
-    <div class="container justify-content-center" style="margin-top: 80px">
-        <h2>All peoples</h2>
-        <div>
-            {% for people in peoples %}
-                <h1> {{ people.name }} </h1>
-                <form class="d-flex" method="POST" enctype="multipart/form-data">
-                    {% csrf_token %}
-                    <input style="display: none" type="text" name="user_id" value="{{ people.id }}">
-                    <button type="submit" class="btn btn-success"> Add Friend</button>
-                </form>
+{#    <div class="container justify-content-center" style="margin-top: 80px">#}
+{#        <h2>All peoples</h2>#}
+{#        <div>#}
+{#            {% for people in peoples %}#}
+{#                <h1> {{ people.name }} </h1>#}
+{#                <form class="d-flex" method="POST" enctype="multipart/form-data">#}
+{#                    {% csrf_token %}#}
+{#                    <input style="display: none" type="text" name="user_id" value="{{ people.id }}">#}
+{#                    <button type="submit" class="btn btn-success"> Add Friend</button>#}
+{#                </form>#}
+{##}
+{#            {% endfor %}#}
+{#        </div>#}
+{##}
+{#    </div>#}
 
-            {% endfor %}
+
+    <div>
+
+    <div class="container d-flex justify-content-center col-md-12">
+
+
+        {# Left Side Bar           START #}
+
+        <div class="col-md-3" style="background: #fff">
+
+            <div class="col-md-12 embed-responsive" style="position: -webkit-sticky;position: sticky;top: 60px;overflow: visible">
+                 <div class="list-group-item" style="margin-left: -20px;margin-right: 5px;">
+                     <div class="d-flex justify-content-center">
+                         <h4>About</h4>
+                     </div>
+                     <h6 class="list-group-item">Name: {{ user.name }}</h6>
+                     <h6 class="list-group-item">Genre: {{ user.fav_genre }}</h6>
+                     <h6 class="list-group-item">Phone: {{ user.phone }}</h6>
+                     <h6 class="list-group-item">Email: {{ user.email }}</h6>
+                     <h6 class="list-group-item">Gender: {{ user.gender }}</h6>
+
+                     <h6></h6>
+
+                     <a href="{% url 'profile_app:profile-update' %}" class="btn btn-secondary">Edit Profile</a>
+                     <a href="{% url 'authentication:change_password' %}" class="btn btn-secondary">Change Password</a>
+                </div>
+            </div>
+
+            <h3 class="d-flex justify-content-center" style="position: -webkit-sticky;position: sticky;top: 400px;overflow: visible">My Albums</h3>
+{#                <div class="col-md-10" >#}
+                <div class="col-md-12 row"  style="position: -webkit-sticky;position: sticky;top: 440px;overflow: visible">
+
+                    {% for album in side_albums %}
+                        <div class="col-md-6 " >
+                            <div class="thumbnail">
+                                {% if album.album_logo %}
+                                    <a href="#">
+                                        <img src="{{ album.album_logo.url }}" class="embed-responsive" >
+                                    </a>
+                                {% else %}
+
+                                    <a href="#">
+                                        <img src='{% static 'resource/Oniket Prantor.jpg' %}' class="embed-responsive">
+                                    </a>
+
+                                {% endif %}
+
+                                <div class="caption justify-content-center">
+                                    <h6>{{ album }}</h6>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                <a href="#">see more...</a>
+                </div>
+
         </div>
 
+
+        {# right section #}
+
+
+    <div class="col-md-6 row"  >
+
+
+        {#        Friend Request             #}
+
+        {% if requests %}
+
+            <div class="col-md-12 embed-responsive row2" style="background: #E9EBEE;padding: 10px;border-radius: 10px;margin-bottom: 10px">
+                <h1 style="margin-bottom: 20px">Friend Request List</h1>
+                {% for people in requests %}
+                 <div style="margin-left: 10px;display: flex;margin-bottom: 20px;background: #FFFFFF;padding: 15px;border-radius: 10px">
+                     <div>
+                         <a href="#" class="td p-p-pic"><img src='{% static 'resource/profile_photo.png' %}'></a>
+                     </div>
+                     <h4 style="margin-left: 60px;margin-top: 7px">{{ people.name }}</h4><hr>
+
+                     <form method="POST" enctype="multipart/form-data">
+                         {% csrf_token %}
+                         <input style="display: none" type="text" name="friendship_request_id" value="{{ people.id }}">
+                         <button type="submit" name="action" value="accept" class="btn btn-success" style="display: block;alignment: right;margin-right: 20px"> Accept</button>
+                     </form>
+
+                     <form method="POST" enctype="multipart/form-data">
+                         {% csrf_token %}
+                         <input style="display: none" type="text" name="friendship_request_id" value="{{ people.id }}">
+                         <button type="submit" name="action" value="reject" class="btn btn-danger" style="display: block;alignment: right;margin-right: 20px"> Reject</button>
+                     </form>
+                 </div>
+
+                {% endfor %}
+            </div>
+
+        {% else %}
+
+            <div class="col-md-12 embed-responsive row2" style="background: #E9EBEE;padding: 10px;border-radius: 10px;margin-bottom: 10px">
+                <h1 style="margin-bottom: 20px">Friend Request List</h1>
+                <h4> No request found</h4>
+            </div>
+
+        {% endif %}
+
+
+        {#        Friends             #}
+
+
+        {% if peoples %}
+            <div class="col-md-12 embed-responsive row1" style="background: #E9EBEE;padding: 10px;border-radius: 10px;margin-bottom: 10px">
+            <h1 style="margin-bottom: 20px">Friend List</h1>
+
+                {% for people in peoples %}
+                 <div style="margin-left: 10px;display: flex;margin-bottom: 20px;background: #FFFFFF;padding: 15px;border-radius: 10px">
+                    <div>
+                        <a href="#" class="td p-p-pic"><img src='{% static 'resource/profile_photo.png' %}'></a>
+                    </div>
+
+                    <h4 style="margin-left: 60px;margin-top: 7px">{{ people.name }}</h4><hr>
+
+                    <form method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <input style="display: none" type="text" name="user_id" value="{{ people.id }}">
+                        <button type="submit" name="unfriend" value="unfriend_request" class="btn btn-danger" style="display: block;alignment: right;margin-right: 20px"> Unfriend</button>
+                    </form>
+
+                </div>
+                {% endfor %}
+
+            </div>
+
+        {% else %}
+            <div class="col-md-12 embed-responsive row1" style="background: #E9EBEE;padding: 10px;border-radius: 10px;margin-bottom: 10px">
+                <h1 style="margin-bottom: 20px">Friend List</h1>
+                <h4>No friend Found</h4>
+            </div>
+        {% endif %}
+
     </div>
+
+    </div>
+
+
 
 {% endblock %}
