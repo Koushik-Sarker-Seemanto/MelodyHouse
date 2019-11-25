@@ -13,4 +13,4 @@ class Post(models.Model):
     post_type = models.CharField(max_length=15)
 
     def __str__(self):
-        return self.post_type
+        return self.post_type+" - "+str(self.post_user)

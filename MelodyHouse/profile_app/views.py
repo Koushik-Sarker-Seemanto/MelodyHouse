@@ -7,6 +7,7 @@ from  profile_app.models import Post
 from authentication.models import Account
 from generic.service import verify_email
 from profile_app.forms import ProfileUpdateForm
+from friendship.models import Friend
 from django.db.models import Q
 
 
@@ -15,6 +16,7 @@ def ProfileView(request):
     user = request.user
     post = Post.objects.filter(post_user=user)
     post = post.all().order_by('-date_time')
+    print(post)
 
     albums = Album.objects.filter(user=request.user)
     side_albums = albums.all().order_by('-date_time')[:4]
@@ -65,14 +67,28 @@ def Playlist(request):
 @login_required(login_url='/signin/')
 def NewsFeedView(request):
     user = request.user
-    albums = Album.objects.filter(user=request.user)
+    albums = Album.objects.all()
     side_albums = albums.all().order_by('-date_time')[:3]
     side_albums = list(side_albums)
-    print(side_albums)
-    albums = albums.all().order_by('-date_time')
+
+    myFriend = Friend.objects.friends(user)
+    myFriend = list(myFriend)
+
+    if myFriend:
+        result = Post.objects.all()
+        result_elms = []
+        for frnd in myFriend:
+            result_elms.append(result.filter(post_user=frnd))
+        post = result_elms[0].union(*result_elms[1:])
+        post = post.all().order_by("-date_time")
+    else:
+        post = Post.objects.all()
+        post = post.all().order_by("-date_time")
+
+    print(post)
     context = {
         'side_albums': side_albums,
-        'albums': albums,
+        'post': post,
         'user': user
     }
 
