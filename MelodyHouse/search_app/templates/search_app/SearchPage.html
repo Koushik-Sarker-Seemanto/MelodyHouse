@@ -100,8 +100,7 @@
                         <div>
                             <a href="#" class="td p-p-pic"><img src='{% static 'resource/profile_photo.png' %}'></a>
                         </div>
-
-                        <h4 style="margin-left: 60px;margin-top: 7px">{{ people.name }}</h4><hr>
+                        <a href="{% url 'profile_app:people-profile' people.id%}"> <h4 style="margin-left: 60px;margin-top: 7px">{{ people.name }}</h4> </a><hr>
                         <button class="btn btn-dark disabled" style="display: block;alignment: right;margin-right: 20px"> Friends</button>
 {#                        <form method="POST" enctype="multipart/form-data">#}
 {#                            {% csrf_token %}#}
@@ -121,8 +120,7 @@
                         <div>
                             <a href="#" class="td p-p-pic"><img src='{% static 'resource/profile_photo.png' %}'></a>
                         </div>
-
-                        <h4 style="margin-left: 60px;margin-top: 7px">{{ people.name }}</h4><hr>
+                        <a href="{% url 'profile_app:people-profile' people.id%}"> <h4 style="margin-left: 60px;margin-top: 7px">{{ people.name }}</h4> </a><hr>
                         <form method="POST" enctype="multipart/form-data">
                             {% csrf_token %}
                             <input style="display: none" type="text" name="user_id" value="{{ people.id }}">
@@ -155,7 +153,7 @@
 
                             <div class="td p-r-hdr">
                                 <div class="p-u-info">
-                                    <a href="#">{{ user.name }}</a> created an Album: <a href="#"> {{ album }}</a>
+                                    <a href="{% url 'profile_app:people-profile' album.user.id%}">{{ album.user.name }}</a> created an Album: <a href="#"> {{ album }}</a>
                                 </div>
                                 <div class="p-dt">
                                     <i class="material-icons">calendar_today</i>
@@ -200,7 +198,7 @@
 
                             <div class="td p-r-hdr">
                                 <div class="p-u-info">
-                                    <a href="#">{{ user.name }}</a> Uploaded a Song: <a href="#"> {{ song }}</a>
+                                    <a href="{% url 'profile_app:people-profile' song.user.id%}">{{ song.user.name }}</a> Uploaded a Song: <a href="#"> {{ song }}</a>
                                 </div>
                                 <div class="p-dt">
                                     <i class="material-icons">calendar_today</i>
