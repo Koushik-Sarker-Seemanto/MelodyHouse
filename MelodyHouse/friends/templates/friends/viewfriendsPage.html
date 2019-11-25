@@ -118,7 +118,7 @@
                      <div>
                          <a href="#" class="td p-p-pic"><img src='{% static 'resource/profile_photo.png' %}'></a>
                      </div>
-                     <h4 style="margin-left: 60px;margin-top: 7px">{{ people.name }}</h4><hr>
+                     <a href="{% url 'profile_app:people-profile' people.id%}"> <h4 style="margin-left: 60px;margin-top: 7px">{{ people.name }}</h4> </a><hr>
 
                      <form method="POST" enctype="multipart/form-data">
                          {% csrf_token %}
@@ -159,7 +159,7 @@
                         <a href="#" class="td p-p-pic"><img src='{% static 'resource/profile_photo.png' %}'></a>
                     </div>
 
-                    <h4 style="margin-left: 60px;margin-top: 7px">{{ people.name }}</h4><hr>
+                    <a href="{% url 'profile_app:people-profile' people.id%}"> <h4 style="margin-left: 60px;margin-top: 7px">{{ people.name }}</h4> </a><hr>
 
                     <form method="POST" enctype="multipart/form-data">
                         {% csrf_token %}
