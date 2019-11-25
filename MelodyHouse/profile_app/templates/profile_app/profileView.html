@@ -131,8 +131,11 @@
 
 {#        Main Posts             #}
         <div class="col-md-6">
-            {% for album in albums %}
-            <div class="col-md-12 d-flex justify-content-center">
+
+        {% for posts in post %}
+
+            {% if posts.post_type == 'album' %}
+                <div class="col-md-12 d-flex justify-content-center">
                 <div class="post col-md-12" style="background: #fff">
                     <div class="tb" style="display: flex">
                         <div>
@@ -141,22 +144,22 @@
 
                         <div class="td p-r-hdr">
                             <div class="p-u-info">
-                                <a href="#">{{ user.name }}</a> created an Album: <a href="#"> {{ album }}</a>
+                                <a href="#">{{ user.name }}</a> created an Album: <a href="#"> {{ posts.post_album }}</a>
                             </div>
                             <div class="p-dt">
                                 <i class="material-icons">calendar_today</i>
-                                <span id="current_date">{{ album.date_time }}</span>
+                                <span id="current_date">{{ posts.post_album.date_time }}</span>
                             </div>
                         </div>
                         <div class="td p-opt"><i class="material-icons">keyboard_arrow_down</i></div>
                     </div>
-                    {% if album.description %}
+                    {% if posts.post_album.description %}
                     <p class="embed-responsive" style="padding-top: 10px">
-                        {{ album.description }}
+                        {{ posts.post_album.description }}
                     </p>
                     {% endif %}
                     <a href="#" class="p-cnt-v" >
-                        <img class="embed-responsive" style="padding-top: 10px" src='{{ album.album_logo.url }}'>
+                        <img class="embed-responsive" style="padding-top: 10px" src='{{ posts.post_album.album_logo.url }}'>
                     </a>
                     <div>
                         <div class="p-acts" style="margin-top: 10px">
@@ -166,8 +169,93 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            {% endfor %}
+                </div>
+            {% else %}
+                <div class="col-md-12 d-flex justify-content-center">
+                <div class="post col-md-12" style="background: #fff">
+                    <div class="tb" style="display: flex">
+                        <div>
+                            <a href="#" class="td p-p-pic"><img src='{% static 'resource/profile_photo.png' %}'></a>
+                        </div>
+
+                        <div class="td p-r-hdr">
+                            <div class="p-u-info">
+                                <a href="#">{{ user.name }}</a> created a Song: <a href="#"> {{ posts.post_song }}</a>
+                            </div>
+                            <div class="p-dt">
+                                <i class="material-icons">calendar_today</i>
+                                <span id="current_date">{{ posts.post_song.date_time }}</span>
+                            </div>
+                        </div>
+                        <div class="td p-opt"><i class="material-icons">keyboard_arrow_down</i></div>
+                    </div>
+                    {% if posts.post_song.description %}
+                    <p class="embed-responsive" style="padding-top: 10px">
+                        {{ posts.post_song.description }}
+                    </p>
+                    {% endif %}
+
+
+                    <a href="#" class="p-cnt-v" >
+                        <img class="embed-responsive" style="padding-top: 10px" src='{{ posts.post_song.album_id.album_logo.url }}'>
+                    </a>
+
+
+                    <audio controls style="width: 100%;margin-top: 5px">
+                        <source src="{{ posts.post_song.song_file.url }}" type="audio/mpeg">
+                    </audio>
+
+
+                    <div>
+                        <div class="p-acts" style="margin-top: 10px">
+                            <div class="p-act like"><i class="material-icons">thumb_up_alt</i><span>25</span></div>
+                            <div class="p-act comment"><i class="material-icons">comment</i><span>1</span></div>
+                            <div class="p-act share"><i class="material-icons">reply</i></div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            {% endif %}
+
+        {% endfor %}
+
+{#            {% for album in albums %}#}
+{#            <div class="col-md-12 d-flex justify-content-center">#}
+{#                <div class="post col-md-12" style="background: #fff">#}
+{#                    <div class="tb" style="display: flex">#}
+{#                        <div>#}
+{#                            <a href="#" class="td p-p-pic"><img src='{% static 'resource/profile_photo.png' %}'></a>#}
+{#                        </div>#}
+{##}
+{#                        <div class="td p-r-hdr">#}
+{#                            <div class="p-u-info">#}
+{#                                <a href="#">{{ user.name }}</a> created an Album: <a href="#"> {{ album }}</a>#}
+{#                            </div>#}
+{#                            <div class="p-dt">#}
+{#                                <i class="material-icons">calendar_today</i>#}
+{#                                <span id="current_date">{{ album.date_time }}</span>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                        <div class="td p-opt"><i class="material-icons">keyboard_arrow_down</i></div>#}
+{#                    </div>#}
+{#                    {% if album.description %}#}
+{#                    <p class="embed-responsive" style="padding-top: 10px">#}
+{#                        {{ album.description }}#}
+{#                    </p>#}
+{#                    {% endif %}#}
+{#                    <a href="#" class="p-cnt-v" >#}
+{#                        <img class="embed-responsive" style="padding-top: 10px" src='{{ album.album_logo.url }}'>#}
+{#                    </a>#}
+{#                    <div>#}
+{#                        <div class="p-acts" style="margin-top: 10px">#}
+{#                            <div class="p-act like"><i class="material-icons">thumb_up_alt</i><span>25</span></div>#}
+{#                            <div class="p-act comment"><i class="material-icons">comment</i><span>1</span></div>#}
+{#                            <div class="p-act share"><i class="material-icons">reply</i></div>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+{#            {% endfor %}#}
         </div>
     </div>
 
