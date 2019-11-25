@@ -77,3 +77,24 @@ def NewsFeedView(request):
     }
 
     return render(request, 'profile_app/NewsFeed.html', context)
+
+
+@login_required(login_url='/signin/')
+def PeopleProfile(request, pk):
+    user = request.user
+    view_user = Account.objects.get(id=pk)
+    print(view_user)
+
+    post = Post.objects.filter(post_user=view_user)
+    post = post.all().order_by('-date_time')
+
+    albums = Album.objects.filter(user=view_user)
+    side_albums = albums.all().order_by('-date_time')[:4]
+
+    context = {
+        "post": post,
+        "side_albums": side_albums,
+        "view_user": view_user,
+        "user": user,
+    }
+    return render(request, 'profile_app/peopleProfile.html', context)

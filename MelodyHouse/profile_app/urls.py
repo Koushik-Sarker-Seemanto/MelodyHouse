@@ -10,5 +10,6 @@ urlpatterns = [
     path('profile/', views.ProfileView, name='profile-view'),
     path('update/', views.ProfileUpdate, name='profile-update'),
     path('playlist/', views.Playlist, name='playlist'),
+    path('people/<int:pk>/', views.PeopleProfile, name='people-profile'),
 
 ]
