@@ -4,6 +4,7 @@ from django.shortcuts import redirect, render, HttpResponse
 from generic.helper import decode as token_decode
 from generic.service import verify_email
 from authentication.models import Account
+from  profile_app.models import Post
 from upload_app.models import Album, Song
 from upload_app.forms import AlbumForm, SongForm
 
@@ -47,6 +48,11 @@ def addAlbum(request):
                 return render(request, 'upload_app/uploadPage.html', context)
             else:
                 album.save()
+                post_instance = Post()
+                post_instance.post_type = 'album'
+                post_instance.post_album = album
+                post_instance.post_user = request.user
+                post_instance.save()
                 return redirect('profile_app:profile-view')
 
         form_song = SongForm(request.POST, request.FILES)
@@ -82,6 +88,11 @@ def addAlbum(request):
                 return render(request, 'upload_app/uploadPage.html', context)
             else:
                 song.save()
+                post_instance = Post()
+                post_instance.post_type = 'song'
+                post_instance.post_song = song
+                post_instance.post_user = request.user
+                post_instance.save()
                 return redirect('profile_app:profile-view')
 
     else:

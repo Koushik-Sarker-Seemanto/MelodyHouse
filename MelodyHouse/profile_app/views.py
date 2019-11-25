@@ -3,6 +3,7 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import redirect, render, HttpResponse
 from generic.helper import decode as token_decode
 from upload_app.models import Album, Song
+from  profile_app.models import Post
 from authentication.models import Account
 from generic.service import verify_email
 from profile_app.forms import ProfileUpdateForm
@@ -12,10 +13,14 @@ from django.db.models import Q
 @login_required(login_url='/signin/')
 def ProfileView(request):
     user = request.user
+    post = Post.objects.filter(post_user=user)
+    post = post.all().order_by('-date_time')
+
     albums = Album.objects.filter(user=request.user)
     side_albums = albums.all().order_by('-date_time')[:4]
     albums = albums.all().order_by('-date_time')
     context = {
+        'post': post,
         'side_albums': side_albums,
         'albums': albums,
         'user': user
