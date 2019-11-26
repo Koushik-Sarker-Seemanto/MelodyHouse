@@ -46,7 +46,11 @@ INSTALLED_APPS = [
     'search_app.apps.SearchAppConfig',
 
     'friendship',
+
+    'crispy_forms',
 ]
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

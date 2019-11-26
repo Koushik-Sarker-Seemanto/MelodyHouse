@@ -1,19 +1,24 @@
 {% extends 'home/base.html' %}
 {% load static %}
 
+
+{% load crispy_forms_tags %}
+
+
 {% block title %}
     <title>Sign-Up Page</title>
 {% endblock %}
 
 {% block body %}
     <h1 class="d-flex justify-content-center" style="margin-top: 100px">Sign-up</h1>
-	<div class="d-flex justify-content-center mt-5 mb-5" style="margin-top: 500px">
-		<div class="col-md-5 list-group-item">
+	<div class="d-flex justify-content-center mt-5 mb-5" style="margin-bottom: 200px">
+		<div class="col-md-5 list-group-item" style="background: #ccdcd7">
 			<form method="POST" enctype="multipart/form-data">
 				{% csrf_token %}
-				{{ form.as_p }}
-				<button class="btn btn-success">Signup</button>
+				{{ form | crispy }}
+				<button class="btn btn-success" style="width: 100%">Signup</button>
 			</form>
+            <a href="#" class="d-flex justify-content-center" style="margin-top: 20px;color: #2070ff">Already has an account?</a>
 		</div>
 	</div>
 {% endblock %}
