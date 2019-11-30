@@ -164,6 +164,25 @@
 
 {#        Main Posts             #}
         <div class="col-md-6">
+
+             <div class="container justify-content-center">
+            {% if error == "Already in Playlist" %}
+                <div class="alert alert-danger alert-dismissible fade show d-flex justify-content-center">
+                    <strong>Failure : </strong> {{ error }}
+                    <button type="button" class="close" data-dismiss="alert">&times;
+                    </button>
+                </div>
+            {% elif error == "Added to Playlist" %}
+                <div class="alert alert-success alert-dismissible fade show d-flex justify-content-center">
+                    <strong>Success : </strong> {{ error }}
+                    <button type="button" class="close" data-dismiss="alert">&times;
+                    </button>
+                </div>
+            {% endif %}
+            </div>
+
+
+
             {% for posts in post %}
 
             {% if posts.post_type == 'album' %}
@@ -212,6 +231,11 @@
                 </div>
                 </div>
             {% elif posts.post_type == 'song' %}
+
+
+
+
+
                 <div class="col-md-12 d-flex justify-content-center">
                 <div class="post col-md-12" style="background: #fff">
                     <div class="tb" style="display: flex">
@@ -251,9 +275,17 @@
                         <h5 style="margin-top: 10px;color: #a3a6aa"> <i class="fa fa-fw fa-thumbs-up"></i> 54</h5>
 
                         <div class="d-flex align-items-center" style="margin-top: 10px;">
-                            <button class="btn btn-outline-primary" style="width: 100%">
+                            <button class="btn btn-outline-primary" style="width: 50%">
                                 <i class="fa fa-fw fa-thumbs-up"></i>Like
                             </button>
+{#                            <h6 style="margin: 10px"></h6>#}
+                            <form action="" method="POST" enctype="multipart/form-data" style="width: 50%">
+                                {% csrf_token %}
+                                <input style="display: none" type="text" name="song_id" value="{{ posts.post_song.id }}">
+                                <button name="add_to_playlist" value="add_to_playlist" style="width: 100%" class="btn btn-outline-primary" >
+                                    <i class="fa fa-fw fa-thumbs-up"></i>Add to playlist
+                                </button>
+                            </form>
 
                         </div>
                     </div>
