@@ -3,7 +3,7 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import redirect, render, HttpResponse
 from generic.helper import decode as token_decode
 from upload_app.models import Album, Song
-from  profile_app.models import Post
+from profile_app.models import Post,PlayList
 from authentication.models import Account
 from generic.service import verify_email
 from profile_app.forms import ProfileUpdateForm
@@ -56,7 +56,8 @@ def ProfileUpdate(request):
 @login_required(login_url='/signin/')
 def Playlist(request):
     user = request.user
-    songs = Song.objects.filter(user=user)
+    songs = PlayList.objects.filter(playlist_user=user)
+    # songs = Song.objects.filter(user=user)
     context = {
         'songs': songs,
         'user': user
@@ -85,8 +86,38 @@ def NewsFeedView(request):
         post = Post.objects.all()
         post = post.all().order_by("-date_time")
 
+    if request.POST.get('add_to_playlist') == "add_to_playlist":
+        song_id = request.POST['song_id']
+        print(song_id)
+
+        song = Song.objects.get(id=song_id)
+        song_exist = PlayList.objects.filter(playlist_song=song).filter(playlist_user=request.user)
+
+        if song_exist.exists():
+            context = {
+                "error": "Already in Playlist",
+                'side_albums': side_albums,
+                'post': post,
+                'user': user
+            }
+            return render(request, 'profile_app/NewsFeed.html', context)
+        else:
+            playlist_instance = PlayList()
+            playlist_instance.playlist_song = song
+            playlist_instance.playlist_user = request.user
+            playlist_instance.save()
+
+            context = {
+                "error": "Added to Playlist",
+                'side_albums': side_albums,
+                'post': post,
+                'user': user
+            }
+            return render(request, 'profile_app/NewsFeed.html', context)
+
     print(post)
     context = {
+        "error": "",
         'side_albums': side_albums,
         'post': post,
         'user': user

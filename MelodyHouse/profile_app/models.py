@@ -14,3 +14,11 @@ class Post(models.Model):
 
     def __str__(self):
         return self.post_type+" - "+str(self.post_user)
+
+
+class PlayList(models.Model):
+    playlist_song = models.ForeignKey(Song, on_delete=models.CASCADE)
+    playlist_user = models.ForeignKey(Account, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.playlist_song.song_title
