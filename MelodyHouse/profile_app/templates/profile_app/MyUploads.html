@@ -1,0 +1,129 @@
+{% extends 'profile_app/profilebase.html' %}
+{% load static %}
+
+{% block title %}
+    <title>Play List</title>
+
+
+{% endblock %}
+
+{% block UserName %}
+    {{ user.name }}
+{% endblock %}
+
+{% block body %}
+
+<h1 class="d-flex justify-content-center" style="margin-top: 70px">
+    My Uploads
+</h1>
+
+<div class="container d-flex justify-content-center col-md-12">
+
+        {# Left Side Bar           START #}
+
+        <div class="col-md-3" style="background: #fff">
+            <div class=" col-md-12 embed-responsive" style="position: -webkit-sticky;position: sticky;top: 60px;overflow: visible;">
+                <div class="d-flex justify-content-center" >
+                    <a class="h3" href="{% url 'profile_app:my_uploads' %}" style="background: #343A40;padding: 10px;border-radius: 5px;color: #ffffff">All Albums</a>
+                </div>
+                <div class="col-md-12 row">
+                    {% for album in albums %}
+
+
+                        <div class="col-md-6" >
+                        {% if album == current_album %}
+                            <div class="thumbnail" style="background: #cce5ff">
+                                {% if album.album_logo %}
+                                    <a href="{% url 'profile_app:my_album_songs' album.id %}">
+                                        <img src="{{ album.album_logo.url }}" class="embed-responsive" style="opacity: 60%" >
+                                    </a>
+                                {% else %}
+
+                                    <a href="#">
+                                        <img src='{% static 'resource/Oniket Prantor.jpg' %}' class="embed-responsive" style="opacity: 60%">
+                                    </a>
+
+                                {% endif %}
+
+                                <div class="caption justify-content-center">
+                                    <h6>{{ album }}</h6>
+                                </div>
+                            </div>
+                        {% else %}
+                            <div class="thumbnail">
+                                {% if album.album_logo %}
+                                    <a href="{% url 'profile_app:my_album_songs' album.id %}">
+                                        <img src="{{ album.album_logo.url }}" class="embed-responsive"  >
+                                    </a>
+                                {% else %}
+
+                                    <a href="#">
+                                        <img src='{% static 'resource/Oniket Prantor.jpg' %}' class="embed-responsive">
+                                    </a>
+
+                                {% endif %}
+
+                                <div class="caption justify-content-center">
+                                    <h6>{{ album }}</h6>
+                                </div>
+                            </div>
+                        {% endif %}
+                        </div>
+
+                    {% endfor %}
+                </div>
+
+            </div>
+
+        </div>
+
+
+        {# Left Side Bar           END #}
+
+
+{#        Main Posts             #}
+        <div class="col-md-6">
+        {% if current_album %}
+        <div class="d-flex justify-content-center" >
+            <h3 style="background: #343A40;padding: 10px;border-radius: 5px;color: #ffffff">Album : {{ current_album }}</h3>
+        </div>
+        {% else %}
+        <div class="d-flex justify-content-center" >
+            <h3 style="background: #343A40;padding: 10px;border-radius: 5px;color: #ffffff">All Songs</h3>
+        </div>
+        {% endif %}
+
+
+
+        {% if songs %}
+
+            {% for song in songs %}
+
+            <div class="col-md-12 d-flex justify-content-center">
+                <div class="postSONG col-md-12" style="background: #ffede0">
+                    <div class="d-flex align-items-center">
+                        <img src="{{ song.album_id.album_logo.url }}" style="width: 30px;height: 30px;margin-right: 20px">
+                        <h3>{{ song.song_title }}</h3>
+                        <hr>
+                        <a class="" target="_blank"  href="{{ song.song_file.url }}">
+                        <button type="button" class="btn btn-outline-success">
+                             <i class="fa fa-fw fa-play"></i>Play
+                        </button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            {% endfor %}
+
+        {% else %}
+            <h2 class="justify-content-center d-flex" style="margin-top: 30px">No Song Found !!!</h2>
+        {% endif %}
+
+
+
+        </div>
+    </div>
+
+
+{% endblock %}

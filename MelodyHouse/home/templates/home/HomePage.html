@@ -1,55 +1,272 @@
 {% extends 'home/base.html' %}
 
+{% load static %}
+
+
+{% block title %}
+    <title>Home Page</title>
+
+
+    <style>
+
+    /* Carousel base class */
+    .carousel {
+        margin-top: 20px;
+      min-height: 600px;
+    }
+    /* Since positioning the image, we need to help out the caption */
+    .carousel-caption {
+      z-index: 10;
+    }
+
+    /* Declare heights because of positioning of img element */
+    .carousel .carousel-item {
+      min-height: 600px;
+      background-color: #777;
+    }
+    .carousel-inner > .carousel-item > img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      min-height: 600px;
+    }
+
+
+  </style>
+
+
+{% endblock %}
+
+
 
 {% block body %}
-    {% load staticfiles %}
+
+    <div class="col-md-9 container justify-content-center mt-2 mb-2" style="margin-top: 100px;padding: 30px">
 
 
-    <!-- ##### Hero Area Start ##### -->
-    <div id="demo" class="carousel slide d-flex justify-content-center" data-ride="carousel" style="margin-top: 70px">
-        <!-- Indicators -->
-        <ul class="carousel-indicators">
-            <li data-target="#demo" data-slide-to="0" class="active"></li>
-            <li data-target="#demo" data-slide-to="1"></li>
-            <li data-target="#demo" data-slide-to="2"></li>
-        </ul>
 
-        <!-- The slideshow -->
-        <div class="carousel-inner text-center">
-            <div class="carousel-item active">
-                <div class="back_ground1 d-flex justify-content-center">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="text-center">
-                                    <h6>Latest album</h6>
-                                    <h2>Beyond Time <span>Beyond Time</span></h2>
-                                    <a  href="#" class="btn btn-primary">Discover <i class="fa fa-angle-double-right"></i></a>
+        <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="3000">
+            <!-- Indicators -->
+
+            <ul class="carousel-indicators">
+                <li data-target="#demo" data-slide-to="0" class="active"></li>
+                <li data-target="#demo" data-slide-to="1"></li>
+                <li data-target="#demo" data-slide-to="2"></li>
+            </ul>
+
+            <!-- The slideshow -->
+
+            <div class="carousel-inner">
+
+                <div class="carousel-item active">
+
+                    <img src='{{ side_albums.0.album_logo.url }}'>
+
+                    <div class="carousel-caption" style="background: #ffffff;opacity: 70%;border-radius: 30px">
+                        <h1 class="font-weight-bold" style="color: #000000">{{ side_albums.0.album_title }}</h1>
+                        <h5 class="font-weight-bold" style="color: #000000">{{ side_albums.0.artist }}</h5>
+                    </div>
+
+                </div>
+
+
+                <div class="carousel-item">
+                    <img src='{{ side_albums.1.album_logo.url }}'>
+                    <div class="carousel-caption" style="background: #ffffff;opacity: 70%;border-radius: 30px">
+                        <h1 class="font-weight-bold" style="color: #000000">{{ side_albums.1.album_title }}</h1>
+                        <h5 class="font-weight-bold" style="color: #000000">{{ side_albums.1.artist }}</h5>
+                    </div>
+                </div>
+
+
+                <div class="carousel-item">
+                    <img src='{{ side_albums.2.album_logo.url }}' >
+                    <div class="carousel-caption" style="background: #ffffff;opacity: 70%;border-radius: 30px">
+                        <h1 class="font-weight-bold" style="color: #000000">{{ side_albums.2.album_title }}</h1>
+                        <h5 class="font-weight-bold" style="color: #000000">{{ side_albums.2.artist }}</h5>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+            <!-- Left and right controls -->
+            <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </a>
+            <a class="carousel-control-next" href="#myCarousel" data-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </a>
+        </div>
+    </div>
+
+
+
+    <div class="container d-flex justify-content-center col-md-12" style="margin-top: 40px">
+
+    {# Left Side Bar           START #}
+
+        <div class="col-md-3" style="background: #fff">
+            <div class="col-md-12 embed-responsive" style="position: -webkit-sticky;position: sticky;top: 60px;overflow: visible">
+                 <div class="list-group-item" style="margin-left: -20px;margin-right: 5px;">
+                     <div class="d-flex justify-content-center">
+                         <h4>About</h4>
+                     </div>
+                     <h6 class="list-group-item">Name: {{ user.name }}</h6>
+                     <h6 class="list-group-item">Genre: {{ user.fav_genre }}</h6>
+                     <h6 class="list-group-item">Phone: {{ user.phone }}</h6>
+                     <h6 class="list-group-item">Email: {{ user.email }}</h6>
+                     <h6 class="list-group-item">Gender: {{ user.gender }}</h6>
+
+                     <h6></h6>
+
+                     <a href="{% url 'profile_app:profile-update' %}" class="btn btn-secondary">Edit Profile</a>
+                     <a href="{% url 'authentication:change_password' %}" class="btn btn-secondary">Change Password</a>
+                </div>
+            </div>
+
+        <h3 class="d-flex justify-content-center" style="position: -webkit-sticky;position: sticky;top: 400px;overflow: visible">My Albums</h3>
+{#                <div class="col-md-10" >#}
+                <div class="col-md-12 row"  style="position: -webkit-sticky;position: sticky;top: 440px;overflow: visible">
+
+                    {% for album in side_albums %}
+                        <div class="col-md-6 " >
+                            <div class="thumbnail">
+                                {% if album.album_logo %}
+                                    <a href="#">
+                                        <img src="{{ album.album_logo.url }}" class="embed-responsive" >
+                                    </a>
+                                {% else %}
+
+                                    <a href="#">
+                                        <img src='{% static 'resource/Oniket Prantor.jpg' %}' class="embed-responsive">
+                                    </a>
+
+                                {% endif %}
+
+                                <div class="caption justify-content-center">
+                                    <h6>{{ album }}</h6>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    {% endfor %}
+                <a href="#">see more...</a>
                 </div>
-            </div>
-            <div class="carousel-item">
-                <img src="https://www.w3schools.com/bootstrap4/la.jpg" alt="">
-                <div class="carousel-caption text-center">
-                    <h6 data-animation="fadeInUp" data-delay="100ms">Latest album</h6>
-                    <h2 data-animation="fadeInUp" data-delay="300ms">Beyond Time <span>Beyond Time</span></h2>
-                    <a data-animation="fadeInUp" data-delay="500ms" href="#" class="btn btn-primary">Discover <i class="fa fa-angle-double-right"></i></a>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img src="https://www.w3schools.com/bootstrap4/ny.jpg" alt="New York">
-            </div>
+
         </div>
 
-        <!-- Left and right controls -->
-        <a class="carousel-control-prev" href="#demo" data-slide="prev">
-            <span class="carousel-control-prev-icon"></span>
-        </a>
-        <a class="carousel-control-next" href="#demo" data-slide="next">
-            <span class="carousel-control-next-icon"></span>
-        </a>
+
+        {# Left Side Bar           END #}
+
+
+{#        Main Posts             #}
+        <div class="col-md-6">
+            {% for posts in post %}
+
+            {% if posts.post_type == 'album' %}
+                <div class="col-md-12 d-flex justify-content-center">
+                <div class="post col-md-12" style="background: #fff">
+                    <div class="tb" style="display: flex">
+                        <div>
+                            <a href="#" class="td p-p-pic"><img src='{% static 'resource/profile_photo.png' %}'></a>
+                        </div>
+
+                        <div class="td p-r-hdr">
+                            <div class="p-u-info">
+                                <a href="{% url 'profile_app:people-profile' posts.post_user.id %}">{{ posts.post_user.name }}</a> created an Album: <a href="#"> {{ posts.post_album }}</a>
+                            </div>
+                            <div class="p-dt">
+                                <i class="material-icons">calendar_today</i>
+                                <span id="current_date">{{ posts.post_album.date_time }}</span>
+                            </div>
+                        </div>
+                        <div class="td p-opt"><i class="material-icons">keyboard_arrow_down</i></div>
+                    </div>
+                    {% if posts.post_album.description %}
+                    <p class="embed-responsive" style="padding-top: 10px">
+                        {{ posts.post_album.description }}
+                    </p>
+                    {% endif %}
+                    <a href="#" class="p-cnt-v" >
+                        <img class="embed-responsive" style="padding-top: 10px" src='{{ posts.post_album.album_logo.url }}'>
+                    </a>
+                    <div>
+                        <h5 style="margin-top: 10px;color: #a3a6aa"> <i class="fa fa-fw fa-thumbs-up"></i> 54</h5>
+
+                        <div class="d-flex align-items-center" style="margin-top: 10px;">
+                            <button class="btn btn-outline-primary" style="width: 100%">
+                                <i class="fa fa-fw fa-thumbs-up"></i>Like
+                            </button>
+
+                        </div>
+
+{#                        <div class="p-acts" style="margin-top: 10px">#}
+{#                            <div class="p-act like"><i class="material-icons">thumb_up_alt</i><span>23</span></div>#}
+{#                            <div class="p-act comment"><i class="material-icons">comment</i><span>1</span></div>#}
+{#                            <div class="p-act share"><i class="material-icons">reply</i></div>#}
+{#                        </div>#}
+                    </div>
+                </div>
+                </div>
+            {% elif posts.post_type == 'song' %}
+                <div class="col-md-12 d-flex justify-content-center">
+                <div class="post col-md-12" style="background: #fff">
+                    <div class="tb" style="display: flex">
+                        <div>
+                            <a href="#" class="td p-p-pic"><img src='{% static 'resource/profile_photo.png' %}'></a>
+                        </div>
+
+                        <div class="td p-r-hdr">
+                            <div class="p-u-info">
+                                <a href="{% url 'profile_app:people-profile' posts.post_user.id %}">{{ posts.post_user.name }}</a> created a Song: <a href="#"> {{ posts.post_song }}</a>
+                            </div>
+                            <div class="p-dt">
+                                <i class="material-icons">calendar_today</i>
+                                <span id="current_date">{{ posts.post_song.date_time }}</span>
+                            </div>
+                        </div>
+                        <div class="td p-opt"><i class="material-icons">keyboard_arrow_down</i></div>
+                    </div>
+                    {% if posts.post_song.description %}
+                    <p class="embed-responsive" style="padding-top: 10px">
+                        {{ posts.post_song.description }}
+                    </p>
+                    {% endif %}
+
+
+                    <a href="#" class="p-cnt-v" >
+                        <img class="embed-responsive" style="padding-top: 10px" src='{{ posts.post_song.album_id.album_logo.url }}'>
+                    </a>
+
+
+                    <audio controls style="width: 100%;margin-top: 5px">
+                        <source src="{{ posts.post_song.song_file.url }}" type="audio/mpeg">
+                    </audio>
+
+
+                    <div>
+                        <h5 style="margin-top: 10px;color: #a3a6aa"> <i class="fa fa-fw fa-thumbs-up"></i> 54</h5>
+
+                        <div class="d-flex align-items-center" style="margin-top: 10px;">
+                            <button class="btn btn-outline-primary" style="width: 100%">
+                                <i class="fa fa-fw fa-thumbs-up"></i>Like
+                            </button>
+
+                        </div>
+                    </div>
+                </div>
+                </div>
+            {% endif %}
+
+        {% endfor %}
+        </div>
+
+
     </div>
+
+
+
+
 {% endblock %}

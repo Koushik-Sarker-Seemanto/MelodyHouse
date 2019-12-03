@@ -1,6 +1,8 @@
 {% extends 'home/base.html' %}
 {% load static %}
 
+{% load crispy_forms_tags %}
+
 {% block title %}
     <title>Sign-in Page</title>
 {% endblock %}
@@ -9,17 +11,20 @@
 {% block body %}
     <h1 class="d-flex justify-content-center" style="margin-top: 100px">Sign-in</h1>
 	<div class="d-flex justify-content-center mt-5">
-		<div class="col-md-5 list-group-item">
+		<div class="col-md-5 list-group-item" style="background: #ccdcd7">
 			<form method="POST" enctype="multipart/form-data">
-                <table>
+
 				{% csrf_token %}
-				{{ form.as_table }}
-				<tr><td><button class="btn btn-success">Signin</button></td></tr>
-                    </table>
+				{{ form | crispy }}
+
+				<button class="btn btn-success" style="width: 100%">Signin</button>
 			</form>
 			<br>
-			<a href="#" class="list-group-item">Forget password</a>
-			<a href="{% url 'authentication:signup' %}" class="list-group-item">Create a new account</a>
+            <div class="justify-content-center">
+                <a href="#" class="d-flex justify-content-center">Forget password?</a>
+			    <a href="{% url 'authentication:signup' %}" class="d-flex justify-content-center" >Create a new account</a>
+            </div>
+
 		</div>
 	</div>
 {% endblock %}

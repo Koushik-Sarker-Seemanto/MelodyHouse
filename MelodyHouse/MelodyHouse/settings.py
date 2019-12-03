@@ -43,9 +43,14 @@ INSTALLED_APPS = [
     'profile_app.apps.ProfileAppConfig',
     'upload_app.apps.UploadAppConfig',
     'friends',
+    'search_app.apps.SearchAppConfig',
 
     'friendship',
+
+    'crispy_forms',
 ]
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -86,7 +91,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'melody_house',
         'USER': 'root',
-        'PASSWORD': '20168310',
+        'PASSWORD': '4200',
         'HOST': '127.0.0.1',
         'PORT': '3306',
     }

@@ -1,0 +1,263 @@
+{% extends 'profile_app/profilebase.html' %}
+{% load static %}
+
+{% block title %}
+    <title>Profile Page</title>
+
+
+{% endblock %}
+
+{% block UserName %}
+    {{ user.name }}
+{% endblock %}
+
+
+{% block body %}
+
+
+{# Cover Photo Area           START #}
+
+    <div class="d-flex justify-content-center mt-2 mb-2" >
+        <div id="profile-upper" class="col-md-9">
+            <div id="profile-banner-image">
+                <img src='{% static 'resource/cover_photo.jpg' %}' alt="Banner image">
+            </div>
+            <div id="profile-d">
+                <div id="profile-pic">
+                    <img src='{% static 'resource/profile_photo.png' %}'>
+                </div>
+                <div id="u-name">{{ view_user.name }}</div>
+                <div id="u-fav_genre">{{ view_user.fav_genre }}</div>
+                <div class="tb" id="m-btns" style="display: flex">
+                    <div class="td">
+                        <div class="m-btn"><i class="material-icons">format_list_bulleted</i><span>Activity log</span></div>
+                    </div>
+                    <div class="td">
+                        <div class="m-btn"><i class="material-icons">lock</i><span>Privacy</span></div>
+                    </div>
+                </div>
+                <div id="edit-profile"><i class="fa fa-fw fa-camera"></i></div>
+            </div>
+            <div id="black-grd"></div>
+        </div>
+    </div>
+
+    {# Cover Photo Area           END #}
+
+
+
+
+    {# SUB Menu Area           START#}
+
+{#    <div class="d-flex justify-content-center mt-2 mb-2" >#}
+{#         <div class="td col-md-6" id="m-col">#}
+{#             <div class="m-mrg" id="p-tabs">#}
+{#                 <div class="tb">#}
+{#                     <div class="td">#}
+{#                         <div class="tb justify-content-center" id="p-tabs-m" style="display: flex">#}
+{#                             <div class="td"><a id="u_link" class="a_link" href="{% url 'profile_app:playlist' %}"><i class="material-icons">headset</i><span>PLAYLIST</span></a></div>#}
+{#                             <div class="td"><a id="u_link" class="a_link" href="{% url 'friends:ViewFriends' %}"><i class="material-icons">people</i><span>FRIENDS</span></a></div>#}
+{#                             <div class="td"><a id="u_link" class="a_link" href="{% url 'upload_app:add-album' %}"><i class="material-icons">file_upload</i><span>UPLOAD</span></a></div>#}
+{#                             <div class="td"><a id="u_link" class="a_link" href="{% url 'friends:view-request' %}"><i class="material-icons">message</i><span>REQUESTS</span></div>#}
+{#                             <div class="td"> <a id="u_link" class="a_link" href="{% url 'profile_app:profile-update' %}"><i class="material-icons">create</i><span>EDIT PROFILE</span></a></div>#}
+{#                         </div>#}
+{#                     </div>#}
+{#                 </div>#}
+{#             </div>#}
+{#        </div>#}
+{#    </div>#}
+
+    {# SUB Menu Area           END #}
+
+
+
+    <div class="container d-flex justify-content-center col-md-12">
+
+
+        {# Left Side Bar           START #}
+
+        <div class="col-md-3" style="background: #fff">
+            <div class="col-md-12 embed-responsive" style="position: -webkit-sticky;position: sticky;top: 60px;overflow: visible;margin-top: 50px">
+                 <div class="list-group-item" style="margin-left: -20px;margin-right: 5px;">
+                     <div class="d-flex justify-content-center">
+                         <h4>About</h4>
+                     </div>
+                     <h6 class="list-group-item">Name: {{ view_user.name }}</h6>
+                     <h6 class="list-group-item">Genre: {{ view_user.fav_genre }}</h6>
+                     <h6 class="list-group-item">Phone: {{ view_user.phone }}</h6>
+                     <h6 class="list-group-item">Email: {{ view_user.email }}</h6>
+                     <h6 class="list-group-item">Gender: {{ view_user.gender }}</h6>
+
+                     <h6></h6>
+
+{#                     <a href="{% url 'profile_app:profile-update' %}" class="btn btn-secondary">Edit Profile</a>#}
+{#                     <a href="{% url 'authentication:change_password' %}" class="btn btn-secondary">Change Password</a>#}
+                </div>
+            </div>
+
+        <h3 class="d-flex justify-content-center" style="position: -webkit-sticky;position: sticky;top: 400px;overflow: visible">My Albums</h3>
+{#                <div class="col-md-10" >#}
+                <div class="col-md-12 row"  style="position: -webkit-sticky;position: sticky;top: 440px;overflow: visible">
+
+                    {% for album in side_albums %}
+                        <div class="col-md-6 " >
+                            <div class="thumbnail">
+                                {% if album.album_logo %}
+                                    <a href="#">
+                                        <img src="{{ album.album_logo.url }}" class="embed-responsive" >
+                                    </a>
+                                {% else %}
+
+                                    <a href="#">
+                                        <img src='{% static 'resource/Oniket Prantor.jpg' %}' class="embed-responsive">
+                                    </a>
+
+                                {% endif %}
+
+                                <div class="caption justify-content-center">
+                                    <h6>{{ album }}</h6>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                <a href="#">see more...</a>
+                </div>
+
+        </div>
+
+
+        {# Left Side Bar           END #}
+
+
+{#        Main Posts             #}
+        <div class="col-md-6">
+
+        {% for posts in post %}
+
+            {% if posts.post_type == 'album' %}
+                <div class="col-md-12 d-flex justify-content-center">
+                <div class="post col-md-12" style="background: #fff">
+                    <div class="tb" style="display: flex">
+                        <div>
+                            <a href="#" class="td p-p-pic"><img src='{% static 'resource/profile_photo.png' %}'></a>
+                        </div>
+
+                        <div class="td p-r-hdr">
+                            <div class="p-u-info">
+                                <a href="#">{{ view_user.name }}</a> created an Album: <a href="#"> {{ posts.post_album }}</a>
+                            </div>
+                            <div class="p-dt">
+                                <i class="material-icons">calendar_today</i>
+                                <span id="current_date">{{ posts.post_album.date_time }}</span>
+                            </div>
+                        </div>
+                        <div class="td p-opt"><i class="material-icons">keyboard_arrow_down</i></div>
+                    </div>
+                    {% if posts.post_album.description %}
+                    <p class="embed-responsive" style="padding-top: 10px">
+                        {{ posts.post_album.description }}
+                    </p>
+                    {% endif %}
+                    <a href="#" class="p-cnt-v" >
+                        <img class="embed-responsive" style="padding-top: 10px" src='{{ posts.post_album.album_logo.url }}'>
+                    </a>
+                    <div>
+                        <div class="p-acts" style="margin-top: 10px">
+                            <div class="p-act like"><i class="material-icons">thumb_up_alt</i><span>25</span></div>
+                            <div class="p-act comment"><i class="material-icons">comment</i><span>1</span></div>
+                            <div class="p-act share"><i class="material-icons">reply</i></div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            {% else %}
+                <div class="col-md-12 d-flex justify-content-center">
+                <div class="post col-md-12" style="background: #fff">
+                    <div class="tb" style="display: flex">
+                        <div>
+                            <a href="#" class="td p-p-pic"><img src='{% static 'resource/profile_photo.png' %}'></a>
+                        </div>
+
+                        <div class="td p-r-hdr">
+                            <div class="p-u-info">
+                                <a href="#">{{ view_user.name }}</a> created a Song: <a href="#"> {{ posts.post_song }}</a>
+                            </div>
+                            <div class="p-dt">
+                                <i class="material-icons">calendar_today</i>
+                                <span id="current_date">{{ posts.post_song.date_time }}</span>
+                            </div>
+                        </div>
+                        <div class="td p-opt"><i class="material-icons">keyboard_arrow_down</i></div>
+                    </div>
+                    {% if posts.post_song.description %}
+                    <p class="embed-responsive" style="padding-top: 10px">
+                        {{ posts.post_song.description }}
+                    </p>
+                    {% endif %}
+
+
+                    <a href="#" class="p-cnt-v" >
+                        <img class="embed-responsive" style="padding-top: 10px" src='{{ posts.post_song.album_id.album_logo.url }}'>
+                    </a>
+
+
+                    <audio controls style="width: 100%;margin-top: 5px">
+                        <source src="{{ posts.post_song.song_file.url }}" type="audio/mpeg">
+                    </audio>
+
+
+                    <div>
+                        <div class="p-acts" style="margin-top: 10px">
+                            <div class="p-act like"><i class="material-icons">thumb_up_alt</i><span>25</span></div>
+                            <div class="p-act comment"><i class="material-icons">comment</i><span>1</span></div>
+                            <div class="p-act share"><i class="material-icons">reply</i></div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            {% endif %}
+
+        {% endfor %}
+
+{#            {% for album in albums %}#}
+{#            <div class="col-md-12 d-flex justify-content-center">#}
+{#                <div class="post col-md-12" style="background: #fff">#}
+{#                    <div class="tb" style="display: flex">#}
+{#                        <div>#}
+{#                            <a href="#" class="td p-p-pic"><img src='{% static 'resource/profile_photo.png' %}'></a>#}
+{#                        </div>#}
+{##}
+{#                        <div class="td p-r-hdr">#}
+{#                            <div class="p-u-info">#}
+{#                                <a href="#">{{ user.name }}</a> created an Album: <a href="#"> {{ album }}</a>#}
+{#                            </div>#}
+{#                            <div class="p-dt">#}
+{#                                <i class="material-icons">calendar_today</i>#}
+{#                                <span id="current_date">{{ album.date_time }}</span>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                        <div class="td p-opt"><i class="material-icons">keyboard_arrow_down</i></div>#}
+{#                    </div>#}
+{#                    {% if album.description %}#}
+{#                    <p class="embed-responsive" style="padding-top: 10px">#}
+{#                        {{ album.description }}#}
+{#                    </p>#}
+{#                    {% endif %}#}
+{#                    <a href="#" class="p-cnt-v" >#}
+{#                        <img class="embed-responsive" style="padding-top: 10px" src='{{ album.album_logo.url }}'>#}
+{#                    </a>#}
+{#                    <div>#}
+{#                        <div class="p-acts" style="margin-top: 10px">#}
+{#                            <div class="p-act like"><i class="material-icons">thumb_up_alt</i><span>25</span></div>#}
+{#                            <div class="p-act comment"><i class="material-icons">comment</i><span>1</span></div>#}
+{#                            <div class="p-act share"><i class="material-icons">reply</i></div>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+{#            {% endfor %}#}
+        </div>
+    </div>
+
+
+{% endblock %}

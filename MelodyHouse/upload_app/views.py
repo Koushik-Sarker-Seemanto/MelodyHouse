@@ -4,6 +4,7 @@ from django.shortcuts import redirect, render, HttpResponse
 from generic.helper import decode as token_decode
 from generic.service import verify_email
 from authentication.models import Account
+from  profile_app.models import Post
 from upload_app.models import Album, Song
 from upload_app.forms import AlbumForm, SongForm
 
@@ -25,7 +26,7 @@ def addAlbum(request):
                 file_type = file_type.lower()
                 if file_type not in IMAGE_FILE_TYPES:
                     form = AlbumForm()
-                    form_song = SongForm()
+                    form_song = SongForm(request.user)
                     context = {
                         'form': form,
                         'form_song': form_song,
@@ -38,7 +39,7 @@ def addAlbum(request):
             query = Album.objects.filter(artist=artist).filter(album_title=album_title).filter(user=request.user)
             if query.exists():
                 form = AlbumForm()
-                form_song = SongForm()
+                form_song = SongForm(request.user)
                 context = {
                     'form': form,
                     'form_song': form_song,
@@ -47,9 +48,14 @@ def addAlbum(request):
                 return render(request, 'upload_app/uploadPage.html', context)
             else:
                 album.save()
+                post_instance = Post()
+                post_instance.post_type = 'album'
+                post_instance.post_album = album
+                post_instance.post_user = request.user
+                post_instance.save()
                 return redirect('profile_app:profile-view')
 
-        form_song = SongForm(request.POST, request.FILES)
+        form_song = SongForm(request.user, request.POST, request.FILES)
         if form_song.is_valid():
             song = form_song.save(commit=False)
             song.user = request.user
@@ -59,7 +65,7 @@ def addAlbum(request):
             file_type = file_type.lower()
             if file_type not in AUDIO_FILE_TYPES:
                 form = AlbumForm()
-                form_song = SongForm()
+                form_song = SongForm(request.user)
                 context = {
                     'form': form,
                     'form_song': form_song,
@@ -73,7 +79,7 @@ def addAlbum(request):
             query = Song.objects.filter(album_id=album_id).filter(song_file=song_file)
             if query.exists():
                 form = AlbumForm()
-                form_song = SongForm()
+                form_song = SongForm(request.user)
                 context = {
                     'form': form,
                     'form_song': form_song,
@@ -82,11 +88,16 @@ def addAlbum(request):
                 return render(request, 'upload_app/uploadPage.html', context)
             else:
                 song.save()
+                post_instance = Post()
+                post_instance.post_type = 'song'
+                post_instance.post_song = song
+                post_instance.post_user = request.user
+                post_instance.save()
                 return redirect('profile_app:profile-view')
 
     else:
         form = AlbumForm()
-        form_song = SongForm()
+        form_song = SongForm(request.user)
     context = {
         'form': form,
         'form_song': form_song

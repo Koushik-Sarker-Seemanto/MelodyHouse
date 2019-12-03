@@ -10,5 +10,8 @@ urlpatterns = [
     path('profile/', views.ProfileView, name='profile-view'),
     path('update/', views.ProfileUpdate, name='profile-update'),
     path('playlist/', views.Playlist, name='playlist'),
+    path('people/<int:pk>/', views.PeopleProfile, name='people-profile'),
+    path('myuploads/', views.MyUploads, name='my_uploads'),
+    path('myuploads/<int:pk>/', views.MyUploadedAlbum, name='my_album_songs'),
 
 ]

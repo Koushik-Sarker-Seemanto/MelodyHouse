@@ -40,6 +40,14 @@
     {{ user.name }}
 {% endblock %}
 
+{% block Home %}
+<li class="nav-item">
+    <a class="nav-link" href="{% url 'profile_app:profile-view' %}">
+        <i class="fa fa-fw fa-user"></i>Profile <span class="sr-only">(current)</span>
+    </a>
+</li>
+{% endblock %}
+
 
 {% block body %}
 
@@ -105,7 +113,6 @@
 
 
 
-
     <div class="container d-flex justify-content-center col-md-12" style="margin-top: 40px">
 
     {# Left Side Bar           START #}
@@ -165,8 +172,29 @@
 
 {#        Main Posts             #}
         <div class="col-md-6">
-            {% for album in albums %}
-            <div class="col-md-12 d-flex justify-content-center">
+
+             <div class="container justify-content-center">
+            {% if error == "Already in Playlist" %}
+                <div class="alert alert-danger alert-dismissible fade show d-flex justify-content-center">
+                    <strong>Failure : </strong> {{ error }}
+                    <button type="button" class="close" data-dismiss="alert">&times;
+                    </button>
+                </div>
+            {% elif error == "Added to Playlist" %}
+                <div class="alert alert-success alert-dismissible fade show d-flex justify-content-center">
+                    <strong>Success : </strong> {{ error }}
+                    <button type="button" class="close" data-dismiss="alert">&times;
+                    </button>
+                </div>
+            {% endif %}
+            </div>
+
+
+
+            {% for posts in post %}
+
+            {% if posts.post_type == 'album' %}
+                <div class="col-md-12 d-flex justify-content-center">
                 <div class="post col-md-12" style="background: #fff">
                     <div class="tb" style="display: flex">
                         <div>
@@ -175,33 +203,105 @@
 
                         <div class="td p-r-hdr">
                             <div class="p-u-info">
-                                <a href="#">{{ user.name }}</a> created an Album: <a href="#"> {{ album }}</a>
+                                <a href="{% url 'profile_app:people-profile' posts.post_user.id %}">{{ posts.post_user.name }}</a> created an Album: <a href="#"> {{ posts.post_album }}</a>
                             </div>
                             <div class="p-dt">
                                 <i class="material-icons">calendar_today</i>
-                                <span id="current_date">{{ album.date_time }}</span>
+                                <span id="current_date">{{ posts.post_album.date_time }}</span>
                             </div>
                         </div>
                         <div class="td p-opt"><i class="material-icons">keyboard_arrow_down</i></div>
                     </div>
-                    {% if album.description %}
+                    {% if posts.post_album.description %}
                     <p class="embed-responsive" style="padding-top: 10px">
-                        {{ album.description }}
+                        {{ posts.post_album.description }}
                     </p>
                     {% endif %}
                     <a href="#" class="p-cnt-v" >
-                        <img class="embed-responsive" style="padding-top: 10px" src='{{ album.album_logo.url }}'>
+                        <img class="embed-responsive" style="padding-top: 10px" src='{{ posts.post_album.album_logo.url }}'>
                     </a>
                     <div>
-                        <div class="p-acts" style="margin-top: 10px">
-                            <div class="p-act like"><i class="material-icons">thumb_up_alt</i><span>25</span></div>
-                            <div class="p-act comment"><i class="material-icons">comment</i><span>1</span></div>
-                            <div class="p-act share"><i class="material-icons">reply</i></div>
+                        <h5 style="margin-top: 10px;color: #a3a6aa"> <i class="fa fa-fw fa-thumbs-up"></i> 54</h5>
+
+                        <div class="d-flex align-items-center" style="margin-top: 10px;">
+                            <button class="btn btn-outline-primary" style="width: 100%">
+                                <i class="fa fa-fw fa-thumbs-up"></i>Like
+                            </button>
+
+                        </div>
+
+{#                        <div class="p-acts" style="margin-top: 10px">#}
+{#                            <div class="p-act like"><i class="material-icons">thumb_up_alt</i><span>23</span></div>#}
+{#                            <div class="p-act comment"><i class="material-icons">comment</i><span>1</span></div>#}
+{#                            <div class="p-act share"><i class="material-icons">reply</i></div>#}
+{#                        </div>#}
+                    </div>
+                </div>
+                </div>
+            {% elif posts.post_type == 'song' %}
+
+
+
+
+
+                <div class="col-md-12 d-flex justify-content-center">
+                <div class="post col-md-12" style="background: #fff">
+                    <div class="tb" style="display: flex">
+                        <div>
+                            <a href="#" class="td p-p-pic"><img src='{% static 'resource/profile_photo.png' %}'></a>
+                        </div>
+
+                        <div class="td p-r-hdr">
+                            <div class="p-u-info">
+                                <a href="{% url 'profile_app:people-profile' posts.post_user.id %}">{{ posts.post_user.name }}</a> created a Song: <a href="#"> {{ posts.post_song }}</a>
+                            </div>
+                            <div class="p-dt">
+                                <i class="material-icons">calendar_today</i>
+                                <span id="current_date">{{ posts.post_song.date_time }}</span>
+                            </div>
+                        </div>
+                        <div class="td p-opt"><i class="material-icons">keyboard_arrow_down</i></div>
+                    </div>
+                    {% if posts.post_song.description %}
+                    <p class="embed-responsive" style="padding-top: 10px">
+                        {{ posts.post_song.description }}
+                    </p>
+                    {% endif %}
+
+
+                    <a href="#" class="p-cnt-v" >
+                        <img class="embed-responsive" style="padding-top: 10px" src='{{ posts.post_song.album_id.album_logo.url }}'>
+                    </a>
+
+
+                    <audio controls style="width: 100%;margin-top: 5px">
+                        <source src="{{ posts.post_song.song_file.url }}" type="audio/mpeg">
+                    </audio>
+
+
+                    <div>
+                        <h5 style="margin-top: 10px;color: #a3a6aa"> <i class="fa fa-fw fa-thumbs-up"></i> 54</h5>
+
+                        <div class="d-flex align-items-center" style="margin-top: 10px;">
+                            <button class="btn btn-outline-primary" style="width: 50%">
+                                <i class="fa fa-fw fa-thumbs-up"></i>Like
+                            </button>
+{#                            <h6 style="margin: 10px"></h6>#}
+                            <form action="" method="POST" enctype="multipart/form-data" style="width: 50%">
+                                {% csrf_token %}
+                                <input style="display: none" type="text" name="song_id" value="{{ posts.post_song.id }}">
+                                <button name="add_to_playlist" value="add_to_playlist" style="width: 100%" class="btn btn-outline-primary" >
+                                    <i class="fa fa-fw fa-thumbs-up"></i>Add to playlist
+                                </button>
+                            </form>
+
                         </div>
                     </div>
                 </div>
-            </div>
-            {% endfor %}
+                </div>
+            {% endif %}
+
+        {% endfor %}
         </div>
 
 
