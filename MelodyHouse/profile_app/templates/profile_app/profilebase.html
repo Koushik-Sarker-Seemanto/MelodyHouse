@@ -46,19 +46,21 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
+            {% block Home %}
             <li class="nav-item">
                 <a class="nav-link" href="{% url 'profile_app:news-feed' %}">
                     <i class="fa fa-fw fa-home"></i>Home <span class="sr-only">(current)</span>
                 </a>
             </li>
+            {% endblock %}
             <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <i class="fa fa-fw fa-music"></i>&nbsp;Stream
+                <a class="nav-link" href="{% url 'profile_app:playlist' %}">
+                    <i class="fa fa-fw fa-music"></i>&nbsp;Playlist
                 </a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <i class="fa fa-fw fa-book"></i> Library
+            <li class="nav-item" style="margin-right: 20px">
+                <a class="nav-link" href="{% url 'friends:ViewFriends' %}">
+                    <i class="fa fa-fw fa-users"></i> Friends
                 </a>
             </li>
             <li class="nav-item">
@@ -70,9 +72,9 @@
             </li>
         </ul>
 
-        <ul class="navbar-nav ml-auto">
+        <ul class="navbar-nav ml-auto" style="margin-right: 100px">
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i class="fa fa-fw fa-user"></i>
                     {% block UserName %}
                     User Name
@@ -81,32 +83,35 @@
 
                 <div class="dropdown-menu dropdown-content" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="{% url 'profile_app:profile-view' %}"> <i class="fa fa-fw fa-user-circle"></i> PROFILE</a>
-                    <a class="dropdown-item" href="#"> <i class="fa fa-fw fa-play"></i> PLAYLIST</a>
-                    <a class="dropdown-item" href="#"> <i class="fa fa-fw fa-users"></i> FRIENDS</a>
+                    <a class="dropdown-item" href="{% url 'profile_app:profile-update' %}"><i class="fa fa-fw fa-edit"></i>UPDATE</a>
+                    <a class="dropdown-item" href="{% url 'profile_app:playlist' %}"> <i class="fa fa-fw fa-play"></i> PLAYLIST</a>
+                    <a class="dropdown-item" href="{% url 'profile_app:my_uploads' %}"> <i class="fa fa-fw fa-cloud-upload"></i> MY UPLOADS</a>
+                    <a class="dropdown-item" href="{% url 'friends:ViewFriends' %}"> <i class="fa fa-fw fa-users"></i> FRIENDS</a>
+                    <a class="dropdown-item" href="{% url 'upload_app:add-album' %}"><i class="fa fa-fw fa-upload"></i>UPLOAD</a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="{% url 'authentication:signout' %}"> <i class="fa fa-fw fa-sign-out"></i> SIGN OUT</a>
                 </div>
             </li>
 
-            <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <i class="fa fa-fw fa-envelope"></i> Messages
-                </a>
-            </li>
+{#            <li class="nav-item">#}
+{#                <a class="nav-link" href="#">#}
+{#                    <i class="fa fa-fw fa-envelope"></i> Messages#}
+{#                </a>#}
+{#            </li>#}
 
-            <li class="nav-item dropdown" style="margin-right: 100px">
-                <a class="nav-link dropBtn">
-                    <i class="fa fa-fw fa-bars"></i>
-                </a>
-                <div class="dropdown-menu dropdown-content" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#"> <i class="fa fa-fw fa-user-circle"></i> Profile</a>
-                    <a class="dropdown-item" href="#"> <i class="fa fa-fw fa-thumbs-up"></i> Likes</a>
-                    <a class="dropdown-item" href="#"> <i class="fa fa-fw fa-play"></i> PlayList</a>
-                    <a class="dropdown-item" href="#"> <i class="fa fa-fw fa-users"></i> Friends</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#"> <i class="fa fa-fw fa-sign-out"></i> Log Out</a>
-                </div>
-            </li>
+{#            <li class="nav-item dropdown" style="margin-right: 100px">#}
+{#                <a class="nav-link dropBtn">#}
+{#                    <i class="fa fa-fw fa-bars"></i>#}
+{#                </a>#}
+{#                <div class="dropdown-menu dropdown-content" aria-labelledby="navbarDropdown">#}
+{#                    <a class="dropdown-item" href="#"> <i class="fa fa-fw fa-user-circle"></i> Profile</a>#}
+{#                    <a class="dropdown-item" href="#"> <i class="fa fa-fw fa-thumbs-up"></i> Likes</a>#}
+{#                    <a class="dropdown-item" href="#"> <i class="fa fa-fw fa-play"></i> PlayList</a>#}
+{#                    <a class="dropdown-item" href="#"> <i class="fa fa-fw fa-users"></i> Friends</a>#}
+{#                    <div class="dropdown-divider"></div>#}
+{#                    <a class="dropdown-item" href="#"> <i class="fa fa-fw fa-sign-out"></i> Log Out</a>#}
+{#                </div>#}
+{#            </li>#}
 
 
         </ul>
@@ -123,10 +128,10 @@
 
 </body>
 
-<footer style="position: fixed;left: 0px;bottom: 0px;width: 100%">
-    <audio controls style="width: 100%">
-        <p>{{ song }}</p>
-        <source src="{{ song.song_file.url }}" type="audio/mpeg">
-    </audio>
-</footer>
+{#<footer style="position: fixed;left: 0px;bottom: 0px;width: 100%">#}
+{#    <audio controls style="width: 100%">#}
+{#        <p>{{ song }}</p>#}
+{#        <source src="{{ song.song_file.url }}" type="audio/mpeg">#}
+{#    </audio>#}
+{#</footer>#}
 </html>

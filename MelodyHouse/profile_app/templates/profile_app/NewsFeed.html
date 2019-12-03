@@ -40,6 +40,14 @@
     {{ user.name }}
 {% endblock %}
 
+{% block Home %}
+<li class="nav-item">
+    <a class="nav-link" href="{% url 'profile_app:profile-view' %}">
+        <i class="fa fa-fw fa-user"></i>Profile <span class="sr-only">(current)</span>
+    </a>
+</li>
+{% endblock %}
+
 
 {% block body %}
 
