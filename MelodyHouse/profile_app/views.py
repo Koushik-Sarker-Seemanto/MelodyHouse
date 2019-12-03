@@ -57,8 +57,21 @@ def ProfileUpdate(request):
 def Playlist(request):
     user = request.user
     songs = PlayList.objects.filter(playlist_user=user)
-    # songs = Song.objects.filter(user=user)
+
+    if request.POST.get('remove_from_playlist') == "remove_from_playlist":
+        song_id = request.POST['song_id']
+        song = PlayList.objects.get(id=song_id)
+        song.delete()
+
+        context = {
+            'error': song.playlist_song.song_title + " has been removed from your playlist",
+            'songs': songs,
+            'user': user
+        }
+        return render(request, 'profile_app/PlayList.html', context)
+
     context = {
+        'error': '',
         'songs': songs,
         'user': user
     }
