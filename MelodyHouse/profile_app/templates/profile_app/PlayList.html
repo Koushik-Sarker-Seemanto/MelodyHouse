@@ -17,6 +17,15 @@
         <h1 class="justify-content-center" style="margin-top: 80px">My Playlist</h1>
     </div>
 
+    {% if error %}
+        <div class="alert alert-danger alert-dismissible fade show d-flex justify-content-center">
+            <strong>Success : </strong>  {{ error }}
+            <button type="button" class="close" data-dismiss="alert">&times;
+            </button>
+        </div>
+     {% endif %}
+
+
     <div class="container" style="margin-top: 30px">
 
         <div class="row" >
@@ -24,18 +33,10 @@
         {% for song in songs %}
             <div class="col-md-3 mt-2 mb-2" >
                 <div class="" style="padding: 20px;border-radius: 10px;background: #c5c5c5;">
-                    <div class="d-flex justify-content-between align-items-center">
+                    <div class="">
                         <div class="p" style="overflow: hidden">
                             {{ song.playlist_song.song_title }}
                         </div>
-
-                        <div class="ml-auto">
-                            <a class="" target="_blank" href="{{ song.playlist_song.song_file.url }}">
-                            <button type="button" class="btn btn-success ">
-                                <span class="glyphicon glyphicon-play"></span>&nbsp; Play
-                            </button>
-                            </a>
-                        </div><br>
                     </div>
                     <a href="#" class="p-cnt-v" >
                         <img class="embed-responsive" style="padding-top: 10px" src='{{ song.playlist_song.album_id.album_logo.url }}'>
@@ -43,6 +44,30 @@
                     <audio controls style="width: 100%;margin-top: 10px">
                         <source src="{{ song.playlist_song.song_file.url }}" type="audio/mpeg">
                     </audio>
+
+                    <div class="d-flex">
+                        <div class="" >
+                            <a class="" target="_blank"  href="{{ song.playlist_song.song_file.url }}">
+                            <button type="button" class="btn btn-outline-success">
+                                 <i class="fa fa-fw fa-play"></i>Play
+                            </button>
+                            </a>
+                        </div>
+                        <hr>
+{#                        <div>#}
+{#                            <button class="btn btn-outline-danger">Remove</button>#}
+{#                        </div>#}
+
+                        <form action="" method="POST" enctype="multipart/form-data" style="width: 50%">
+                            {% csrf_token %}
+                            <input style="display: none" type="text" name="song_id" value="{{ song.id}}">
+                            <button name="remove_from_playlist" value="remove_from_playlist" style="width: 100%" class="btn btn-outline-danger" >
+                                <i class="fa fa-fw fa-trash"></i>Remove
+                            </button>
+                        </form>
+
+
+                    </div>
                 </div>
 
             </div>
