@@ -158,3 +158,33 @@ def PeopleProfile(request, pk):
         "user": user,
     }
     return render(request, 'profile_app/peopleProfile.html', context)
+
+
+@login_required(login_url='/signin/')
+def MyUploads(request):
+    user = request.user
+    albums = Album.objects.filter(user=request.user)
+    songs = Song.objects.filter(user=request.user)
+
+    context = {
+        'songs': songs,
+        'albums': albums,
+        'user': user,
+    }
+    return render(request, 'profile_app/MyUploads.html', context)
+
+
+@login_required(login_url='/signin/')
+def MyUploadedAlbum(request, pk):
+    user = request.user
+    current_album = Album.objects.get(id=pk)
+    albums = Album.objects.filter(user=request.user)
+    songs = Song.objects.filter(user=request.user).filter(album_id=current_album)
+
+    context = {
+        'current_album': current_album,
+        'songs': songs,
+        'albums': albums,
+        'user': user,
+    }
+    return render(request, 'profile_app/MyUploads.html', context)
