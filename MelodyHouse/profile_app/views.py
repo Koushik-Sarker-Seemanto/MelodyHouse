@@ -88,6 +88,28 @@ def NewsFeedView(request):
     myFriend = Friend.objects.friends(user)
     myFriend = list(myFriend)
 
+    mylist = PlayList.objects.filter(playlist_user=request.user)
+    mylist = list(mylist)
+
+    allpost = Post.objects.all()
+    allpost = allpost.all().order_by("-date_time")
+    allpost = list(allpost)
+
+    for item in allpost:
+        temp_post = item.post_song_id
+        for myitem in mylist:
+            temp_list = myitem.playlist_song_id
+            if temp_post == temp_list:
+                item.check_playlist = "1"
+                item.save()
+                print("Macthhhhhhhhhhhhhhhhhhhhhhhhh" + item.post_song.song_title)
+                break
+            elif temp_post != temp_list:
+                if temp_post:
+                    print("settttttt 000000000" + item.post_song.song_title)
+                item.check_playlist = "0"
+                item.save()
+
     if myFriend:
         result = Post.objects.all()
         result_elms = []
@@ -102,6 +124,10 @@ def NewsFeedView(request):
     if request.POST.get('add_to_playlist') == "add_to_playlist":
         song_id = request.POST['song_id']
         print(song_id)
+
+        temp_check = Post.objects.get(post_song_id=song_id)
+        temp_check.check_playlist = "1"
+        temp_check.save()
 
         song = Song.objects.get(id=song_id)
         song_exist = PlayList.objects.filter(playlist_song=song).filter(playlist_user=request.user)
@@ -119,6 +145,24 @@ def NewsFeedView(request):
             playlist_instance.playlist_song = song
             playlist_instance.playlist_user = request.user
             playlist_instance.save()
+
+            # mylist = PlayList.objects.filter(playlist_user=request.user)
+            # mylist = list(mylist)
+            #
+            # allpost = Post.objects.all()
+            # allpost = allpost.all().order_by("-date_time")
+            # allpost = list(allpost)
+            #
+            # for item in allpost:
+            #     temp_post = item.post_song_id
+            #     for myitem in mylist:
+            #         temp_list = myitem.playlist_song_id
+            #         if temp_post == temp_list:
+            #             item.check_playlist = "1"
+            #             item.save()
+            #         else:
+            #             item.check_playlist = "0"
+            #             item.save()
 
             context = {
                 "error": "Added to Playlist",
