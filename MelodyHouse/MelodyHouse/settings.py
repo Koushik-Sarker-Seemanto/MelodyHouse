@@ -48,7 +48,12 @@ INSTALLED_APPS = [
     'friendship',
 
     'crispy_forms',
+
+    'django.contrib.sites',
 ]
+
+SITE_ID = 1
+
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
