@@ -208,7 +208,7 @@
 
                         <div class="td p-r-hdr">
                             <div class="p-u-info">
-                                <a href="{% url 'profile_app:people-profile' posts.post_user.id %}">{{ posts.post_user.name }}</a> created an Album: <a href="#"> {{ posts.post_album }}</a>
+                                <a href="{% url 'profile_app:people-profile' posts.post_user.id %}">{{ posts.post_user.name }}</a> created an Album: <a href="{% url 'profile_app:single-album' posts.post_album.id %}"> {{ posts.post_album }}</a>
                             </div>
                             <div class="p-dt">
                                 <i class="material-icons">calendar_today</i>
@@ -288,22 +288,22 @@
                         <h5 style="margin-top: 10px;color: #a3a6aa"> <i class="fa fa-fw fa-thumbs-up"></i> 54</h5>
 
                         <div class="d-flex align-items-center" style="margin-top: 10px;">
-                            <button class="btn btn-outline-primary" style="width: 50%">
+                            <button class="btn btn-primary" style="width: 50%">
                                 <i class="fa fa-fw fa-thumbs-up"></i>Like
                             </button>
-{#                            <h6 style="margin: 10px"></h6>#}
+                            <h6 style="margin: 10px"></h6>
                             <form action="" method="POST" enctype="multipart/form-data" style="width: 50%">
                                 {% csrf_token %}
                                 <input style="display: none" type="text" name="song_id" value="{{ posts.post_song.id }}">
 
                                 {% if posts.check_playlist == "0" %}
 
-                                    <button name="add_to_playlist" value="add_to_playlist" style="width: 100%" class="btn btn-outline-primary" >
+                                    <button name="add_to_playlist" value="add_to_playlist" style="width: 100%" class="btn btn-primary" >
                                         <i class="fa fa-fw fa-thumbs-up"></i>Add to playlist
                                     </button>
 
                                 {% elif posts.check_playlist == "1" %}
-                                    <button name="add_to_playlist" value="add_to_playlist" style="width: 100%" class="btn btn-outline-danger" >
+                                    <button name="add_to_playlist" value="add_to_playlist" style="width: 100%" class="btn btn-danger disabled" >
                                         <i class="fa fa-fw fa-thumbs-up"></i>Already in List
                                     </button>
                                 {% endif %}

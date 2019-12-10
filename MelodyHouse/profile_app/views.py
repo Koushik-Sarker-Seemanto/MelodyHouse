@@ -232,3 +232,17 @@ def MyUploadedAlbum(request, pk):
         'user': user,
     }
     return render(request, 'profile_app/MyUploads.html', context)
+
+
+@login_required(login_url='/signin/')
+def SingleAlbum(request, pk):
+    user = request.user
+    album = Album.objects.get(id=pk)
+    songs = Song.objects.filter(album_id=album)
+
+    context = {
+        'songs': songs,
+        'albums': album,
+        'user': user,
+    }
+    return render(request, 'profile_app/SingleAlbum.html', context)
