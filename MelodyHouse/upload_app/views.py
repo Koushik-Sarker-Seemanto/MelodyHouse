@@ -4,7 +4,7 @@ from django.shortcuts import redirect, render, HttpResponse
 from generic.helper import decode as token_decode
 from generic.service import verify_email
 from authentication.models import Account
-from  profile_app.models import Post
+from profile_app.models import Post
 from upload_app.models import Album, Song
 from upload_app.forms import AlbumForm, SongForm
 
