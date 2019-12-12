@@ -9,7 +9,6 @@ from profile_app.forms import ProfileUpdateForm
 from django.db.models import Q
 from friendship.models import Friend, Follow, Block, FriendshipRequest
 
-
 @login_required(login_url='/signin/')
 def SearchResult(request):
     search_key = request.GET.get('search_field')
