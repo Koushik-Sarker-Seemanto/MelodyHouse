@@ -7,7 +7,7 @@ from profile_app.models import Post,PlayList
 from authentication.models import Account
 from generic.service import verify_email
 from profile_app.forms import ProfileUpdateForm
-from friendship.models import Friend
+from friendship.models import Friend, FriendshipRequest
 from django.db.models import Q
 
 
@@ -188,6 +188,17 @@ def PeopleProfile(request, pk):
     user = request.user
     view_user = Account.objects.get(id=pk)
     print(view_user)
+    check_friend = Friend.objects.are_friends(request.user, view_user)
+    friend_checking = "x"
+
+    if check_friend == True:
+        friend_checking = "1"
+    else:
+        friend_checking = "0"
+
+    sent_request = FriendshipRequest.objects.filter(from_user=request.user).filter(to_user=view_user)
+    if sent_request:
+        friend_checking = "pending"
 
     post = Post.objects.filter(post_user=view_user)
     post = post.all().order_by('-date_time')
@@ -195,11 +206,49 @@ def PeopleProfile(request, pk):
     albums = Album.objects.filter(user=view_user)
     side_albums = albums.all().order_by('-date_time')[:4]
 
+    if request.POST.get('add_friend') == "add_friend":
+        user_id = request.POST['user_id']
+        print(user_id)
+        other_user = Account.objects.get(pk=user_id)
+        Friend.objects.add_friend(
+            request.user,  # The sender
+            other_user,  # The recipient
+            message='Hi! I would like to add you')
+        sent_request = FriendshipRequest.objects.filter(from_user=request.user).filter(to_user=view_user)
+        if sent_request:
+            friend_checking = "pending"
+
+        context = {
+            "friend_checking": friend_checking,
+            "post": post,
+            "side_albums": side_albums,
+            "view_user": view_user,
+            "user": user,
+            "error": "Friend request sent!!!"
+        }
+        return render(request, 'profile_app/peopleProfile.html', context)
+    if request.POST.get('un_friend') == "un_friend":
+        user_id = request.POST['user_id']
+        print(user_id)
+        other_user = Account.objects.get(pk=user_id)
+        Friend.objects.remove_friend(request.user, other_user)
+        context = {
+            "friend_checking": friend_checking,
+            "post": post,
+            "side_albums": side_albums,
+            "view_user": view_user,
+            "user": user,
+            "error": "Un-friend user!!!"
+        }
+        return render(request, 'profile_app/peopleProfile.html', context)
+
     context = {
+        "friend_checking": friend_checking,
         "post": post,
         "side_albums": side_albums,
         "view_user": view_user,
         "user": user,
+        "error": "",
     }
     return render(request, 'profile_app/peopleProfile.html', context)
 

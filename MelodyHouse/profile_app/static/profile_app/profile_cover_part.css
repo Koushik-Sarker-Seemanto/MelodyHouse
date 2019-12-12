@@ -89,6 +89,18 @@
     border-radius: 2px;
 }
 
+/*.ADD_FRIEND :hover{*/
+/*    background: #5cb85c;*/
+/*    border-radius: 3px;*/
+/*    color: #ffffff;*/
+/*}*/
+
+/*.UN_FRIEND :hover{*/
+/*    background: #d9534f;*/
+/*    border-radius: 3px;*/
+/*    color: #ffffff;*/
+/*}*/
+
 .m-btn i
 {
     font-size: 16px;

@@ -29,14 +29,47 @@
                 <div id="u-name">{{ view_user.name }}</div>
                 <div id="u-fav_genre">{{ view_user.fav_genre }}</div>
                 <div class="tb" id="m-btns" style="display: flex">
-                    <div class="td">
-                        <div class="m-btn"><i class="material-icons">format_list_bulleted</i><span>Activity log</span></div>
-                    </div>
-                    <div class="td">
-                        <div class="m-btn"><i class="material-icons">lock</i><span>Privacy</span></div>
-                    </div>
+
+                    {% if friend_checking == "0" %}
+
+                        <div class="td ADD_FRIEND" style="margin-left: 60px">
+                            <form method="POST" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                <input style="display: none" type="text" name="user_id" value="{{ view_user.id }}">
+                                <button name="add_friend" value="add_friend" class="btn btn-success" >
+                                    <i class="fa fa-fw fa-user-plus"></i> Add Friend
+                                </button>
+
+                            </form>
+                        </div>
+
+                    {% elif friend_checking == "1" %}
+
+                        <div class="td UN_FRIEND" style="margin-left: 60px">
+                            <form method="POST" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                <input style="display: none" type="text" name="user_id" value="{{ view_user.id }}">
+                                <button name="un_friend" value="un_friend" class="btn btn-danger" >
+                                    <i class="fa fa-fw fa-user-times"></i> Unfriend
+                                </button>
+                            </form>
+                        </div>
+
+                    {% elif friend_checking == "pending" %}
+
+                        <div class="td UN_FRIEND" style="margin-left: 0px">
+                            <form method="POST" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                <input style="display: none" type="text" name="user_id" value="{{ view_user.id }}">
+                                <button name="un_friend" value="un_friend" class="btn btn-secondary" >
+                                    <i class="fa fa-fw fa-user-plus"></i> Friend request sent
+                                </button>
+                            </form>
+                        </div>
+
+                    {% endif %}
+
                 </div>
-                <div id="edit-profile"><i class="fa fa-fw fa-camera"></i></div>
             </div>
             <div id="black-grd"></div>
         </div>
@@ -131,6 +164,22 @@
 
 {#        Main Posts             #}
         <div class="col-md-6">
+
+         <div class="container justify-content-center">
+        {% if error == "Un-friend user!!!" %}
+            <div class="alert alert-danger alert-dismissible fade show d-flex justify-content-center">
+                <strong>Failure : </strong> {{ error }}
+                <button type="button" class="close" data-dismiss="alert">&times;
+                </button>
+            </div>
+        {% elif error == "Friend request sent!!!" %}
+            <div class="alert alert-success alert-dismissible fade show d-flex justify-content-center">
+                <strong>Success : </strong> {{ error }}
+                <button type="button" class="close" data-dismiss="alert">&times;
+                </button>
+            </div>
+        {% endif %}
+        </div>
 
         {% for posts in post %}
 
