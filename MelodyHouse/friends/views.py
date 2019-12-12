@@ -48,6 +48,8 @@ def ViewFriends(request):
             )
             friend_request.reject()
 
+            friend_request.delete()
+
             peoples = Friend.objects.friends(user)
             friendship_requests = Friend.objects.unrejected_requests(user=request.user)
             context = {
