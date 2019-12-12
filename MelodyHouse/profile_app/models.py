@@ -8,9 +8,10 @@ from datetime import datetime
 class Post(models.Model):
     post_user = models.ForeignKey(Account, on_delete=models.CASCADE)
     post_album = models.ForeignKey(Album, on_delete=models.CASCADE, blank=True, null=True)
-    post_song = models.ForeignKey(Song, on_delete=models.CASCADE, blank=True,null=True)
+    post_song = models.ForeignKey(Song, on_delete=models.CASCADE, blank=True, null=True)
     date_time = models.DateTimeField(default=datetime.now)
     post_type = models.CharField(max_length=15)
+    check_playlist = models.CharField(max_length=2, default="0")
 
     def __str__(self):
         return self.post_type+" - "+str(self.post_user)

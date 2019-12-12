@@ -103,7 +103,7 @@
                         <div class="col-md-6 " >
                             <div class="thumbnail">
                                 {% if album.album_logo %}
-                                    <a href="#">
+                                    <a href="{% url 'profile_app:single-album' album.id  %}">
                                         <img src="{{ album.album_logo.url }}" class="embed-responsive" >
                                     </a>
                                 {% else %}

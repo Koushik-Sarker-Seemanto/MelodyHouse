@@ -4,8 +4,7 @@
 {% block title %}
     <title>Profile Page</title>
 
-
-    <style>
+<style>
 
     /* Carousel base class */
     .carousel {
@@ -31,7 +30,9 @@
     }
 
 
-  </style>
+</style>
+
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Aladin" />
 
 
 {% endblock %}
@@ -49,13 +50,14 @@
 {% endblock %}
 
 
+
+
 {% block body %}
 
     <div class="col-md-9 container justify-content-center mt-2 mb-2" style="margin-top: 100px;padding: 30px">
 
 
-
-        <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="3000">
+        <div id="myCarousel" class="carousel slide carousel-fade" data-ride="carousel" data-interval="3000">
             <!-- Indicators -->
 
             <ul class="carousel-indicators">
@@ -73,8 +75,8 @@
                     <img src='{{ side_albums.0.album_logo.url }}'>
 
                     <div class="carousel-caption" style="background: #ffffff;opacity: 70%;border-radius: 30px">
-                        <h1 class="font-weight-bold" style="color: #000000">{{ side_albums.0.album_title }}</h1>
-                        <h5 class="font-weight-bold" style="color: #000000">{{ side_albums.0.artist }}</h5>
+                        <h1 class="font-weight-bold display-4" style="color: #000000;font-family: Aladin">{{ side_albums.0.album_title }}</h1>
+                        <h3 class="font-weight-bold" style="color: #000000;font-family: Aladin">{{ side_albums.0.artist }}</h3>
                     </div>
 
                 </div>
@@ -83,8 +85,8 @@
                 <div class="carousel-item">
                     <img src='{{ side_albums.1.album_logo.url }}'>
                     <div class="carousel-caption" style="background: #ffffff;opacity: 70%;border-radius: 30px">
-                        <h1 class="font-weight-bold" style="color: #000000">{{ side_albums.1.album_title }}</h1>
-                        <h5 class="font-weight-bold" style="color: #000000">{{ side_albums.1.artist }}</h5>
+                        <h1 class="font-weight-bold display-4" style="color: #000000;font-family: Aladin">{{ side_albums.1.album_title }}</h1>
+                        <h3 class="font-weight-bold" style="color: #000000;font-family: Aladin">{{ side_albums.1.artist }}</h3>
                     </div>
                 </div>
 
@@ -92,8 +94,8 @@
                 <div class="carousel-item">
                     <img src='{{ side_albums.2.album_logo.url }}' >
                     <div class="carousel-caption" style="background: #ffffff;opacity: 70%;border-radius: 30px">
-                        <h1 class="font-weight-bold" style="color: #000000">{{ side_albums.2.album_title }}</h1>
-                        <h5 class="font-weight-bold" style="color: #000000">{{ side_albums.2.artist }}</h5>
+                        <h1 class="font-weight-bold display-4" style="color: #000000;font-family: Aladin">{{ side_albums.2.album_title }}</h1>
+                        <h3 class="font-weight-bold" style="color: #000000;font-family: Aladin">{{ side_albums.2.artist }}</h3>
                     </div>
                 </div>
 
@@ -109,6 +111,9 @@
                 <span class="carousel-control-next-icon"></span>
             </a>
         </div>
+
+
+
     </div>
 
 
@@ -203,7 +208,7 @@
 
                         <div class="td p-r-hdr">
                             <div class="p-u-info">
-                                <a href="{% url 'profile_app:people-profile' posts.post_user.id %}">{{ posts.post_user.name }}</a> created an Album: <a href="#"> {{ posts.post_album }}</a>
+                                <a href="{% url 'profile_app:people-profile' posts.post_user.id %}">{{ posts.post_user.name }}</a> created an Album: <a href="{% url 'profile_app:single-album' posts.post_album.id %}"> {{ posts.post_album }}</a>
                             </div>
                             <div class="p-dt">
                                 <i class="material-icons">calendar_today</i>
@@ -283,16 +288,26 @@
                         <h5 style="margin-top: 10px;color: #a3a6aa"> <i class="fa fa-fw fa-thumbs-up"></i> 54</h5>
 
                         <div class="d-flex align-items-center" style="margin-top: 10px;">
-                            <button class="btn btn-outline-primary" style="width: 50%">
+                            <button class="btn btn-primary" style="width: 50%">
                                 <i class="fa fa-fw fa-thumbs-up"></i>Like
                             </button>
-{#                            <h6 style="margin: 10px"></h6>#}
+                            <h6 style="margin: 10px"></h6>
                             <form action="" method="POST" enctype="multipart/form-data" style="width: 50%">
                                 {% csrf_token %}
                                 <input style="display: none" type="text" name="song_id" value="{{ posts.post_song.id }}">
-                                <button name="add_to_playlist" value="add_to_playlist" style="width: 100%" class="btn btn-outline-primary" >
-                                    <i class="fa fa-fw fa-thumbs-up"></i>Add to playlist
-                                </button>
+
+                                {% if posts.check_playlist == "0" %}
+
+                                    <button name="add_to_playlist" value="add_to_playlist" style="width: 100%" class="btn btn-primary" >
+                                        <i class="fa fa-fw fa-thumbs-up"></i>Add to playlist
+                                    </button>
+
+                                {% elif posts.check_playlist == "1" %}
+                                    <button name="add_to_playlist" value="add_to_playlist" style="width: 100%" class="btn btn-danger disabled" >
+                                        <i class="fa fa-fw fa-thumbs-up"></i>Already in List
+                                    </button>
+                                {% endif %}
+
                             </form>
 
                         </div>

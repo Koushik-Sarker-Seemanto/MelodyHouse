@@ -1,0 +1,116 @@
+{% extends 'profile_app/profilebase.html' %}
+{% load static %}
+
+{% block title %}
+    <title>{{ albums.album_title }}</title>
+
+
+{% endblock %}
+
+{% block UserName %}
+    {{ user.name }}
+{% endblock %}
+
+{% block body %}
+
+<h1 class="d-flex justify-content-center" style="margin-top: 70px">
+    Individual Album
+</h1>
+
+<div class="container d-flex justify-content-center col-md-12">
+
+        {# Left Side Bar           START #}
+
+        <div class="col-md-3" style="background: #fff">
+            <div class=" col-md-12 embed-responsive" style="position: -webkit-sticky;position: sticky;top: 60px;overflow: visible;">
+
+                <div class="col-md-12 row">
+
+                    <div class="card" style="background: #eeeeee">
+                        <div class="card-header h2">
+                            Album Info
+                        </div>
+
+                        <div class="card-body">
+
+                            <div class="card-img">
+                                {% if album.album_logo %}
+                                    <a href="{% url 'profile_app:my_album_songs' album.id %}">
+                                        <img src="{{ album.album_logo.url }}" class="embed-responsive">
+                                    </a>
+                                {% else %}
+
+                                    <a href="#">
+                                        <img src='{% static 'resource/Oniket Prantor.jpg' %}' class="embed-responsive">
+                                    </a>
+
+                                {% endif %}
+                            </div>
+                            <br>
+
+                            <h3 class="card-title">{{ albums.album_title }}</h3>
+                            <p class="card-text">Uploaded By: {{ albums.user.name }}</p>
+                            <p class="card-text">{{ albums.date_time }}</p>
+                            <h5 class="card-text">Artist: {{ albums.artist }}</h5>
+                            <h5 class="card-text"> Genre: {{ albums.genre }}</h5>
+
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        {# Left Side Bar           END #}
+
+
+{#        Main Posts             #}
+        <div class="col-md-6">
+        {% if albums %}
+        <div class="d-flex justify-content-center" >
+            <h3 style="background: #343A40;padding: 10px;border-radius: 5px;color: #ffffff">Album : {{ albums.album_title }}</h3>
+        </div>
+        {% else %}
+        <div class="d-flex justify-content-center" >
+            <h3 style="background: #343A40;padding: 10px;border-radius: 5px;color: #ffffff">No Album Found</h3>
+        </div>
+        {% endif %}
+
+
+
+        {% if songs %}
+
+            {% for song in songs %}
+
+            <div class="col-md-12 d-flex justify-content-center">
+                <div class="postSONG col-md-12" style="background: #eeeeee">
+                    <div class="d-flex align-items-center">
+                        <img src="{{ song.album_id.album_logo.url }}" style="width: 30px;height: 30px;margin-right: 20px">
+                        <h3>{{ song.song_title }}</h3>
+                        <hr>
+                        <a class="" target="_blank"  href="{{ song.song_file.url }}">
+                        <button type="button" class="btn btn-outline-success">
+                             <i class="fa fa-fw fa-play"></i>Play
+                        </button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            {% endfor %}
+
+        {% else %}
+            <h2 class="justify-content-center d-flex" style="margin-top: 30px">No Song Found !!!</h2>
+        {% endif %}
+
+
+
+        </div>
+    </div>
+
+
+{% endblock %}
