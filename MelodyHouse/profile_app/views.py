@@ -60,7 +60,16 @@ def Playlist(request):
 
     if request.POST.get('remove_from_playlist') == "remove_from_playlist":
         song_id = request.POST['song_id']
+        print("Chhhhhhhhhhhhhhhecccccccccccccckkkkkkkkkkkkkkk")
+
+        print(song_id)
         song = PlayList.objects.get(id=song_id)
+
+        temp_check = Post.objects.get(post_song_id=song.playlist_song_id)
+        temp_check.check_playlist = "0"
+        temp_check.save()
+
+
         song.delete()
 
         context = {
@@ -80,9 +89,10 @@ def Playlist(request):
 
 @login_required(login_url='/signin/')
 def NewsFeedView(request):
+    print("Innnnnnniiiiiiiiiiiiiiiiiittttttttttttttttttttttttttttt")
     user = request.user
     albums = Album.objects.all()
-    side_albums = albums.all().order_by('-date_time')[:3]
+    side_albums = albums.all().order_by('-date_time')[:4]
     side_albums = list(side_albums)
 
     myFriend = Friend.objects.friends(user)
@@ -102,11 +112,8 @@ def NewsFeedView(request):
             if temp_post == temp_list:
                 item.check_playlist = "1"
                 item.save()
-                print("Macthhhhhhhhhhhhhhhhhhhhhhhhh" + item.post_song.song_title)
                 break
             elif temp_post != temp_list:
-                if temp_post:
-                    print("settttttt 000000000" + item.post_song.song_title)
                 item.check_playlist = "0"
                 item.save()
 
@@ -121,19 +128,31 @@ def NewsFeedView(request):
         post = Post.objects.all()
         post = post.all().order_by("-date_time")
 
+    friends_album = list()
+
+    for temp in post:
+        if temp.post_type == "album":
+            friends_album.append(temp)
+
+    friends_album = friends_album[0:6]
+
     if request.POST.get('add_to_playlist') == "add_to_playlist":
+        print("Add button clickedddddddddddddddddddddddddddddddddddddddd")
         song_id = request.POST['song_id']
         print(song_id)
 
         temp_check = Post.objects.get(post_song_id=song_id)
         temp_check.check_playlist = "1"
         temp_check.save()
+        print("DATA savedddddddddddddddddddddddd toooooooooooooooo DDDDDDDDDBBBBB")
+        print(temp_check.check_playlist)
 
         song = Song.objects.get(id=song_id)
         song_exist = PlayList.objects.filter(playlist_song=song).filter(playlist_user=request.user)
 
         if song_exist.exists():
             context = {
+                "friends_album": friends_album,
                 "error": "Already in Playlist",
                 'side_albums': side_albums,
                 'post': post,
@@ -146,25 +165,8 @@ def NewsFeedView(request):
             playlist_instance.playlist_user = request.user
             playlist_instance.save()
 
-            # mylist = PlayList.objects.filter(playlist_user=request.user)
-            # mylist = list(mylist)
-            #
-            # allpost = Post.objects.all()
-            # allpost = allpost.all().order_by("-date_time")
-            # allpost = list(allpost)
-            #
-            # for item in allpost:
-            #     temp_post = item.post_song_id
-            #     for myitem in mylist:
-            #         temp_list = myitem.playlist_song_id
-            #         if temp_post == temp_list:
-            #             item.check_playlist = "1"
-            #             item.save()
-            #         else:
-            #             item.check_playlist = "0"
-            #             item.save()
-
             context = {
+                "friends_album": friends_album,
                 "error": "Added to Playlist",
                 'side_albums': side_albums,
                 'post': post,
@@ -174,6 +176,7 @@ def NewsFeedView(request):
 
     print(post)
     context = {
+        "friends_album": friends_album,
         "error": "",
         'side_albums': side_albums,
         'post': post,
@@ -271,7 +274,7 @@ def MyUploads(request):
 def MyUploadedAlbum(request, pk):
     user = request.user
     current_album = Album.objects.get(id=pk)
-    albums = Album.objects.filter(user=request.user)
+    albums = Album.objects.filter(user=request.user)[0:6]
     songs = Song.objects.filter(user=request.user).filter(album_id=current_album)
 
     context = {

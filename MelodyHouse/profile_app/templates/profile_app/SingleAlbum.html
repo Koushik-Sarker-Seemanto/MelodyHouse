@@ -34,9 +34,9 @@
                         <div class="card-body">
 
                             <div class="card-img">
-                                {% if album.album_logo %}
-                                    <a href="{% url 'profile_app:my_album_songs' album.id %}">
-                                        <img src="{{ album.album_logo.url }}" class="embed-responsive">
+                                {% if albums.album_logo %}
+                                    <a>
+                                        <img src="{{ albums.album_logo.url }}" class="embed-responsive">
                                     </a>
                                 {% else %}
 

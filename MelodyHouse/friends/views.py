@@ -1,4 +1,4 @@
-from django.shortcuts import render,redirect,get_object_or_404
+from django.shortcuts import render,redirect, get_object_or_404
 from authentication.models import Account
 from django.contrib.auth.decorators import login_required
 from friendship.exceptions import AlreadyExistsError
@@ -14,7 +14,11 @@ def ViewFriends(request):
     print(peoples)
     print(friendship_requests)
 
+    all_users = Account.objects.all().exclude(id=request.user.id)
+    print(all_users)
+
     context = {
+        'all_users': all_users,
         'user': user,
         'peoples': peoples,
         "requests": friendship_requests,
@@ -34,6 +38,7 @@ def ViewFriends(request):
             peoples = Friend.objects.friends(user)
             friendship_requests = Friend.objects.unrejected_requests(user=request.user)
             context = {
+                'all_users': all_users,
                 'user': user,
                 'peoples': peoples,
                 "requests": friendship_requests,
@@ -53,6 +58,7 @@ def ViewFriends(request):
             peoples = Friend.objects.friends(user)
             friendship_requests = Friend.objects.unrejected_requests(user=request.user)
             context = {
+                'all_users': all_users,
                 'user': user,
                 'peoples': peoples,
                 "requests": friendship_requests,
@@ -68,6 +74,7 @@ def ViewFriends(request):
             friendship_requests = Friend.objects.unrejected_requests(user=request.user)
             peoples = Friend.objects.friends(user)
             context = {
+                'all_users': all_users,
                 'user': user,
                 'peoples': peoples,
                 'friend_requests': friendship_requests,

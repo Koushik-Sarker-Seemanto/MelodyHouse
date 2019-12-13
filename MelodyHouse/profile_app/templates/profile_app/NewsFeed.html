@@ -57,7 +57,7 @@
     <div class="col-md-9 container justify-content-center mt-2 mb-2" style="margin-top: 100px;padding: 30px">
 
 
-        <div id="myCarousel" class="carousel slide carousel-fade" data-ride="carousel" data-interval="3000">
+        <div id="myCarousel" class="carousel slide carousel-fade" data-ride="carousel" data-interval="2000">
             <!-- Indicators -->
 
             <ul class="carousel-indicators">
@@ -122,35 +122,19 @@
 
     {# Left Side Bar           START #}
 
-        <div class="col-md-3" style="background: #fff">
-            <div class="col-md-12 embed-responsive" style="position: -webkit-sticky;position: sticky;top: 60px;overflow: visible">
-                 <div class="list-group-item" style="margin-left: -20px;margin-right: 5px;">
-                     <div class="d-flex justify-content-center">
-                         <h4>About</h4>
-                     </div>
-                     <h6 class="list-group-item">Name: {{ user.name }}</h6>
-                     <h6 class="list-group-item">Genre: {{ user.fav_genre }}</h6>
-                     <h6 class="list-group-item">Phone: {{ user.phone }}</h6>
-                     <h6 class="list-group-item">Email: {{ user.email }}</h6>
-                     <h6 class="list-group-item">Gender: {{ user.gender }}</h6>
+        <div class="col-md-3" style="background: #fff;margin-bottom: 20px">
 
-                     <h6></h6>
 
-                     <a href="{% url 'profile_app:profile-update' %}" class="btn btn-secondary">Edit Profile</a>
-                     <a href="{% url 'authentication:change_password' %}" class="btn btn-secondary">Change Password</a>
-                </div>
-            </div>
-
-        <h3 class="d-flex justify-content-center" style="position: -webkit-sticky;position: sticky;top: 400px;overflow: visible">My Albums</h3>
+        <h3 class="d-flex justify-content-center" style="position: -webkit-sticky;position: sticky;top: 60px;overflow: visible">Friend's Albums</h3>
 {#                <div class="col-md-10" >#}
-                <div class="col-md-12 row"  style="position: -webkit-sticky;position: sticky;top: 440px;overflow: visible">
+                <div class="col-md-12 row"  style="position: -webkit-sticky;position: sticky;top: 100px;overflow: visible">
 
-                    {% for album in side_albums %}
+                    {% for album in friends_album %}
                         <div class="col-md-6 " >
                             <div class="thumbnail">
-                                {% if album.album_logo %}
-                                    <a href="#">
-                                        <img src="{{ album.album_logo.url }}" class="embed-responsive" >
+                                {% if album.post_album.album_logo %}
+                                    <a href="{% url 'profile_app:single-album' album.post_album.id %}">
+                                        <img src="{{ album.post_album.album_logo.url }}" class="embed-responsive" >
                                     </a>
                                 {% else %}
 
@@ -161,13 +145,26 @@
                                 {% endif %}
 
                                 <div class="caption justify-content-center">
-                                    <h6>{{ album }}</h6>
+                                    <h6>{{ album.post_album }}</h6>
                                 </div>
                             </div>
                         </div>
                     {% endfor %}
-                <a href="#">see more...</a>
                 </div>
+{#        <a href="#" style="background: #eeeeee;position: -webkit-sticky;position: sticky;top: 730px;margin-left: 15px">see more...</a>#}
+
+
+        <div class="container justify-content-center" style="background: #eeeeee;position: -webkit-sticky;position: sticky;top: 840px;padding-top: 5px;padding-bottom: 5px;border-radius: 5px">
+            <h4 class="font-weight-bold d-flex justify-content-center">Follow us on :</h4>
+            <div class="d-flex justify-content-center">
+                <i class="fa fa-fw fa-facebook-official fa-3x"></i>
+                <i class="fa fa-fw fa-twitter-square fa-3x"></i>
+                <i class="fa fa-fw fa-instagram fa-3x"></i>
+                <i class="fa fa-fw fa-linkedin-square fa-3x"></i>
+            </div>
+
+        </div>
+
 
         </div>
 
@@ -234,19 +231,11 @@
                             </button>
 
                         </div>
-
-{#                        <div class="p-acts" style="margin-top: 10px">#}
-{#                            <div class="p-act like"><i class="material-icons">thumb_up_alt</i><span>23</span></div>#}
-{#                            <div class="p-act comment"><i class="material-icons">comment</i><span>1</span></div>#}
-{#                            <div class="p-act share"><i class="material-icons">reply</i></div>#}
-{#                        </div>#}
                     </div>
                 </div>
                 </div>
+
             {% elif posts.post_type == 'song' %}
-
-
-
 
 
                 <div class="col-md-12 d-flex justify-content-center">
@@ -296,16 +285,16 @@
                                 {% csrf_token %}
                                 <input style="display: none" type="text" name="song_id" value="{{ posts.post_song.id }}">
 
-                                {% if posts.check_playlist == "0" %}
+                                {% if posts.check_playlist == "1" %}
+                                    <button name="add_to_playlist" value="add_to_playlist" style="width: 100%" class="btn btn-danger disabled" >
+                                        <i class="fa fa-fw fa-thumbs-down"></i>Already in Playlist
+                                    </button>
 
+                                {% elif posts.check_playlist == "0" %}
                                     <button name="add_to_playlist" value="add_to_playlist" style="width: 100%" class="btn btn-success" >
                                         <i class="fa fa-fw fa-thumbs-up"></i>Add to playlist
                                     </button>
 
-                                {% elif posts.check_playlist == "1" %}
-                                    <button name="add_to_playlist" value="add_to_playlist" style="width: 100%" class="btn btn-danger disabled" >
-                                        <i class="fa fa-fw fa-thumbs-up"></i>Already in Playlist
-                                    </button>
                                 {% endif %}
 
                             </form>
