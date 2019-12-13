@@ -58,7 +58,7 @@
                              <div class="td"><a id="u_link" class="a_link" href="{% url 'profile_app:playlist' %}"><i class="material-icons">headset</i><span>PLAYLIST</span></a></div>
                              <div class="td"><a id="u_link" class="a_link" href="{% url 'friends:ViewFriends' %}"><i class="material-icons">people</i><span>FRIENDS</span></a></div>
                              <div class="td"><a id="u_link" class="a_link" href="{% url 'upload_app:add-album' %}"><i class="material-icons">file_upload</i><span>UPLOAD</span></a></div>
-                             <div class="td"><a id="u_link" class="a_link" href="{% url 'friends:view-request' %}"><i class="material-icons">message</i><span>REQUESTS</span></div>
+                             <div class="td"><a id="u_link" class="a_link" href="{% url 'friends:ViewFriends' %}"><i class="material-icons">message</i><span>REQUESTS</span></div>
                              <div class="td"> <a id="u_link" class="a_link" href="{% url 'profile_app:profile-update' %}"><i class="material-icons">create</i><span>EDIT PROFILE</span></a></div>
                          </div>
                      </div>
@@ -120,8 +120,20 @@
                             </div>
                         </div>
                     {% endfor %}
-                <a href="{% url 'profile_app:my_uploads' %}">see more...</a>
+{#                <a href="{% url 'profile_app:my_uploads' %}">see more...</a>#}
                 </div>
+
+        <div class="container justify-content-center" style="background: #eeeeee;position: -webkit-sticky;position: sticky;top: 840px;padding-top: 5px;padding-bottom: 5px;border-radius: 5px">
+            <h4 class="font-weight-bold d-flex justify-content-center">Follow us on :</h4>
+            <div class="d-flex justify-content-center">
+                <i class="fa fa-fw fa-facebook-official fa-3x"></i>
+                <i class="fa fa-fw fa-twitter-square fa-3x"></i>
+                <i class="fa fa-fw fa-instagram fa-3x"></i>
+                <i class="fa fa-fw fa-linkedin-square fa-3x"></i>
+            </div>
+
+        </div>
+
 
         </div>
 
