@@ -105,12 +105,7 @@
                         </div>
                         <a href="{% url 'profile_app:people-profile' people.id%}"> <h4 style="margin-left: 60px;margin-top: 7px">{{ people.name }}</h4> </a><hr>
                         <button class="btn btn-dark disabled" style="display: block;alignment: right;margin-right: 20px"> Friends</button>
-{#                        <form method="POST" enctype="multipart/form-data">#}
-{#                            {% csrf_token %}#}
-{#                            <input style="display: none" type="text" name="user_id" value="{{ people.id }}">#}
-{#                            <button class="btn btn-dark disabled" style="display: block;alignment: right;margin-right: 20px"> Friends</button>#}
-{##}
-{#                        </form>#}
+
 
                     </div>
                 {% endfor %}
