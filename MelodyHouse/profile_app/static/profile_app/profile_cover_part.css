@@ -101,6 +101,24 @@
 /*    color: #ffffff;*/
 /*}*/
 
+.BOX_DESIGN{
+    -webkit-box-shadow: 1px 6px 46px 0px rgba(0,0,0,0.85);
+-moz-box-shadow: 1px 6px 46px 0px rgba(0,0,0,0.85);
+box-shadow: 1px 6px 46px 0px rgba(0,0,0,0.85);
+}
+
+.Music_Card{
+    -webkit-box-shadow: 10px 10px 37px -25px rgba(0,0,0,0.84);
+-moz-box-shadow: 10px 10px 37px -25px rgba(0,0,0,0.84);
+box-shadow: 10px 10px 37px -25px rgba(0,0,0,0.84);
+}
+
+.Album_Info{
+    -webkit-box-shadow: 10px 10px 37px -25px rgba(0,0,0,0.84);
+-moz-box-shadow: 10px 10px 37px -25px rgba(0,0,0,0.84);
+box-shadow: 10px 10px 37px -25px rgba(0,0,0,0.84);
+}
+
 .m-btn i
 {
     font-size: 16px;

@@ -9,9 +9,9 @@ def verify_email(request, user):
 
 	current_site = get_current_site(request)
 	context = {
-		'user' : user,
-		'domain' : current_site.domain,
-		'token' : token_encode({'user_id': user.id, 'email': user.email })
+		'user': user,
+		'domain': current_site.domain,
+		'token': token_encode({'user_id': user.id, 'email': user.email })
 	}
 
 	message = render_to_string('authentication/verify_email.html', context)

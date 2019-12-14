@@ -52,13 +52,19 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <i class="fa fa-fw fa-music"></i>&nbsp;Stream
+                <a class="nav-link" href="{% url 'profile_app:playlist' %}">
+                    <i class="fa fa-fw fa-music"></i>&nbsp;Playlist
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <i class="fa fa-fw fa-book"></i> Library
+                <a class="nav-link" href="{% url 'friends:ViewFriends' %}">
+                    <i class="fa fa-fw fa-users"></i> Friends
+                </a>
+            </li>
+
+            <li class="nav-item" style="margin-right: 20px">
+                <a class="nav-link" href="{% url 'profile_app:my_uploads' %}">
+                    <i class="fa fa-fw fa-cloud-upload"></i> My Uploads
                 </a>
             </li>
             <li class="nav-item">
@@ -123,10 +129,4 @@
 
 </body>
 
-<footer style="position: fixed;left: 0px;bottom: 0px;width: 100%">
-    <audio controls style="width: 100%">
-        <p>{{ song }}</p>
-        <source src="{{ song.song_file.url }}" type="audio/mpeg">
-    </audio>
-</footer>
 </html>

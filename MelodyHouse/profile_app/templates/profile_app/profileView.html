@@ -78,7 +78,7 @@
 
         <div class="col-md-3" style="background: #fff">
             <div class="col-md-12 embed-responsive" style="position: -webkit-sticky;position: sticky;top: 60px;overflow: visible">
-                 <div class="list-group-item" style="margin-left: -20px;margin-right: 5px;">
+                 <div class="list-group-item" style="margin-left: 0px;margin-right: 0px;">
                      <div class="d-flex justify-content-center">
                          <h4>About</h4>
                      </div>
@@ -95,9 +95,11 @@
                 </div>
             </div>
 
-        <h3 class="d-flex justify-content-center" style="position: -webkit-sticky;position: sticky;top: 400px;overflow: visible">My Albums</h3>
+        <a href="{% url 'profile_app:my_uploads' %}" class="h3 d-flex justify-content-center" style="position: -webkit-sticky;position: sticky;top: 400px;overflow: visible; background: #343A40;color: #ffffff;padding: 5px;border-radius: 3px;margin-top: 5px">
+            My Albums
+        </a>
 {#                <div class="col-md-10" >#}
-                <div class="col-md-12 row"  style="position: -webkit-sticky;position: sticky;top: 440px;overflow: visible">
+                <div class="col-md-12 row"  style="position: -webkit-sticky;position: sticky;top: 450px;overflow: visible">
 
                     {% for album in side_albums %}
                         <div class="col-md-6 " >
@@ -123,13 +125,13 @@
 {#                <a href="{% url 'profile_app:my_uploads' %}">see more...</a>#}
                 </div>
 
-        <div class="container justify-content-center" style="background: #eeeeee;position: -webkit-sticky;position: sticky;top: 840px;padding-top: 5px;padding-bottom: 5px;border-radius: 5px">
+        <div class="container justify-content-center" style="background: #eeeeee;position: -webkit-sticky;position: sticky;top: 850px;padding-top: 5px;padding-bottom: 5px;border-radius: 5px">
             <h4 class="font-weight-bold d-flex justify-content-center">Follow us on :</h4>
             <div class="d-flex justify-content-center">
-                <i class="fa fa-fw fa-facebook-official fa-3x"></i>
-                <i class="fa fa-fw fa-twitter-square fa-3x"></i>
-                <i class="fa fa-fw fa-instagram fa-3x"></i>
-                <i class="fa fa-fw fa-linkedin-square fa-3x"></i>
+                <a href="https://www.facebook.com/" target="_blank"><i class="fa fa-fw fa-facebook-official fa-3x"></i></a>
+                <a href="https://twitter.com/" target="_blank"><i class="fa fa-fw fa-twitter-square fa-3x"></i></a>
+                <a href="https://www.instagram.com/" target="_blank"><i class="fa fa-fw fa-instagram fa-3x"></i></a>
+                <a href="https://www.linkedin.com/" target="_blank"><i class="fa fa-fw fa-linkedin-square fa-3x"></i></a>
             </div>
 
         </div>

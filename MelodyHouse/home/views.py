@@ -11,7 +11,7 @@ def homeView(request):
     else:
         user = request.user
         albums = Album.objects.all()
-        side_albums = albums.all().order_by('-date_time')[:3]
+        side_albums = albums.all().order_by('-date_time')[:8]
         side_albums = list(side_albums)
 
         post = Post.objects.all()

@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block title %}
-    <title>Play List</title>
+    <title>My Uploads</title>
 
 
 {% endblock %}
@@ -32,10 +32,10 @@
 
                         <div class="col-md-6" >
                         {% if album == current_album %}
-                            <div class="thumbnail" style="background: #cce5ff">
+                            <div class="thumbnail BOX_DESIGN" style="background: #eeeeee;padding: 10px">
                                 {% if album.album_logo %}
                                     <a href="{% url 'profile_app:my_album_songs' album.id %}">
-                                        <img src="{{ album.album_logo.url }}" class="embed-responsive" style="opacity: 60%" >
+                                        <img src="{{ album.album_logo.url }}" class="embed-responsive" style="opacity: 70%" >
                                     </a>
                                 {% else %}
 
@@ -75,13 +75,13 @@
 
             </div>
 
-        <div class="container justify-content-center" style="background: #eeeeee;position: -webkit-sticky;position: sticky;top: 840px;padding-top: 5px;padding-bottom: 5px;border-radius: 5px">
+        <div class="container justify-content-center" style="background: #eeeeee;position: -webkit-sticky;position: sticky;top: 840px;padding-top: 5px;padding-bottom: 5px;border-radius: 5px;margin-top: 30px">
             <h4 class="font-weight-bold d-flex justify-content-center">Follow us on :</h4>
             <div class="d-flex justify-content-center">
-                <i class="fa fa-fw fa-facebook-official fa-3x"></i>
-                <i class="fa fa-fw fa-twitter-square fa-3x"></i>
-                <i class="fa fa-fw fa-instagram fa-3x"></i>
-                <i class="fa fa-fw fa-linkedin-square fa-3x"></i>
+                <a href="https://www.facebook.com/" target="_blank"><i class="fa fa-fw fa-facebook-official fa-3x"></i></a>
+                <a href="https://twitter.com/" target="_blank"><i class="fa fa-fw fa-twitter-square fa-3x"></i></a>
+                <a href="https://www.instagram.com/" target="_blank"><i class="fa fa-fw fa-instagram fa-3x"></i></a>
+                <a href="https://www.linkedin.com/" target="_blank"><i class="fa fa-fw fa-linkedin-square fa-3x"></i></a>
             </div>
 
         </div>
