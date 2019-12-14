@@ -87,46 +87,6 @@ def ViewFriends(request):
     return render(request, template, context)
 
 
-@login_required(login_url='/signin/')
-def viewRequest(request):
-    template = 'friends/FriendRequestList.html'
-    user = request.user
-    friendship_requests = Friend.objects.unrejected_requests(user=request.user)
-    context = {
-        'user': user,
-        "requests": friendship_requests,
-        'error_message': '',
-    }
-
-    if request.method == 'POST':
-        user = request.user
-        friendship_request_id = request.POST['friendship_request_id']
-        if request.POST['action'] == "accept":
-            friend_request = get_object_or_404(
-                request.user.friendship_requests_received, id=friendship_request_id
-            )
-            friend_request.accept()
-            friendship_requests = Friend.objects.unrejected_requests(user=request.user)
-            context = {
-                'user': user,
-                "requests": friendship_requests,
-                'error_message': 'Friend Request Accepted!!!',
-            }
-
-        elif request.POST['action'] == "reject":
-
-            friend_request = get_object_or_404(
-                request.user.friendship_requests_received, id=friendship_request_id
-            )
-            friend_request.reject()
-            friendship_requests = Friend.objects.unrejected_requests(user=request.user)
-            context = {
-                'user': user,
-                "requests": friendship_requests,
-                'error_message': 'Friend Request Rejected!!!',
-            }
-
-    return render(request, template, context)
 
 
 
