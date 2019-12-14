@@ -14,7 +14,10 @@ def ViewFriends(request):
     print(peoples)
     print(friendship_requests)
 
+    print("Frient reqqqqqqqqqqqqqqquuuuuuuuueesssssssssssssssssssttt")
+
     all_users = Account.objects.all().exclude(id=request.user.id)
+
     print(all_users)
 
     context = {

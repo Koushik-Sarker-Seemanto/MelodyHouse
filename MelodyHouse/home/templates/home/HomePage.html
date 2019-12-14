@@ -46,7 +46,7 @@
 
 
 
-        <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="3000">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="2000">
             <!-- Indicators -->
 
             <ul class="carousel-indicators">
@@ -109,27 +109,27 @@
     {# Left Side Bar           START #}
 
         <div class="col-md-3" style="background: #fff">
-            <div class="col-md-12 embed-responsive" style="position: -webkit-sticky;position: sticky;top: 60px;overflow: visible">
-                 <div class="list-group-item" style="margin-left: -20px;margin-right: 5px;">
-                     <div class="d-flex justify-content-center">
-                         <h4>About</h4>
-                     </div>
-                     <h6 class="list-group-item">Name: {{ user.name }}</h6>
-                     <h6 class="list-group-item">Genre: {{ user.fav_genre }}</h6>
-                     <h6 class="list-group-item">Phone: {{ user.phone }}</h6>
-                     <h6 class="list-group-item">Email: {{ user.email }}</h6>
-                     <h6 class="list-group-item">Gender: {{ user.gender }}</h6>
+{#            <div class="col-md-12 embed-responsive" style="position: -webkit-sticky;position: sticky;top: 60px;overflow: visible">#}
+{#                 <div class="list-group-item" style="margin-left: -20px;margin-right: 5px;">#}
+{#                     <div class="d-flex justify-content-center">#}
+{#                         <h4>About</h4>#}
+{#                     </div>#}
+{#                     <h6 class="list-group-item">Name: {{ user.name }}</h6>#}
+{#                     <h6 class="list-group-item">Genre: {{ user.fav_genre }}</h6>#}
+{#                     <h6 class="list-group-item">Phone: {{ user.phone }}</h6>#}
+{#                     <h6 class="list-group-item">Email: {{ user.email }}</h6>#}
+{#                     <h6 class="list-group-item">Gender: {{ user.gender }}</h6>#}
+{##}
+{#                     <h6></h6>#}
+{##}
+{#                     <a href="{% url 'profile_app:profile-update' %}" class="btn btn-secondary">Edit Profile</a>#}
+{#                     <a href="{% url 'authentication:change_password' %}" class="btn btn-secondary">Change Password</a>#}
+{#                </div>#}
+{#            </div>#}
 
-                     <h6></h6>
-
-                     <a href="{% url 'profile_app:profile-update' %}" class="btn btn-secondary">Edit Profile</a>
-                     <a href="{% url 'authentication:change_password' %}" class="btn btn-secondary">Change Password</a>
-                </div>
-            </div>
-
-        <h3 class="d-flex justify-content-center" style="position: -webkit-sticky;position: sticky;top: 400px;overflow: visible">My Albums</h3>
+        <h3 class="d-flex justify-content-center" style="position: -webkit-sticky;position: sticky;top: 60px;overflow: visible">Recent Albums</h3>
 {#                <div class="col-md-10" >#}
-                <div class="col-md-12 row"  style="position: -webkit-sticky;position: sticky;top: 440px;overflow: visible">
+                <div class="col-md-12 row"  style="position: -webkit-sticky;position: sticky;top: 100px;overflow: visible">
 
                     {% for album in side_albums %}
                         <div class="col-md-6 " >
@@ -152,7 +152,7 @@
                             </div>
                         </div>
                     {% endfor %}
-                <a href="#">see more...</a>
+{#                <a href="#">see more...</a>#}
                 </div>
 
         </div>
@@ -195,12 +195,12 @@
                     <div>
                         <h5 style="margin-top: 10px;color: #a3a6aa"> <i class="fa fa-fw fa-thumbs-up"></i> 54</h5>
 
-                        <div class="d-flex align-items-center" style="margin-top: 10px;">
-                            <button class="btn btn-outline-primary" style="width: 100%">
-                                <i class="fa fa-fw fa-thumbs-up"></i>Like
-                            </button>
-
-                        </div>
+{#                        <div class="d-flex align-items-center" style="margin-top: 10px;">#}
+{#                            <button class="btn btn-outline-primary" style="width: 100%">#}
+{#                                <i class="fa fa-fw fa-thumbs-up"></i>Like#}
+{#                            </button>#}
+{##}
+{#                        </div>#}
 
 {#                        <div class="p-acts" style="margin-top: 10px">#}
 {#                            <div class="p-act like"><i class="material-icons">thumb_up_alt</i><span>23</span></div>#}
@@ -249,12 +249,12 @@
                     <div>
                         <h5 style="margin-top: 10px;color: #a3a6aa"> <i class="fa fa-fw fa-thumbs-up"></i> 54</h5>
 
-                        <div class="d-flex align-items-center" style="margin-top: 10px;">
-                            <button class="btn btn-outline-primary" style="width: 100%">
-                                <i class="fa fa-fw fa-thumbs-up"></i>Like
-                            </button>
-
-                        </div>
+{#                        <div class="d-flex align-items-center" style="margin-top: 10px;">#}
+{#                            <button class="btn btn-outline-primary" style="width: 100%">#}
+{#                                <i class="fa fa-fw fa-thumbs-up"></i>Like#}
+{#                            </button>#}
+{##}
+{#                        </div>#}
                     </div>
                 </div>
                 </div>

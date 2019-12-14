@@ -14,7 +14,7 @@
 
 {% block body %}
     <div class="container justify-content-center d-flex">
-        <h1 class="justify-content-center" style="margin-top: 80px">My Playlist</h1>
+        <h1 class="justify-content-center" style="margin-top: 80px;background: #343A40;color: #ffffff;padding: 10px;border-radius: 5px" >My Playlist</h1>
     </div>
 
     {% if error %}
@@ -32,7 +32,7 @@
 
         {% for song in songs %}
             <div class="col-md-3 mt-2 mb-2" >
-                <div class="" style="padding: 20px;border-radius: 10px;background: #c5c5c5;">
+                <div class=" Music_Card " style="padding: 20px;border-radius: 10px;background: #c5c5c5;">
                     <div class="">
                         <div class="p" style="overflow: hidden">
                             {{ song.playlist_song.song_title }}
@@ -76,15 +76,16 @@
     </div>
     </div>
 
-<div style="background: #eeeeee">
-        <div class="container">
-            <p class="footer-block">Follow us on :</p>
-            <i class="fa fa-fw fa-facebook-official"></i>
-            <i class="fa fa-fw fa-twitter-square"></i>
-            <i class="fa fa-fw fa-instagram"></i>
-            <i class="fa fa-fw fa-linkedin-square"></i>
+        <div class="justify-content-center" style="background: #343A40;padding-top: 5px;padding-bottom: 5px;margin-top: 50px;padding-top: 100px;padding-bottom: 139px">
+            <h4 class="font-weight-bold d-flex justify-content-center" style="color: #ffffff;margin-bottom: 20px">Follow us on :</h4>
+            <div class="d-flex justify-content-center">
+                <a href="https://www.facebook.com/" target="_blank" style="color: #ffffff"><i class="fa fa-fw fa-facebook-official fa-3x"></i></a>
+                <a href="https://twitter.com/" target="_blank" style="color: #ffffff"><i class="fa fa-fw fa-twitter-square fa-3x"></i></a>
+                <a href="https://www.instagram.com/" target="_blank" style="color: #ffffff"><i class="fa fa-fw fa-instagram fa-3x"></i></a>
+                <a href="https://www.linkedin.com/" target="_blank" style="color: #ffffff"><i class="fa fa-fw fa-linkedin-square fa-3x"></i></a>
+            </div>
+
         </div>
-    </div>
 
 
 {% endblock %}
