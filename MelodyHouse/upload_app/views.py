@@ -63,6 +63,7 @@ def addAlbum(request):
             song.song_file = request.FILES['song_file']
             file_type = song.song_file.url.split('.')[-1]
             file_type = file_type.lower()
+
             if file_type not in AUDIO_FILE_TYPES:
                 form = AlbumForm()
                 form_song = SongForm(request.user)
