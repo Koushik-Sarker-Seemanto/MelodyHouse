@@ -17,9 +17,9 @@
 
 {# Cover Photo Area           START #}
 
-    <div class="d-flex justify-content-center mt-2 mb-2" >
+    <div class="d-flex justify-content-center" >
         <div id="profile-upper" class="col-md-9">
-            <div id="profile-banner-image">
+            <div id="profile-banner-image" class="AlbumForm">
                 <img src='{% static 'resource/cover_photo.jpg' %}' alt="Banner image">
             </div>
             <div id="profile-d">
@@ -28,14 +28,14 @@
                 </div>
                 <div id="u-name">{{ user.name }}</div>
                 <div id="u-fav_genre">{{ user.fav_genre }}</div>
-                <div class="tb" id="m-btns" style="display: flex">
-                    <div class="td">
-                        <div class="m-btn"><i class="material-icons">format_list_bulleted</i><span>Activity log</span></div>
-                    </div>
-                    <div class="td">
-                        <div class="m-btn"><i class="material-icons">lock</i><span>Privacy</span></div>
-                    </div>
-                </div>
+{#                <div class="tb" id="m-btns" style="display: flex">#}
+{#                    <div class="td">#}
+{#                        <div class="m-btn"><i class="material-icons">format_list_bulleted</i><span>Activity log</span></div>#}
+{#                    </div>#}
+{#                    <div class="td">#}
+{#                        <div class="m-btn"><i class="material-icons">lock</i><span>Privacy</span></div>#}
+{#                    </div>#}
+{#                </div>#}
                 <div id="edit-profile"><i class="fa fa-fw fa-camera"></i></div>
             </div>
             <div id="black-grd"></div>
@@ -76,11 +76,11 @@
 
         {# Left Side Bar           START #}
 
-        <div class="col-md-3" style="background: #fff">
+        <div class="col-md-3 SideBarShadow" style="background: #fff">
             <div class="col-md-12 embed-responsive" style="position: -webkit-sticky;position: sticky;top: 60px;overflow: visible">
-                 <div class="list-group-item" style="margin-left: 0px;margin-right: 0px;">
+                 <div class="list-group-item SideBarShadow" style="margin-left: 0px;margin-top: 15px;">
                      <div class="d-flex justify-content-center">
-                         <h4>About</h4>
+                         <h4 >About</h4>
                      </div>
                      <h6 class="list-group-item">Name: {{ user.name }}</h6>
                      <h6 class="list-group-item">Genre: {{ user.fav_genre }}</h6>
@@ -95,14 +95,14 @@
                 </div>
             </div>
 
-        <a href="{% url 'profile_app:my_uploads' %}" class="h3 d-flex justify-content-center" style="position: -webkit-sticky;position: sticky;top: 400px;overflow: visible; background: #343A40;color: #ffffff;padding: 5px;border-radius: 3px;margin-top: 5px">
+        <a href="{% url 'profile_app:my_uploads' %}" class="h3 d-flex justify-content-center Text_Shadow" style="position: -webkit-sticky;position: sticky;top: 400px;overflow: visible; background: #343A40;color: #ffffff;padding: 5px;border-radius: 3px;margin-top: 5px">
             My Albums
         </a>
 {#                <div class="col-md-10" >#}
                 <div class="col-md-12 row"  style="position: -webkit-sticky;position: sticky;top: 450px;overflow: visible">
 
                     {% for album in side_albums %}
-                        <div class="col-md-6 " >
+                        <div class="col-md-6 AlbumHover" >
                             <div class="thumbnail">
                                 {% if album.album_logo %}
                                     <a href="{% url 'profile_app:single-album' album.id %}">
