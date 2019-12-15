@@ -158,7 +158,8 @@ def NewsFeedView(request):
                 'post': post,
                 'user': user
             }
-            return render(request, 'profile_app/NewsFeed.html', context)
+            return redirect('profile_app:news-feed')
+            # return render(request, 'profile_app/NewsFeed.html', context)
         else:
             playlist_instance = PlayList()
             playlist_instance.playlist_song = song

@@ -119,6 +119,32 @@ box-shadow: 10px 10px 37px -25px rgba(0,0,0,0.84);
 box-shadow: 10px 10px 37px -25px rgba(0,0,0,0.84);
 }
 
+.AlbumForm{
+    -webkit-box-shadow: 0px 0px 30px 5px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 0px 30px 5px rgba(0,0,0,0.75);
+box-shadow: 0px 0px 30px 5px rgba(0,0,0,0.75);
+}
+
+.Text_Shadow{
+    -webkit-box-shadow: 5px 5px 5px 0px rgba(135,135,135,1);
+-moz-box-shadow: 5px 5px 5px 0px rgba(135,135,135,1);
+box-shadow: 5px 5px 5px 0px rgba(135,135,135,1);
+}
+
+.SideBarShadow{
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(199,199,199,1);
+-moz-box-shadow: 0px 0px 10px 0px rgba(199,199,199,1);
+box-shadow: 0px 0px 10px 0px rgba(199,199,199,1);
+}
+
+.AlbumHover:hover {
+    -webkit-box-shadow: 0px 0px 30px 5px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 0px 30px 5px rgba(0,0,0,0.75);
+box-shadow: 0px 0px 30px 5px rgba(0,0,0,0.75);
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
 .m-btn i
 {
     font-size: 16px;

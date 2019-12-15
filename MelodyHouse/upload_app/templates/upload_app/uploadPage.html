@@ -15,16 +15,20 @@
 {% block body %}
 
     {% if error_message %}
-        <div class="alert alert-warning alert-dismissible fade show d-flex justify-content-center" style="margin-top: 100px">
+        <div class="alert alert-danger alert-dismissible fade show d-flex justify-content-center" style="margin-top: 100px">
             <strong>Error: </strong> {{ error_message }}
             <button type="button" class="close" data-dismiss="alert">&times;
             </button>
         </div>
     {% endif %}
 
-    <h1 class="d-flex justify-content-center" style="margin-top: 100px">Create Album</h1>
+    <div class="d-flex justify-content-center" style="margin-top: 100px;">
+        <h1 class="Text_Shadow" style="background: #343A40;padding: 10px;color: #FFFFFF;border-radius: 5px">
+            Create Album
+        </h1>
+    </div>
 	<div class="d-flex justify-content-center mt-5 mb-5">
-		<div class="col-md-6 list-group-item" style="background: #ccdcd7">
+		<div class="col-md-6 list-group-item AlbumForm" style="background: #eeeeee" >
 			<form  method="POST" enctype="multipart/form-data">
                 <table class="d-flex justify-content-center" style="padding: 20px">
                     {% csrf_token %}
@@ -35,9 +39,13 @@
 		</div>
 	</div>
 
-    <h1 class="d-flex justify-content-center" style="margin-top: 50px">Add Song</h1>
+    <div class="d-flex justify-content-center" style="margin-top: 50px;">
+        <h1 class="Text_Shadow" style="background: #343A40;padding: 10px;color: #FFFFFF;border-radius: 5px">
+            Add Song
+        </h1>
+    </div>
 	<div class="d-flex justify-content-center mt-5 mb-5">
-		<div class="col-md-6 list-group-item" style="background: #ccdcd7;margin-bottom: 200px">
+		<div class="col-md-6 list-group-item AlbumForm" style="background: #eeeeee;margin-bottom: 200px">
 			<form method="POST" enctype="multipart/form-data">
 				<table class="d-flex justify-content-center" style="padding: 20px">
                     {% csrf_token %}
