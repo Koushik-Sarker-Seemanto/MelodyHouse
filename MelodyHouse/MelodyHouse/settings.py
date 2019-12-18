@@ -92,7 +92,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'melody_house',
-        'USER': 'root',
+        'USER': 'melody_house',
         'PASSWORD': '4200',
         'HOST': '127.0.0.1',
         'PORT': '3306',
