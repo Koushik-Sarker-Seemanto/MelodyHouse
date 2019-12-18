@@ -288,6 +288,56 @@ def MyUploadedAlbum(request, pk):
 
 
 @login_required(login_url='/signin/')
+def MyUploadsSongRemove(request, pk):
+    removed_song = Song.objects.get(id=pk)
+    print(removed_song.song_title, removed_song.id)
+
+    playlist_remove = PlayList.objects.filter(playlist_song=removed_song)
+    post_remove = Post.objects.filter(post_song=removed_song)
+    print(playlist_remove)
+    print(post_remove)
+
+    post_remove.delete()
+    playlist_remove.delete()
+    removed_song.delete()
+
+    user = request.user
+    albums = Album.objects.filter(user=request.user)
+    songs = Song.objects.filter(user=request.user)
+
+    context = {
+        'songs': songs,
+        'albums': albums,
+        'user': user,
+    }
+    # return redirect('profile_app:my_album_songs', context)
+    return render(request, 'profile_app/MyUploads.html', context)
+
+
+@login_required(login_url='/signin/')
+def MyUploadsAlbumRemove(request, pk):
+    removed_album = Album.objects.get(id=pk)
+    print(removed_album.album_title, removed_album.id)
+
+    if removed_album.user_id == request.user:
+        removed_album.delete()
+    else:
+        error = "  This is not your album"
+
+    user = request.user
+    albums = Album.objects.filter(user=request.user)
+    songs = Song.objects.filter(user=request.user)
+
+    context = {
+        'error': error,
+        'songs': songs,
+        'albums': albums,
+        'user': user,
+    }
+    return render(request, 'profile_app/MyUploads.html', context)
+
+
+@login_required(login_url='/signin/')
 def SingleAlbum(request, pk):
     user = request.user
     album = Album.objects.get(id=pk)
