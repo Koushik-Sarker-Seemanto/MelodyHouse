@@ -3,7 +3,7 @@ astropy==3.2.1
 bootstrap4==0.1.0
 cffi==1.12.3
 cftime==1.0.3.4
-cryptography==2.7
+cryptography==3.2
 cycler==0.10.0
 decode==0.5.5
 Django==2.2.10
